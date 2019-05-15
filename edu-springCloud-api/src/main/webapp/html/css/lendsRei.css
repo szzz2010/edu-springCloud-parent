@@ -1,0 +1,427 @@
+/*主体公共样式*/
+.public-div{
+    min-height: 640px;
+}
+.public-div>div{
+    width: 975px;
+    margin: 15px auto;
+}
+
+.main-content{
+    min-height: 400px;
+}
+
+.public-div>div.mar-b{
+    margin-bottom: 0;
+}
+
+/*tips提醒*/
+.public-div>div.tips{
+    margin: 0 auto;
+    background: #FFF0D6;
+    height: 61px;
+    line-height: 61px;
+}
+
+div.tips>h2{
+    font-size: 12px;
+    color: #081C45;
+    letter-spacing: -.31px;
+    margin-left: 10px;
+}
+div.tips button{
+    width: 110px;
+    height: 36px;
+    border: none;
+    background: #F5A623;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+.phone-number{
+    font-size: 20px;
+    color: #081C45;
+    letter-spacing: -.1px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.attestation-btn{
+    width: 56px;
+    height: 26px;
+    border: 1px solid #276CFE;
+    border-radius: 4px;
+    color: #276CFE;
+    margin: -5px 0 0 10px;
+    background: none;
+    font-size: 12px;
+}
+
+button.active{
+    background: #276cfe;
+    color: #fff;
+}
+
+.money-list>li {
+    width: 160px;
+    height: 90px;
+    margin: 59px 0 59px calc((100% - 640px) / 5);
+    color: #276CFE;
+    letter-spacing: -.08px;
+}
+
+/*首页个人中心页面 存管账户样式css start*/
+.money-list>li span,
+.escrow>li span{
+    display: inline-block;
+    font-size: 30px;
+}
+
+.money-list>li small{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 35px;
+}
+
+.money-list>li h5,
+.escrow>li h5{
+    font-size: 14px;
+    color: #A2ABBA;
+    line-height: 20px;
+}
+
+.escrow>li{
+    color: #276CFE;
+    letter-spacing: -.08px;
+}
+
+button.btn-next{
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #276CFE;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
+    color: #fff;
+    background: #276CFE;
+}
+
+ul.escrow:nth-child(2){
+    width: 69%;
+    border-right: 1px solid #276cfe;
+}
+
+ul.escrow:nth-child(2)>li.fl{
+    width: 33.33%;
+    margin-top: 25px;
+}
+
+ul.escrow:nth-child(2)>li.tc{
+    margin: 105px 0 15px 0;
+}
+
+ul.escrow:last-child{
+    width: 30%;
+}
+
+ul.escrow:last-child>li:first-child{
+    margin-top: 25px;
+}
+
+ul.escrow:last-child>li:last-child{
+    margin-top: 30px;
+}
+
+ul.escrow:last-child>li:last-child>small{
+    color:#FF3300;
+}
+/*首页个人中心页面 存管账户样式css end*/
+
+/*首页弹层样式*/
+.withdraw-form{
+    font-size: 14px;
+}
+.withdraw-form>div{
+    padding-left: 86px;
+}
+
+
+.withdraw-form>div:not(:last-child){
+    margin-bottom: 25px;
+}
+
+button.withdraw-btn{
+    width: 188px;
+    margin: 25px 0;
+}
+
+.withdraw-form label{
+    margin-right: 25px;
+}
+
+.withdraw-form input:not([type="radio"]),
+.withdraw-form select{
+    width: 275px;
+    height: 40px;
+    border: 1px solid #E3E7EA;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.withdraw-form p.clearfix{
+    margin-top: 5px;
+    padding-left: 85px;
+}
+
+.withdraw-form p.clearfix>a{
+    color: #2067FF;
+}
+
+.expired-con{
+    color: #424242;
+}
+
+.expired-con>h2{
+    margin-top: 30px;
+    font-size: 18px;
+}
+.expired-con>p{
+    font-size: 14px;
+    margin: 33px 0 53px;
+}
+
+
+
+/*首页弹层样式end*/
+
+
+.content-middle{
+    height: 330px;
+    background: #276CFE;
+    background: url("../img/Apply.png") no-repeat center;
+    color: #fff;
+    letter-spacing: .29px;
+    box-sizing: border-box;
+    padding-top: 60px;
+}
+
+.content-middle>p{
+    width: 714px;
+    font-size: 22px;
+    line-height: 42px;
+    margin: 0 auto 60px;
+}
+
+.content-middle>a{
+    width: 240px;
+    height: 60px;
+    background: #F5A623;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+    letter-spacing: -.41px;
+    cursor: pointer;
+    color: #fff;
+    display: inline-block;
+    _zoom:1;
+    _display: inline;
+    *display: inline;
+    height: 60px;
+    line-height: 60px;
+}
+
+
+.billing-info{
+    ont-size: 22px;
+    color: #081C45;
+    letter-spacing: -.17px;
+    margin: 10px 0 0 45px;
+}
+
+.billing>li{
+    width: 80px;
+    height: 30px;
+    margin: 10px 0 0 55px;
+    line-height: 30px;
+    background: #FFF2DC;
+    color: #F5A623;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+
+
+.billing>li.active,
+.billing>li:hover{
+    background: #F5A623;
+    color: #fff;
+}
+
+.axle-con div.time-div:first-child:before {
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    margin: 0 auto;
+    display: inline-block;
+    box-shadow: 0 0 2px 0 #FFF;
+    background: #fff;
+    width: 15px;
+    height: 15px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: relative;
+    top: 21px;
+    left: -22px;
+    z-index: 1;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+
+.across{
+    height: 5px;
+    width: 16px;
+    left: -11px;
+    top: -5px;
+    background: #276CFE;
+}
+
+.circle{
+    width: 14px;
+    height: 14px;
+    border: 3px solid #276CFE;
+    border-radius: 50%;
+    bottom: -19px;
+    left: -13px;
+}
+
+.axle-con{
+    width: 630px;
+    height: auto;
+    margin: 60px auto;
+    padding-top: 25px;
+    border-left: 6px solid #276cfe;
+}
+
+.axle-con .box-s{
+    width: 591px;
+    margin-left: 70px;
+    margin-top: 25px;
+}
+
+.time-div{
+    padding: 15px;
+}
+
+.time-div>p{
+    font-size: 20px;
+    color: #276CFE;
+    letter-spacing: 0;
+    left: -155px;
+    top: -25px;
+}
+
+.time-div>h{
+    font-size: 16px;
+}
+
+.time-div>h5{
+    color: #D2D6DD;
+    line-height: 24px;
+    left: -155px;
+    top: 0;
+}
+
+.time-div>h3{
+    letter-spacing: -.16px;
+    line-height: 22px;
+}
+
+.dot{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #276cfe;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+
+.odd-numbers{
+    color: #091736;
+}
+
+.expire{
+    color: #F83737;
+}
+
+.time-div>h2>span{
+    font-size: 30px;
+    color: #276CFE;
+    letter-spacing: -.25px;
+}
+.time-div>h2 small{
+    font-size: 16px;
+    letter-spacing: -.25px;
+}
+
+.refund{
+    width: 82px;
+    height: 30px;
+    line-height: 30px;
+    background: #F5A623;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #FFF;
+    letter-spacing: -.1px;
+    border: none;
+}
+
+.time-div>h4{
+    line-height: 60px;
+    background: #FAFAFA;
+}
+
+.time-div>h4>p{
+    margin-right: 10px;
+}
+
+.time-div>h4 img{
+    width: 27px;
+    height: 27px;
+    vertical-align: middle;
+}
+
+.time-div>h4 small{
+    margin-left: 5px;
+    font-size: 14px;
+    color: #8a92a1;
+    letter-spacing: -.25px;
+    line-height: 22px;
+}
+
+.time-div>h4 a{
+    font-size: 14px;
+    color: #276CFE;
+    letter-spacing: -.14px;
+}
+
+.time-div hr{
+    margin: 30px auto;
+    background: #c4cbde;
+}
+
+/*底部样式*/
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-pi{
+    position: inherit;
+}

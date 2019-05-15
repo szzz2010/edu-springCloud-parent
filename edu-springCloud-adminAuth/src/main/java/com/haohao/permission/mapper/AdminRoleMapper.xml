@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.haohao.permission.mapper.AdminRoleMapper" >
+
+  <resultMap id="BaseResultMap" type="com.haohao.permission.model.vo.AdminRoleVO" >
+    <id column="admin_id" property="adminId" jdbcType="INTEGER" />
+    <id column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    admin_id, role_id, create_time
+  </sql>
+
+  <!--批量保存 abner-->
+  <insert id="save">
+    INSERT INTO tt_admin_role(admin_id, role_id, create_time) VALUES
+    <foreach collection="roleIdList" item="role" separator="," >
+      (#{id,jdbcType=INTEGER},#{role,jdbcType=INTEGER},#{time,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+  <!--根据adminId获取List<Role.id> abner-->
+  <select id="getRoleIdListByAdminId" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    SELECT role_id FROM tt_admin_role
+    WHERE admin_id = #{adminId,jdbcType=INTEGER}
+    GROUP BY role_id
+  </select>
+
+  <!--根据角色roleIds查询adminIds abner-->
+  <select id="getAdminIdListByRoleIds" resultType="java.lang.Integer" >
+    SELECT admin_id FROM tt_admin_role
+    <where>
+      <if test="roleIds != null and roleIds.length>0" >
+        AND role_id IN
+        <foreach collection="roleIds" item="id" open="(" close=")" separator="," >
+          #{id}
+        </foreach>
+      </if>
+    </where>
+    GROUP BY admin_id
+  </select>
+
+  <!--根据admin.id删除关系 abner-->
+  <delete id="deleteByAdminId" parameterType="java.lang.Integer">
+    DELETE FROM tt_admin_role
+    WHERE admin_id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <!--根据RoleId删除关系 abner-->
+  <delete id="deleteByRoleId" parameterType="java.lang.Integer">
+    DELETE FROM tt_admin_role
+    WHERE role_id = #{id,jdbcType=INTEGER}
+  </delete>
+</mapper>

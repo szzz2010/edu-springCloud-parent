@@ -1,0 +1,250 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+html, body, p, label, span, div, h1, h2, h3, h4, button, input {
+	font-family: PingFangSC-Regular;
+}
+
+.content{
+	width: 100%;
+	height: calc(100% - 247px);
+	padding:124px 0 123px;
+	text-align: center;
+	color: #fff;
+	font-size:26px; 
+	margin-top: -100px;
+}
+
+.content .tit{
+	line-height: 47px;
+	height: 66px;
+	font-size: 38px;
+}
+
+.content .tips{
+	height: 95px;
+	line-height: 40.5px;
+	font-size: 32px;
+}
+
+.content .loginBox{
+	width: calc(28% - 83px);
+	height: 445.5px;
+    padding: 53px 38px 63px 45px;
+	background: rgba(254,254,254,0.95);
+	border-radius: 14px;
+	margin:0 auto;
+}
+
+.content .logo{
+	width: 93px;
+	height: 93px;
+	background: url(../img/logo.png) no-repeat center;
+	background-size: cover;
+	margin:0 auto 38px;
+}
+
+.content .loginBox .inpText{
+	display: block;
+	width: calc(100% - 41px);
+	padding-left: 41px;
+	height: 64px;
+	border:none;
+	background:none;
+	outline: none;
+	border-bottom: 1px solid #CECECE;
+	margin-bottom: 21px;
+}
+
+.content .loginBox .inpText.name{
+	background: url(../img/name.png) no-repeat center left;
+	background-size:26px 27px; 
+}
+
+.content .loginBox .inpText.pass{
+	background: url(../img/pass.png) no-repeat center left;
+	background-size:26px 29px;
+	margin-bottom: 59px;
+}
+
+.content .loginBox .login{
+	width: 100%;
+	height:67.5px;
+	line-height: 67.5px;
+	text-align: center;
+	font-size: 28px;
+	color: #fff;
+	background-image: linear-gradient(-180deg, #4DD1EB 0%, #5CB5FE 100%);
+	border-radius: 10px;
+	border:none;
+	outline: none;
+}
+
+.error{
+	width: 100%;
+    color: #DD1144;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    text-align: left;
+}
+
+/*
+ * 像素兼容
+ */
+@media screen and (max-width: 1366px) {
+	.content{
+		width: 100%;
+		height: calc(100% - 101px);
+		padding:44px 0 57px;
+		text-align: center;
+		color: #fff;
+		font-size:20px; 
+		margin-top: -100px;
+	}
+
+	.content .tit{
+		line-height: 49px;
+		height: 56px;
+		font-size: 30px;
+	}
+
+	.content .tips{
+		height: 70px;
+		line-height: 32px;
+		font-size: 24px;
+	}
+
+	.content .loginBox{
+		width: 296px;
+		height: 318px;
+	    padding: 38px 27px 51px;
+		background: rgba(254,254,254,0.95);
+		border-radius: 14px;
+		margin:0 auto;
+	}
+
+	.content .loginBox .logo{
+		width: 85px;
+		height: 85px;
+		background: url(../img/logo.png) no-repeat center;
+		background-size: cover;
+		margin:0 auto 36px;
+	}
+
+	.content .loginBox .inpText{
+		display: block;
+		width: calc(100% - 26px);
+		padding-left: 26px;
+		height: 39px;
+		border:none;
+		background:none;
+		outline: none;
+		border-bottom: 1px solid #CECECE;
+		margin-bottom: 27px;
+	}
+
+	.content .loginBox .inpText.name{
+		background: url(../img/name.png) no-repeat center left;
+		background-size:18px 23px; 
+	}
+
+	.content .loginBox .inpText.pass{
+		background: url(../img/pass.png) no-repeat center left;
+		background-size:18px 24px;
+		margin-bottom: 38px;
+	}
+
+	.content .loginBox .login{
+		width: 100%;
+		height:49px;
+		line-height: 49px;
+		text-align: center;
+		font-size: 28px;
+		color: #fff;
+		background-image: linear-gradient(-180deg, #4DD1EB 0%, #5CB5FE 100%);
+		border-radius: 10px;
+		border:none;
+		outline: none;
+	}
+}
+
+@media screen and (max-height: 900px) {
+	.content{
+		width: 100%;
+		height: calc(100% - 101px);
+		padding:44px 0 57px;
+		text-align: center;
+		color: #fff;
+		font-size:20px; 
+	}
+
+	.content .tit{
+		line-height: 49px;
+		height: 56px;
+		font-size: 30px;
+	}
+
+	.content .tips{
+		height: 70px;
+		line-height: 32px;
+		font-size: 24px;
+	}
+
+	.content .loginBox{
+		width: 296px;
+		height: 318px;
+	    padding: 38px 27px 51px;
+		background: rgba(254,254,254,0.95);
+		border-radius: 14px;
+		margin:0 auto;
+	}
+
+	.content .loginBox .logo{
+		width: 85px;
+		height: 85px;
+		background: url(../img/logo.png) no-repeat center;
+		background-size: cover;
+		margin:0 auto 36px;
+	}
+
+	.content .loginBox .inpText{
+		display: block;
+		width: calc(100% - 26px);
+		padding-left: 26px;
+		height: 39px;
+		border:none;
+		background:none;
+		outline: none;
+		border-bottom: 1px solid #CECECE;
+		margin-bottom: 27px;
+	}
+
+	.content .loginBox .inpText.name{
+		background: url(../img/name.png) no-repeat center left;
+		background-size:18px 23px; 
+	}
+
+	.content .loginBox .inpText.pass{
+		background: url(../img/pass.png) no-repeat center left;
+		background-size:18px 24px;
+		margin-bottom: 38px;
+	}
+
+	.content .loginBox .login{
+		width: 100%;
+		height:49px;
+		line-height: 49px;
+		text-align: center;
+		font-size: 28px;
+		color: #fff;
+		background-image: linear-gradient(-180deg, #4DD1EB 0%, #5CB5FE 100%);
+		border-radius: 10px;
+		border:none;
+		outline: none;
+	}
+}

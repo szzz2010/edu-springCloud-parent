@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanBankCardInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanBankCardInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="debtor" jdbcType="VARCHAR" property="debtor" />
+    <result column="loan_bank" jdbcType="VARCHAR" property="loanBank" />
+    <result column="loan_bank_num" jdbcType="VARCHAR" property="loanBankNum" />
+    <result column="bank_province" jdbcType="VARCHAR" property="bankProvince" />
+    <result column="bank_city" jdbcType="VARCHAR" property="bankCity" />
+    <result column="branch_name" jdbcType="VARCHAR" property="branchName" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, source, order_id, debtor, loan_bank, loan_bank_num, bank_province, bank_city, 
+    branch_name, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanBankCardInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_bankCard_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_bankCard_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_bankCard_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanBankCardInfoExample">
+    delete from loan_bankCard_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanBankCardInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_bankCard_info (source, order_id, debtor, 
+      loan_bank, loan_bank_num, bank_province, 
+      bank_city, branch_name, create_time, 
+      update_time)
+    values (#{source,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{debtor,jdbcType=VARCHAR}, 
+      #{loanBank,jdbcType=VARCHAR}, #{loanBankNum,jdbcType=VARCHAR}, #{bankProvince,jdbcType=VARCHAR}, 
+      #{bankCity,jdbcType=VARCHAR}, #{branchName,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanBankCardInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_bankCard_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="debtor != null">
+        debtor,
+      </if>
+      <if test="loanBank != null">
+        loan_bank,
+      </if>
+      <if test="loanBankNum != null">
+        loan_bank_num,
+      </if>
+      <if test="bankProvince != null">
+        bank_province,
+      </if>
+      <if test="bankCity != null">
+        bank_city,
+      </if>
+      <if test="branchName != null">
+        branch_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="debtor != null">
+        #{debtor,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBank != null">
+        #{loanBank,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBankNum != null">
+        #{loanBankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankProvince != null">
+        #{bankProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCity != null">
+        #{bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanBankCardInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_bankCard_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_bankCard_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.debtor != null">
+        debtor = #{record.debtor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanBank != null">
+        loan_bank = #{record.loanBank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanBankNum != null">
+        loan_bank_num = #{record.loanBankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankProvince != null">
+        bank_province = #{record.bankProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankCity != null">
+        bank_city = #{record.bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.branchName != null">
+        branch_name = #{record.branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_bankCard_info
+    set id = #{record.id,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      debtor = #{record.debtor,jdbcType=VARCHAR},
+      loan_bank = #{record.loanBank,jdbcType=VARCHAR},
+      loan_bank_num = #{record.loanBankNum,jdbcType=VARCHAR},
+      bank_province = #{record.bankProvince,jdbcType=VARCHAR},
+      bank_city = #{record.bankCity,jdbcType=VARCHAR},
+      branch_name = #{record.branchName,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanBankCardInfo">
+    update loan_bankCard_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="debtor != null">
+        debtor = #{debtor,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBank != null">
+        loan_bank = #{loanBank,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBankNum != null">
+        loan_bank_num = #{loanBankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankProvince != null">
+        bank_province = #{bankProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCity != null">
+        bank_city = #{bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        branch_name = #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanBankCardInfo">
+    update loan_bankCard_info
+    set source = #{source,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      debtor = #{debtor,jdbcType=VARCHAR},
+      loan_bank = #{loanBank,jdbcType=VARCHAR},
+      loan_bank_num = #{loanBankNum,jdbcType=VARCHAR},
+      bank_province = #{bankProvince,jdbcType=VARCHAR},
+      bank_city = #{bankCity,jdbcType=VARCHAR},
+      branch_name = #{branchName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

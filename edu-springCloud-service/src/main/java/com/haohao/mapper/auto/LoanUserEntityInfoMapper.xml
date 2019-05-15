@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanUserEntityInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanUserEntityInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="biz_entity_name" jdbcType="VARCHAR" property="bizEntityName" />
+    <result column="biz_entiry_type" jdbcType="VARCHAR" property="bizEntiryType" />
+    <result column="register_amt" jdbcType="DECIMAL" property="registerAmt" />
+    <result column="founded_date" jdbcType="VARCHAR" property="foundedDate" />
+    <result column="register_addr" jdbcType="VARCHAR" property="registerAddr" />
+    <result column="sgiare_ratio" jdbcType="VARCHAR" property="sgiareRatio" />
+    <result column="employee_num" jdbcType="VARCHAR" property="employeeNum" />
+    <result column="my_company_industry" jdbcType="VARCHAR" property="myCompanyIndustry" />
+    <result column="com_addr" jdbcType="VARCHAR" property="comAddr" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, source, order_id, biz_entity_name, biz_entiry_type, register_amt, founded_date, 
+    register_addr, sgiare_ratio, employee_num, my_company_industry, com_addr, create_time, 
+    update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanUserEntityInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_user_entity_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_user_entity_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_user_entity_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanUserEntityInfoExample">
+    delete from loan_user_entity_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanUserEntityInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_entity_info (source, order_id, biz_entity_name, 
+      biz_entiry_type, register_amt, founded_date, 
+      register_addr, sgiare_ratio, employee_num, 
+      my_company_industry, com_addr, create_time, 
+      update_time)
+    values (#{source,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{bizEntityName,jdbcType=VARCHAR}, 
+      #{bizEntiryType,jdbcType=VARCHAR}, #{registerAmt,jdbcType=DECIMAL}, #{foundedDate,jdbcType=VARCHAR}, 
+      #{registerAddr,jdbcType=VARCHAR}, #{sgiareRatio,jdbcType=VARCHAR}, #{employeeNum,jdbcType=VARCHAR}, 
+      #{myCompanyIndustry,jdbcType=VARCHAR}, #{comAddr,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanUserEntityInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_entity_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="bizEntityName != null">
+        biz_entity_name,
+      </if>
+      <if test="bizEntiryType != null">
+        biz_entiry_type,
+      </if>
+      <if test="registerAmt != null">
+        register_amt,
+      </if>
+      <if test="foundedDate != null">
+        founded_date,
+      </if>
+      <if test="registerAddr != null">
+        register_addr,
+      </if>
+      <if test="sgiareRatio != null">
+        sgiare_ratio,
+      </if>
+      <if test="employeeNum != null">
+        employee_num,
+      </if>
+      <if test="myCompanyIndustry != null">
+        my_company_industry,
+      </if>
+      <if test="comAddr != null">
+        com_addr,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="bizEntityName != null">
+        #{bizEntityName,jdbcType=VARCHAR},
+      </if>
+      <if test="bizEntiryType != null">
+        #{bizEntiryType,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAmt != null">
+        #{registerAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="foundedDate != null">
+        #{foundedDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddr != null">
+        #{registerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="sgiareRatio != null">
+        #{sgiareRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNum != null">
+        #{employeeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="myCompanyIndustry != null">
+        #{myCompanyIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="comAddr != null">
+        #{comAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanUserEntityInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_user_entity_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_user_entity_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.bizEntityName != null">
+        biz_entity_name = #{record.bizEntityName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bizEntiryType != null">
+        biz_entiry_type = #{record.bizEntiryType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerAmt != null">
+        register_amt = #{record.registerAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.foundedDate != null">
+        founded_date = #{record.foundedDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerAddr != null">
+        register_addr = #{record.registerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sgiareRatio != null">
+        sgiare_ratio = #{record.sgiareRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeNum != null">
+        employee_num = #{record.employeeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.myCompanyIndustry != null">
+        my_company_industry = #{record.myCompanyIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comAddr != null">
+        com_addr = #{record.comAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_user_entity_info
+    set id = #{record.id,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      biz_entity_name = #{record.bizEntityName,jdbcType=VARCHAR},
+      biz_entiry_type = #{record.bizEntiryType,jdbcType=VARCHAR},
+      register_amt = #{record.registerAmt,jdbcType=DECIMAL},
+      founded_date = #{record.foundedDate,jdbcType=VARCHAR},
+      register_addr = #{record.registerAddr,jdbcType=VARCHAR},
+      sgiare_ratio = #{record.sgiareRatio,jdbcType=VARCHAR},
+      employee_num = #{record.employeeNum,jdbcType=VARCHAR},
+      my_company_industry = #{record.myCompanyIndustry,jdbcType=VARCHAR},
+      com_addr = #{record.comAddr,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanUserEntityInfo">
+    update loan_user_entity_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="bizEntityName != null">
+        biz_entity_name = #{bizEntityName,jdbcType=VARCHAR},
+      </if>
+      <if test="bizEntiryType != null">
+        biz_entiry_type = #{bizEntiryType,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAmt != null">
+        register_amt = #{registerAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="foundedDate != null">
+        founded_date = #{foundedDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddr != null">
+        register_addr = #{registerAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="sgiareRatio != null">
+        sgiare_ratio = #{sgiareRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNum != null">
+        employee_num = #{employeeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="myCompanyIndustry != null">
+        my_company_industry = #{myCompanyIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="comAddr != null">
+        com_addr = #{comAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanUserEntityInfo">
+    update loan_user_entity_info
+    set source = #{source,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      biz_entity_name = #{bizEntityName,jdbcType=VARCHAR},
+      biz_entiry_type = #{bizEntiryType,jdbcType=VARCHAR},
+      register_amt = #{registerAmt,jdbcType=DECIMAL},
+      founded_date = #{foundedDate,jdbcType=VARCHAR},
+      register_addr = #{registerAddr,jdbcType=VARCHAR},
+      sgiare_ratio = #{sgiareRatio,jdbcType=VARCHAR},
+      employee_num = #{employeeNum,jdbcType=VARCHAR},
+      my_company_industry = #{myCompanyIndustry,jdbcType=VARCHAR},
+      com_addr = #{comAddr,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

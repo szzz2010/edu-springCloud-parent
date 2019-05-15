@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>完善企业信息</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="Licenseor" content="学习金服"/>
+    <meta name="baidu-site-verification" content="GprTjtLKcQ">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Copyright" content="网站版权"/>
+    <meta name="keywords" content="学习金服,学习理财,个人理财,互联网金融平台">
+    <meta name="description" content="学习金服（www.xiangshang360.com）- 是专业、公平、透明的理财服务平台，自2013年7月上线以来一直致力于为出借者提供简单、快捷、安全、低门槛的个人理财服务。">
+    <link rel="icon" href="../img/bitbug_favicon.ico">
+    <link type="text/css" rel="stylesheet" href="../css/public.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/compete.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/company-layer.css"/>
+    <!--上传插件css-->
+    <link rel="stylesheet" type="text/css" href="../js/diyUpload/css/webuploader.css">
+</head>
+<body>
+<div class="headers"></div>
+<ul class="audit-opinion con dis-n">
+    <li>审核意见</li>
+</ul>
+<div class="public-div">
+    <div class="box-s">
+        <p>好好借道平台致力于打造真实、合法、有效的互联网平台。为了更好的保障你和广大用户的合法权益，请你认真填写以下登记信息。<br>
+            企业信息和经办人信息登记审核通过之后您才可以通过质押方式借款。<br>
+            一个企业只能注册一个账号。</p>
+        <!--企业信息-->
+        <div class="comm-div">
+            <input type="hidden" id="id" name="id">
+            <h4><em>丨</em>企业信息</h4>
+
+            <!-- 企业信息-->
+            <div>
+                <span class="tr">企业名称:</span>
+                <input type="text" id="name" name="name" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">统一社会信用代码:</span>
+                <input type="text" maxlength="18" id="usccCode" name="usccCode" class="verification-box" oninput="if(value.length>18)value=value.slice(0,18)" autocomplete="off">
+            </div>
+            <!-- 法人信息-->
+            <div>
+                <span class="tr">法定代表人姓名:</span>
+                <input type="text" id="legalName" name="legalName" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">法定代表人手机:</span>
+                <input type="number" maxlength="11" id="legalPhone" name="legalPhone" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">法定代表人身份证号码:</span>
+                <input type="text" maxlength="18" id="legalIdCard" name="legalIdCard" class="verification-box" autocomplete="off">
+            </div>
+            <!-- 经办人信息-->
+            <div>
+                <span class="tr">经办人姓名:</span>
+                <input type="text" id="handlerName" name="handlerName" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">经办人经办人身份证:</span>
+                <input type="text" id="handlerIdCard" name="handlerIdCard" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">经办人手机号:</span>
+                <input type="text" id="handlerPhone" name="handlerPhone" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr fl">经办人职务:</span>
+                <div>
+                    <select id="handlerDuty" name="handlerDuty">
+                        <option value="总经理">总经理</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix">
+                <span class="tr fl">企业地址:</span>
+                <div class="dix-i" id="place-select">
+                    <select id="placeProvince"></select>省
+                    <select id="placeCity"></select>市
+                    <label class="error">请输入正确的地址</label>
+                </div>
+            </div>
+            <div>
+                <span class="tr">企业经营注册地址:</span>
+                <input type="text" id="enterpriseAddress" name="enterpriseAddress" class="verification-box" autocomplete="off">
+            </div>
+
+            <div class="clearfix">
+                <span class="tr fl">贷款地址:</span>
+                <div class="dix-i">
+                    <select id="referProvince"></select>省
+                    <select id="referCity"></select>市
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <span class="tr fl">企业性质:</span>
+                <div>
+                    <select id="nature" name="nature">
+                        <option value="1">国有企业</option>
+                        <option value="2">民营企业</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <span class="tr">公司章名称:</span>
+                <input type="text" id="companySealName" name="companySealName" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr fl">公司章类型:</span>
+                <div>
+                    <select id="sealType" name="nature">
+                        <option value="公章">公章</option>
+                        <option value="私账">私账</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <span class="tr">公司章编码:</span>
+                <input type="text" id="sealCode" name="sealCode" class="verification-box" autocomplete="off">
+            </div>
+            <!--新增字段-->
+            <div>
+                <span class="tr">提前还款方式:</span>
+                <input type="text" id="advanceRepayType" name="advanceRepayType" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">还款来源:</span>
+                <input type="text" id="repaySource" name="repaySource" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">所属行业:</span>
+                <input type="text" id="industry" name="repaySource" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">经营状态:</span>
+                <input type="text" id="operatingState" name="operatingState" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">企业年营业收入:</span>
+                <input type="text" id="revenue" name="revenue" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">企业负债金额:</span>
+                <input type="text" id="liabilities" name="liabilities" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">成立日期:</span>
+                <input type="text" id="foundedDate" name="foundedDate" class="verification-box" autocomplete="off">
+                <small>格式:2008-08-08</small>
+            </div>
+            <div>
+                <span class="tr">营业期限(起):</span>
+                <input type="text" id="businessStartDate" name="businessStartDate" class="verification-box" autocomplete="off">
+                <small>格式:2008-08-08</small>
+            </div>
+            <div>
+                <span class="tr">营业期限(止):</span>
+                <input type="text" id="businessEndDate" name="businessEndDate" class="verification-box" autocomplete="off">
+                <small>格式:2008-08-08</small>
+            </div>
+            <div>
+                <span class="tr">注册资本:</span>
+                <input type="text" id="registerAmt" name="registerAmt" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">登记机关:</span>
+                <input type="text" id="registerOrg" name="registerOrg" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">经营范围:</span>
+                <input type="text" id="scope" name="scope" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">企业经营财务情况:</span>
+                <input type="text" id="finance" name="finance" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr">企业还款能力变化情况:</span>
+                <input type="text" id="repayAbility" name="repayAbility" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+                <span class="tr fl">企业是否涉诉:</span>
+                <div>
+                    <select id="isInvolvedAppeal" name="isInvolvedAppeal">
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                        <option value="9">未知</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <span class="tr fl">企业是否受行政处罚:</span>
+                <div>
+                    <select id="isAdministrationPunish" name="isAdministrationPunish">
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                        <option value="9">未知</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <span class="tr">企业借款资金运用情况:</span>
+                <input type="text" id="borrowCapitalUse" name="borrowCapitalUse" class="verification-box" autocomplete="off">
+            </div>
+            <div>
+            	<span class="tr fl">企业是否逾期:</span>
+                <div>
+                    <select id="isOverdue" name="isOverdue" >
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                        <option value="9">未知</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--征信信息-->
+        <div class="comm-div">
+            <!--资料信息-->
+            <div class="comm-div clearfix">
+                <h4>丨资料信息</h4>
+                <div class="clearfix">
+                    <div class="fl">
+                        <span class="tr">法人身份证(正面):</span>
+                        <div class="file">
+                            <div class="pr">
+                                <img class="file-ipt" src="../img/frame.png" alt="上传图标" id="legalCardFace-img">
+                                <input type="file" name="file" class="fileupload dis-n" data-url="/file/uploadFile" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+                                <input type="hidden" class="hidden verification-box" id="legalCardFace" name="legalCardFace">
+                            </div>
+                            <label class="mas">单个文件不超过30M</label>
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <span class="tr">示例:</span>
+                        <div class="file">
+                            <img class="file-ipt file-ipt2" src="../img/sfz.png" alt="上传图标">
+                        </div>
+                    </div>
+                    <label class="fl error">请上传身份证正面照</label>
+                </div>
+                <div class="clearfix">
+                    <div class="fl">
+                        <span class="tr">法人身份证(反面):</span>
+                        <div class="file">
+                            <div class="pr">
+                                <img class="file-ipt" src="../img/frame.png" alt="上传图标" id="legalCardBack-img">
+                                <input type="file" name="file" class="fileupload dis-n" data-url="/file/uploadFile" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+                                <input type="hidden" class="hidden verification-box" id="legalCardBack" name="legalCardBack">
+                            </div>
+                            <label class="mas">单个文件不超过30M</label>
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <span class="tr">示例:</span>
+                        <div class="file">
+                            <img class="file-ipt file-ipt2" src="../img/sfzf.png" alt="上传图标">
+                        </div>
+                    </div>
+                    <label class="fl error">请上传身份证反面照</label>
+                </div>
+
+
+                <!--财务报表-->
+                <div class="clearfix">
+                    <div class="fl">
+                        <span class="tr">财务报表:</span>
+                        <div class="file">
+                            <div class="pr">
+                                <img class="file-ipt" src="../img/frame.png" alt="上传图标" id="financeAttach-img">
+                                <input type="file" name="file" class="fileupload dis-n" data-url="/file/uploadFile" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+                                <input type="hidden" class="hidden verification-box" id="financeAttach" name="financeAttach">
+                            </div>
+                            <label class="mas">单个文件不超过30M</label>
+                        </div>
+                    </div>
+                    <div class="fl">
+                      <!--   <span class="tr">示例:</span> -->
+                        <div class="file">
+                            <!-- <img class="file-ipt file-ipt2" src="../img/sfzf.png" alt="上传图标"> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!--担保函-->
+                <div class="clearfix">
+                    <div class="fl">
+                        <span class="tr">担保函:</span>
+                        <div class="file">
+                            <div class="pr">
+                                <img class="file-ipt" src="../img/frame.png" alt="上传图标" id="guaranteeAttach-img">
+                                <input type="file" name="file" class="fileupload dis-n" data-url="/file/uploadFile" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+                                <input type="hidden" class="hidden verification-box" id="guaranteeAttach" name="guaranteeAttach">
+                            </div>
+                            <label class="mas">单个文件不超过30M</label>
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <!-- <span class="tr">示例:</span> -->
+                        <div class="file">
+                           <!--  <img class="file-ipt file-ipt2" src="../img/sfzf.png" alt="上传图标"> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!--传征信报告-->
+                <div class="clearfix">
+                    <div class="fl">
+                        <span class="tr">传征信报告:</span>
+                        <div class="file">
+                            <div class="pr">
+                                <img class="file-ipt" src="../img/frame.png" alt="上传图标" id="creditAttach-img">
+                                <input type="file" name="file" class="fileupload dis-n" data-url="/file/uploadFile" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+                                <input type="hidden" class="hidden verification-box" id="creditAttach" name="creditAttach">
+                            </div>
+                            <label class="mas">单个文件不超过30M</label>
+                        </div>
+                    </div>
+                    <div class="fl">
+                      <!--   <span class="tr">示例:</span> -->
+                        <div class="file">
+                           <!--  <img class="file-ipt file-ipt2" src="../img/sfzf.png" alt="上传图标"> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="tc">
+    	<button class="btn-prev file-ipt2" id="" onClick="history.back()">返回</button>&emsp;&emsp;&emsp;&emsp;
+        <button class="btn-next active file-ipt2" id="nextBtn">保存信息</button>
+    </div>
+</div>
+
+<!--底部版权-->
+<div class="con footer footer-pi">
+    <div class="clearfix">
+        <div class="footerL fl">
+            <p>西雅图假小学习金融信息服务有限企业版权所有</p>
+            <p>京ICP备13036604号-9</p>
+            <p><img src="../img/ico_telephone.png" alt="客服电话">客服热线：（09:00-19:00）4000-688-166</p>
+        </div>
+        <div class="footerR fr pr">
+            <p>友情连接</p>
+            <p><img src="../img/xiangshang-logo.png" alt="学习logo"><a href="https://www.xiangshang360.cn/xweb/index/" target="_blank">学习金服</a></p>
+            <p><img src="../img/haohaojiedaologo.png" alt="好好借道logo"><a href="https://www.xiangshang360.cn/resources/home/aboutXS/dist/html/borrowMoney/index.html"
+                                                                          target="_blank">好好借道(个人版)</a></p>
+            <img class="fr pa" src="../img/QRcode.png" alt="微信二维码">
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/com/jquery-1.11.3.min.js"></script>
+<script src="../js/com/jquery.cookie.js"></script>
+<script src="../js/layer/layer.js"></script>
+
+<!--上传文件依赖的文件-->
+<script src="../js/com/jquery.ui.core.js"></script>
+<script src="../js/com/jquery.ui.widget.js"></script>
+<script src="../js/com/jquery.ui.widget.js"></script>
+<script src="../js/com/jquery.fileupload.js"></script>
+<script src="../js/com/jquery.iframe-transport.js"></script>
+<script src="../js/com/jquery.fileupload-process.js"></script>
+<script src="../js/com/jquery.fileupload-validate.js"></script>
+
+<script language="javascript" type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/public.js"></script>
+
+<!--省市级三级联动插件-->
+<script src="../js/com/distpicker.data.js"></script>
+<script src="../js/com/distpicker.js"></script>
+
+<script src="../js/companyAdd.js"></script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="Licenseor" content="学习金服" />
+    <meta name="baidu-site-verification" content="GprTjtLKcQ">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Copyright" content="网站版权" />
+    <meta name="keywords" content="学习金服,学习理财,个人理财,互联网金融平台">
+    <meta name="description" content="学习金服（www.xiangshang360.com）- 是专业、公平、透明的理财服务平台，自2013年7月上线以来一直致力于为出借者提供简单、快捷、安全、低门槛的个人理财服务。">
+    <link rel="icon" href="../img/bitbug_favicon.ico">
+    <link type="text/css" rel="stylesheet" href="../css/public.css" />
+    <link type="text/css" rel="stylesheet" href="../css/compete.css" />
+    <!--<link type="text/css" rel="stylesheet" href="../css/company-layer.css" />-->
+
+</head>
+<body>
+    <div class="headers"></div>
+    <div class="public-div">
+        <div class="box-s">
+            <!--公司信息-->
+            <div class="comm-div">
+                <h4><em>丨</em>开户和绑定提现银行卡</h4>
+                <div>
+                    <input type="hidden" name="company_id" id="company_id" class="company_id" value="">
+                    <span class="tr">银行卡:</span>
+                    <input type="number" id="cardNum" name="cardNum" class="verification-box" autocomplete="off" value="">
+                    <label class="error">请输入正确的银行卡号</label>
+                </div>
+                <div>
+                    <span class="tr">银行预留手机号:</span>
+                    <input type="number" id="mobile" name="mobile" class="verification-box" autocomplete="off" value="">
+                    <label class="error">请输入正确的手机号</label>
+                </div>
+                <div>
+                    <span class="tr">开户银行:</span>
+                    <select id="bankName" class="bankName" style="width: 415px;"></select>
+                </div>
+                <div class="clearfix">
+                    <span class="tr fl">开户省市:</span>
+                    <div class="dix-i">
+                        <select id="province-s" style="width: 188px;"></select>省
+                        <select id="city-s" style="width: 188px;"></select>市
+                        <input type="hidden" id="province">
+                        <input type="hidden" id="city">
+                        <label class="error">请输入正确的地址</label>
+                    </div>
+                </div>
+               <!--  <div>
+                    <span class="tr">图形验证码:</span>
+                    <input style="width: 270px;" type="text" placeholder="请输入图形验证码" name="validCode" id="validCode" maxlength="4" autocomplete="off">
+                    <img class="yzm" src="" alt="验证码" onclick="getValidImgCode()"><br>
+                    <label class="error">请输入正确的图形验证码</label>
+                </div> -->
+                <div>
+                	<span class="tr">短信验证码:</span>
+	                <input style="width: 253px;" type="number" placeholder="请输入短信验证码" name="smsCode" oninput="if(value.length>6)value=value.slice(0,6)" autocomplete="off" id="smsCode">
+                    <button id="btnSMS">获取验证码</button>
+                    <label class="error">请正确输入短信验证码</label>
+                </div>
+            </div>
+        </div>
+        <div class="tc">
+        	<button class="btn-prev" id="" onClick="history.back()">返回</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <button class="btn-next active" id="btn-next">提交</button>
+        </div>
+    </div>
+
+    <!--底部版权-->
+    <div class="con footer footer-pi">
+        <div class="clearfix">
+            <div class="footerL fl">
+                <p>西雅图假小学习金融信息服务培训学校版权所有</p>
+                <p>京ICP备13036604号-9</p>
+                <p><img src="../img/ico_telephone.png" alt="客服电话">客服热线：（09:00-19:00）4000-688-166</p>
+            </div>
+            <div class="footerR fr pr">
+                <p>友情连接</p>
+                <p><img src="../img/xiangshang-logo.png" alt="学习logo"><a href="https://www.xiangshang360.cn/xweb/index/" target="_blank">学习金服</a></p>
+                <p><img src="../img/haohaojiedaologo.png" alt="好好借道logo"><a href="https://www.xiangshang360.cn/resources/home/aboutXS/dist/html/borrowMoney/index.html" target="_blank">好好借道(个人版)</a></p>
+                <img class="fr pa" src="../img/QRcode.png" alt="微信二维码">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/com/jquery-1.11.3.min.js"></script>
+<script src="../js/com/jquery.cookie.js"></script>
+<script src="../js/layer/layer.js"></script>
+
+<script src="../js/common.js"></script>
+<script src="../js/public.js"></script>
+
+<!--省市级三级联动插件-->
+<script src="../js/com/distpicker.data.js"></script>
+<script src="../js/com/distpicker.js"></script>
+
+<script src="../js/openAnAccount_v1.js"></script>
+<script src="../js/bank.json"></script>
+</html>

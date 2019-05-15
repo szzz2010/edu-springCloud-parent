@@ -1,0 +1,204 @@
+/*
+ * taobao
+ */
+
+.taobao {
+	width: calc(100% - 40px);
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.taobao .layui-form {
+	width: calc(50% - 10px);
+}
+.taobao table {
+	width: 100%;
+}
+
+/*
+ * Id_card
+ */
+.id_card {
+	width: calc(100% - 40px);
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.id_card .idCard_l, .id_card .idCard_r {
+	display: flex;
+	flex-grow: 1;
+	padding-right: 10px;
+	align-items: center;
+	justify-content: center;
+}
+.id_card .idCard_r {
+	flex-direction: column;
+	padding-right: 0;
+	padding-left: 10px;
+}
+.id_card .idCard_l span {
+	width: 224px;
+	height: 328px;
+	background-size: 100%;
+}
+.id_card .idCard_r span {
+	width: 271px;
+	height: 159px;
+	background-size: 100%;
+}
+.id_card .idCard_r span:last-child {
+	margin-top: 15px;
+}
+
+/*
+ * 社保
+ */
+.shebao {
+	width: calc(100% - 40px);
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.shebao span {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: #333333;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.shebao span label {
+	min-width: 100px;
+	text-align: right;
+}
+
+/*
+ * 信用卡
+ */
+.xinyong {
+	width: calc(100% - 40px);
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.xinyong .x_l, .xinyong .x_r {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	margin-right: 10px;
+}
+.xinyong .x_r {
+	margin-right: 0;
+	margin-left: 10px;
+}
+.xinyong span {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: #333333;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+/*
+ * 工资卡
+ */
+
+.cards {
+	width: calc(100% - 40px);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+.cards .layui-form {
+	width: 100%;
+}
+
+/*
+ * 还款
+ */
+
+.paymentHistory {
+	width: calc(100% - 40px);
+	padding: 20px;
+}
+
+/*
+ * 企业性质
+ */
+.nature {
+	width: calc(100% - 40px);
+	padding: 20px;
+}
+.nature .nature_content {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+}
+.nature .nature_content .nature_label {
+	font-size: 14px;
+	color: #333;
+	margin-right: 10px;
+}
+.nature .nature_content .nature_radio {
+	display: flex;
+	flex-direction: column;
+}
+.nature .nature_content .nature_radio span {
+	font-size: 14px;
+	line-height: 1.5;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+.nature .nature_content .nature_radio span label {
+	width: 13px;
+	height: 13px;
+	border: 1px solid #49BFB7;
+	border-radius: 50%;
+	display: flex;
+	margin-right: 8px;
+}
+.nature .nature_content .nature_radio span label.radio_this {
+	width: 15px;
+	height: 15px;
+	border: none;
+	background: url(../images/radio.png) no-repeat;
+	background-size: 100%;
+} 
+
+/*
+ * 确定
+ */
+
+.ensure {
+	width: calc(100% - 40px);
+	padding: 20px;
+}
+.ensure .layui-form-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 0;
+}
+.ensure .layui-form-item .layui-inline {
+	margin-right: 0;
+	margin-bottom: 15px;
+}
+
+
+/*
+ * 
+ */
+.ensure .layui-form-item .layui-inline select {
+	min-height: 38px;
+	min-width: 190px;
+	border-color: #e6e6e6;
+	border-radius: 2px;
+	padding: 0 10px;
+}

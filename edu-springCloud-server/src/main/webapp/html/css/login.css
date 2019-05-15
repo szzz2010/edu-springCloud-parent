@@ -1,0 +1,211 @@
+/*---------------------------------头部样式-start*/
+.header{
+    background: url("../img/bag_Sign.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.headerTop{
+    padding-top: 50px;
+}
+
+.header>div{
+    width: 975px;
+}
+.headerTop img{
+    width: 224px;
+    height: 39px;
+}
+
+.registered{
+    font-size: 14px;
+    color: #276cfe;
+    letter-spacing: .44px;
+    margin-top: 6px;
+}
+
+.headerBottom>img{
+    width: 445px;
+    height: 270px;
+    margin: 60px -60px 80px 0;
+}
+
+.headerBottom>h3 p{
+    font-size: 25px;
+    color: #FFFFFF;
+    letter-spacing: 2.95px;
+    line-height: 35px;
+    font-weight: normal;
+}
+.headerBottom>h3{
+    margin-top: 80px;
+}
+
+.form{
+    width: 362px;
+    height: 400px;
+    background: rgba(255, 255, 255, .85);
+    padding: 30px;
+    box-sizing: border-box;
+}
+.form>h3{
+    font-size: 16px;
+    color: #276CFE;
+    letter-spacing: .44px;
+    line-height: 28px;
+}
+
+.form>div{
+    margin-top: 15px;
+}
+
+.form span{
+    display: block;
+    font-size: 14px;
+    color: #323232;
+    letter-spacing: .44px;
+    line-height: 45px;
+}
+
+.input-text>input{
+    border: none;
+    background: none;
+    width: 100%;
+    height: 23px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.submit{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border: none;
+    background: #276CFE;
+    opacity: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+    color: #FFF;
+    letter-spacing: .44px;
+}
+
+.disabled{
+    background: rgba(39, 108, 254, .6);
+    opacity: .6;
+}
+
+
+.forgetPassword{
+    color: #acacac;
+    letter-spacing: .44px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+/*---------------------------------头部样式-end*/
+
+/*---------------------------------主体样式-start*/
+.content{
+    width: 855px;
+    padding: 150px 0 80px;
+}
+
+.content>ul.tc>li{
+    display: inline-block;
+}
+
+.content>ul.tc>li>img{
+    width: 98px;
+    height: 98px;
+}
+
+.content>ul.tc>li{
+    color: #081C45;
+    letter-spacing: 1.62px;
+}
+
+.content>ul.tc>li>h5{
+    font-size: 22px;
+}
+.content>ul.tc>li>p{
+    font-size: 14px;
+}
+
+.content>h4.tc{
+    font-size: 28px;
+    color: #081C45;
+    letter-spacing: 1.62px;
+    margin: 116px 0 96px;
+    font-weight: 600;
+}
+.content>ul.clearfix>li{
+    width: 50%;
+    box-sizing: border-box;
+    letter-spacing: 1.62px;
+}
+
+.radioBox{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #276CFE;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #276CFE;
+    margin-bottom: 18px;
+}
+
+.mb{
+    margin-bottom: 55px;
+}
+
+.pl{
+    padding-left: 22%;
+}
+
+.content>ul.clearfix>li>h5{
+    font-size: 22px;
+    color: #081C45;
+    line-height: 30px;
+}
+
+.content>ul.clearfix>li>p{
+    font-size: 16px;
+    color: #08294c;
+    letter-spacing: 1.62px;
+    line-height: 32px;
+}
+
+.img-1{
+    width: 266px;
+    height: 258px;
+}
+.img-2{
+    width: 219px;
+    height: 335px;
+}
+
+.add-phone{
+    font-size: 12px;
+    letter-spacing: 2.15px;
+    margin-top: 112px;
+    color: #08294C;
+    line-height: 19px;
+}
+
+.add-phone>li{
+    display: inline-block;
+    width: 46% !important;
+    background: #fff;
+    border-radius: 8px;
+    padding: 55px 40px;
+    box-sizing: border-box;
+}
+
+.add-phone img{
+    width: 30px;
+    height: 30px;
+}
+/*---------------------------------主体样式-end*/
+
+.footer>div{
+    width: 855px;
+    margin: 0 auto;
+}

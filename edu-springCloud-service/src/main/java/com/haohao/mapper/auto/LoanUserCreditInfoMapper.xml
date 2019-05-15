@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanUserCreditInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanUserCreditInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="credit_card_nums" jdbcType="INTEGER" property="creditCardNums" />
+    <result column="max_limit" jdbcType="DECIMAL" property="maxLimit" />
+    <result column="pay_entire" jdbcType="VARCHAR" property="payEntire" />
+    <result column="loanOVD_high" jdbcType="INTEGER" property="loanovdHigh" />
+    <result column="query_times" jdbcType="INTEGER" property="queryTimes" />
+    <result column="app_pboc_blank" jdbcType="VARCHAR" property="appPbocBlank" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, source, order_id, credit_card_nums, max_limit, pay_entire, loanOVD_high, query_times, 
+    app_pboc_blank, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanUserCreditInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_user_credit_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_user_credit_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_user_credit_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanUserCreditInfoExample">
+    delete from loan_user_credit_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanUserCreditInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_credit_info (source, order_id, credit_card_nums, 
+      max_limit, pay_entire, loanOVD_high, 
+      query_times, app_pboc_blank, create_time, 
+      update_time)
+    values (#{source,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{creditCardNums,jdbcType=INTEGER}, 
+      #{maxLimit,jdbcType=DECIMAL}, #{payEntire,jdbcType=VARCHAR}, #{loanovdHigh,jdbcType=INTEGER}, 
+      #{queryTimes,jdbcType=INTEGER}, #{appPbocBlank,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanUserCreditInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_credit_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="creditCardNums != null">
+        credit_card_nums,
+      </if>
+      <if test="maxLimit != null">
+        max_limit,
+      </if>
+      <if test="payEntire != null">
+        pay_entire,
+      </if>
+      <if test="loanovdHigh != null">
+        loanOVD_high,
+      </if>
+      <if test="queryTimes != null">
+        query_times,
+      </if>
+      <if test="appPbocBlank != null">
+        app_pboc_blank,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="creditCardNums != null">
+        #{creditCardNums,jdbcType=INTEGER},
+      </if>
+      <if test="maxLimit != null">
+        #{maxLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="payEntire != null">
+        #{payEntire,jdbcType=VARCHAR},
+      </if>
+      <if test="loanovdHigh != null">
+        #{loanovdHigh,jdbcType=INTEGER},
+      </if>
+      <if test="queryTimes != null">
+        #{queryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="appPbocBlank != null">
+        #{appPbocBlank,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanUserCreditInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_user_credit_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_user_credit_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.creditCardNums != null">
+        credit_card_nums = #{record.creditCardNums,jdbcType=INTEGER},
+      </if>
+      <if test="record.maxLimit != null">
+        max_limit = #{record.maxLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.payEntire != null">
+        pay_entire = #{record.payEntire,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanovdHigh != null">
+        loanOVD_high = #{record.loanovdHigh,jdbcType=INTEGER},
+      </if>
+      <if test="record.queryTimes != null">
+        query_times = #{record.queryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.appPbocBlank != null">
+        app_pboc_blank = #{record.appPbocBlank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_user_credit_info
+    set id = #{record.id,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      credit_card_nums = #{record.creditCardNums,jdbcType=INTEGER},
+      max_limit = #{record.maxLimit,jdbcType=DECIMAL},
+      pay_entire = #{record.payEntire,jdbcType=VARCHAR},
+      loanOVD_high = #{record.loanovdHigh,jdbcType=INTEGER},
+      query_times = #{record.queryTimes,jdbcType=INTEGER},
+      app_pboc_blank = #{record.appPbocBlank,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanUserCreditInfo">
+    update loan_user_credit_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="creditCardNums != null">
+        credit_card_nums = #{creditCardNums,jdbcType=INTEGER},
+      </if>
+      <if test="maxLimit != null">
+        max_limit = #{maxLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="payEntire != null">
+        pay_entire = #{payEntire,jdbcType=VARCHAR},
+      </if>
+      <if test="loanovdHigh != null">
+        loanOVD_high = #{loanovdHigh,jdbcType=INTEGER},
+      </if>
+      <if test="queryTimes != null">
+        query_times = #{queryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="appPbocBlank != null">
+        app_pboc_blank = #{appPbocBlank,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanUserCreditInfo">
+    update loan_user_credit_info
+    set source = #{source,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      credit_card_nums = #{creditCardNums,jdbcType=INTEGER},
+      max_limit = #{maxLimit,jdbcType=DECIMAL},
+      pay_entire = #{payEntire,jdbcType=VARCHAR},
+      loanOVD_high = #{loanovdHigh,jdbcType=INTEGER},
+      query_times = #{queryTimes,jdbcType=INTEGER},
+      app_pboc_blank = #{appPbocBlank,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+html, body, p, label, span, div, h1, h2, h3, h4, button, input {
+	font-family: PingFangSC-Regular;
+}
+
+.index{
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    background-image: linear-gradient(-180deg, #17E2E5 0%, #1BC0E9 100%);
+}
+
+.main{
+    width: 480px;
+    height: 372px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -168px;
+    margin-left: -240px;
+    text-align: center;
+}
+
+.logo{
+    width: 188px;
+    height: 188px;
+    margin:0 auto 51px;
+    background: url(../images/logo.png) no-repeat center;
+    background-size: cover;
+}
+
+.welcome{
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.tit{
+    font-size: 32px;
+    color: #fff;
+}

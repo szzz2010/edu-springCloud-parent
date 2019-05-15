@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.ContractDetailMapper">
+
+    <select id="selectContractDetails" parameterType="com.haohao.util.paramAndDto.ContractDetailParam"
+            resultType="com.haohao.util.paramAndDto.ContractDetail">
+
+        SELECT
+            o.loan_number   AS loanNumber,
+            u.name          AS loanUserName,
+            o.loan_terms    AS loanTerms,
+            o.contract_amt  AS contractAmt,
+            o.create_time   AS createTime,
+            c.quota_sum     AS quotaSum
+        FROM loan_order_info o
+        JOIN loan_user_info u ON o.order_id = u.order_id
+        JOIN contract c ON o.contract_code = c.contract_code
+        WHERE 1=1
+        AND o.contract_code = #{contractCode}
+        <if test="loanNumber!=null and loanNumber!=''">
+            AND o.loan_number = #{loanNumber}
+        </if>
+        <if test="loanUserName!=null and loanUserName!=''">
+            AND u.name = #{loanUserName}
+        </if>
+        <if test="createBetweenTime!=null">
+            AND o.create_time BETWEEN '${createBetweenTime[0]}' AND '${createBetweenTime[1]}'
+        </if>
+        ORDER BY o.create_time DESC
+    </select>
+
+    <select id="countSumContractAmt" parameterType="String" resultType="java.math.BigDecimal">
+        SELECT SUM(contract_amt)
+        FROM loan_order_info
+        WHERE 1=1
+        AND contract_code = #{contractCode}
+    </select>
+</mapper>

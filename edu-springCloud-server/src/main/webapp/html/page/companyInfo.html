@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="Author" content="学习金服"/>
+    <meta name="baidu-site-verification" content="GprTjtLKcQ">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Copyright" content="网站版权"/>
+    <meta name="keywords" content="学习金服,学习理财,个人理财,互联网金融平台">
+    <meta name="description" content="学习金服（www.xiangshang360.com）- 是专业、公平、透明的理财服务平台，自2013年7月上线以来一直致力于为出借者提供简单、快捷、安全、低门槛的个人理财服务。">
+    <link rel="icon" href="../img/bitbug_favicon.ico">
+    <link type="text/css" rel="stylesheet" href="../css/public.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/compete.css"/>
+</head>
+<body>
+<div class="headers"></div>
+
+<div class="public-div">
+    <div class="box-s">
+        <!--公司信息-->
+        <div class="comm-div">
+            <h4>丨公司信息</h4>
+            <div>
+                <span class="tr">企业名称:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="name">
+                <span class="tr">登录手机号:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="mobile">
+            </div>
+            <div>
+                <span class="tr">授信额度:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="quota">
+                <span class="tr">统一社会信用代码:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="loan_company_id_card">
+            </div>
+            <div>
+                <span class="tr">法人姓名:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="legal_name">
+                <span class="tr">经营范围:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="scope">
+            </div>
+            <div>
+                <span class="tr">经办人姓名:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="handler_name">
+                <span class="tr">经办人手机号:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="handler_phone">
+            </div>
+            <div class="tc">
+                <button class="btn-next active"  onClick="location.href='/html/page/companyAdd.html'">修改</button>
+            </div>
+        </div>
+        <!--平安银行存管账户信息-->
+        <div class="comm-div" id="pingAnAccount">
+            <h4>平安银行存管账户信息</h4>
+            <div>
+                <span class="tr">开户状态:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="p_infoCode">
+                <span class="tr"> 开户名:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="p_userName">
+            </div>
+            <div>
+                <span class="tr">开户银行卡:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="p_bankName">
+                <span class="tr">所属银行:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="p_bankCard">
+            </div>
+            <div>
+                <span class="tr"> 手机号:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="p_mobile">
+                <span class="tr">存管账户余额:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" id="p_amount">
+            </div>
+        </div>
+
+        <!--借贷信息-->
+        <div class="comm-div" id="orderList">
+            <!--<h4>丨借贷信息</h4>
+            <div>
+                <span class="tr">借款单号:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="order_no">
+                <span class="tr">订单状态:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="status">
+            </div>
+            <div>
+                <span class="tr">申请时间:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="apply_time">
+                <span class="tr">放款时间:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="pay_time">
+            </div>
+            <div>
+                <span class="tr">借款利率:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="rate">
+                <span class="tr">借款期限(天):</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="life_of_loan">
+            </div>
+            <div>
+                <span class="tr">最后还款时间:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="order_deadline">
+                <span class="tr">确认借款金额:</span>
+                <input class="disabled disab-ipt" type="text" disabled="disabled" value="actual_money">
+            </div>-->
+        </div>
+
+    </div>
+</div>
+
+<!--底部版权-->
+<div class="con footer footer-pi">
+    <div class="clearfix">
+        <div class="footerL fl">
+            <p>西雅图假小学习金融信息服务培训学校版权所有</p>
+            <p>京ICP备13036604号-9</p>
+            <p><img src="../img/ico_telephone.png" alt="客服电话">客服热线：（09:00-19:00）4000-688-166</p>
+        </div>
+        <div class="footerR fr pr">
+            <p>友情连接</p>
+            <p><img src="../img/xiangshang-logo.png" alt="学习logo"><a href="https://www.xiangshang360.cn/xweb/index/" target="_blank">学习金服</a></p>
+            <p><img src="../img/haohaojiedaologo.png" alt="好好借道logo"><a href="https://www.xiangshang360.cn/resources/home/aboutXS/dist/html/borrowMoney/index.html"
+                                                                          target="_blank">好好借道(个人版)</a></p>
+            <img class="fr pa" src="../img/QRcode.png" alt="微信二维码">
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/com/jquery-1.11.3.min.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../js/com/jquery.cookie.js"></script>
+<script language="javascript" type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+<script src="../js/com/distpicker.data.js"></script>
+<script src="../js/com/distpicker.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/public.js"></script>
+<script type="text/javascript">
+    $(function () {
+        getCompany();
+        var companyId = company.id;
+        var mobile = company.mobile;
+        if (companyId == null || typeof(companyId) === "undefined") {
+            layer.msg("公司id为空!");
+            return false;
+        }
+
+        getPingAnAccount(companyId, mobile);
+        getOrder(companyId);
+    });
+
+    function getCompany() {
+    	console.info(company);
+        $("#name").val(company.name);
+        $("#mobile").val(company.mobile);
+        $("#quota").val(company.quota);
+        $("#loan_company_id_card").val(company.usccCode);
+        $("#legal_name").val(company.legalName);
+        $("#scope").val(company.scope);
+        $("#handler_name").val(company.handlerName);
+        $("#handler_phone").val(company.handlerPhone);
+    }
+
+    function getOrder(companyId) {
+        $.ajax({
+            type: 'GET',
+            url: '/companyInfo/' + companyId,
+            async: false,
+            data: null,
+            success: function (data) {
+                console.info(data);
+                if (data.success) {
+                    var orderList = data.data.orderList;
+                    var size = orderList.length;
+                    if (size == 0) {
+                        $("#orderList").append("<h4>丨借贷信息</h4><div><span class=\"tr\">暂无信息!</span></div>");
+                    } else {
+                        for (var i = 0; i < orderList.length; i++) {
+                            var orderListDiv = "<h4>丨借贷信息</h4>\n" +
+                                "            <div>\n" +
+                                "                <span class=\"tr\">借款单号:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"order_no\">\n" +
+                                "                <span class=\"tr\">订单状态:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"status\">\n" +
+                                "            </div>\n" +
+                                "            <div>\n" +
+                                "                <span class=\"tr\">申请时间:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"apply_time\">\n" +
+                                "                <span class=\"tr\">放款时间:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"pay_time\">\n" +
+                                "            </div>\n" +
+                                "            <div>\n" +
+                                "                <span class=\"tr\">借款利率:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"rate\">\n" +
+                                "                <span class=\"tr\">借款期限(天):</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"life_of_loan\">\n" +
+                                "            </div>\n" +
+                                "            <div>\n" +
+                                "                <span class=\"tr\">最后还款时间:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"order_deadline\">\n" +
+                                "                <span class=\"tr\">确认借款金额:</span>\n" +
+                                "                <input class=\"disabled disab-ipt\" type=\"text\" disabled=\"disabled\" value=\"actual_money\">\n" +
+                                "            </div>";
+
+                            orderListDiv = orderListDiv.replace("order_no", orderList[i].order_no);
+                            orderListDiv = orderListDiv.replace("status", orderList[i].status);
+                            orderListDiv = orderListDiv.replace("apply_time", orderList[i].apply_time);
+                            orderListDiv = orderListDiv.replace("pay_time", orderList[i].pay_time);
+                            orderListDiv = orderListDiv.replace("rate", orderList[i].rate);
+                            orderListDiv = orderListDiv.replace("life_of_loan", orderList[i].life_of_loan);
+                            orderListDiv = orderListDiv.replace("order_deadline", orderList[i].order_deadline);
+                            orderListDiv = orderListDiv.replace("actual_money", orderList[i].actual_money);
+                            $("#orderList").append(orderListDiv);
+                        }
+                    }
+                }
+            },
+            error: function (err) {
+                layer.msg(err);
+            }
+        });
+    }
+
+    function getPingAnAccount(companyId, mobile) {
+        $.ajax({
+            type: 'GET',
+            url: '/xs/account/hasOpenPingAnAccount?company_id=' + companyId + "&mobile=" + mobile,
+            async: false,
+            data: null,
+            success: function (data) {
+                console.info(data);
+                if (data.code === 200) {
+                    var obj = data.data;
+                    if (obj.infoCode === 12001){
+                        $("#p_infoCode").val("已开户");
+                        $("#pingAnAccount").append("<div class=\"tc\">\n" +
+                            "                <button class=\"btn-next active\"  onClick=\"location.href='/html/page/orderAdd.html'\">去借款</button>\n" +
+                            "</div>");
+                    } else {
+                        $("#p_infoCode").val("未开户");
+                        $("#pingAnAccount").append("<div class=\"tc\">\n" +
+                            "                <button class=\"btn-next active\"  onClick=\"location.href='/html/page/openAnAccount_v1.html'\">去开户</button>\n" +
+                            "</div>");
+                    }
+                    $("#p_userName").val(obj.infoData.userName);
+                    $("#p_bankName").val(obj.infoData.bankName);
+                    $("#p_bankCard").val(obj.infoData.bankCard);
+                    $("#p_mobile").val(obj.infoData.mobile);
+                    $("#p_amount").val(obj.infoData.amount);
+
+                } else {
+                    $("#p_infoCode").val("未开户");
+                    $("#pingAnAccount").append("<div class=\"tc\">\n" +
+                        "                <button class=\"btn-next active\"  onClick=\"location.href='/html/page/openAnAccount_v1.html'\">去开户</button>\n" +
+                        "</div>");
+                }
+            },
+            error: function (err) {
+                layer.msg(err);
+            }
+        });
+    }
+
+</script>
+</html>

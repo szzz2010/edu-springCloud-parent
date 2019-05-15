@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanUserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanUserInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="id_card_no" jdbcType="VARCHAR" property="idCardNo" />
+    <result column="cell_phone" jdbcType="VARCHAR" property="cellPhone" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="idPeriod" jdbcType="VARCHAR" property="idperiod" />
+    <result column="home_town_addr" jdbcType="VARCHAR" property="homeTownAddr" />
+    <result column="home_town_app_location" jdbcType="VARCHAR" property="homeTownAppLocation" />
+    <result column="communicate_addr" jdbcType="VARCHAR" property="communicateAddr" />
+    <result column="local_years" jdbcType="VARCHAR" property="localYears" />
+    <result column="local_phone" jdbcType="VARCHAR" property="localPhone" />
+    <result column="marriage" jdbcType="VARCHAR" property="marriage" />
+    <result column="family_situation" jdbcType="VARCHAR" property="familySituation" />
+    <result column="app_city" jdbcType="VARCHAR" property="appCity" />
+    <result column="is_has_child" jdbcType="VARCHAR" property="isHasChild" />
+    <result column="sign_date" jdbcType="VARCHAR" property="signDate" />
+    <result column="appr_date" jdbcType="VARCHAR" property="apprDate" />
+    <result column="submit_city" jdbcType="VARCHAR" property="submitCity" />
+    <result column="family_is_known" jdbcType="VARCHAR" property="familyIsKnown" />
+    <result column="month_payment" jdbcType="DECIMAL" property="monthPayment" />
+    <result column="home_partner" jdbcType="VARCHAR" property="homePartner" />
+    <result column="home_type" jdbcType="VARCHAR" property="homeType" />
+    <result column="affirm_date_time" jdbcType="VARCHAR" property="affirmDateTime" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, source, order_id, name, id_card_no, cell_phone, education, birthday, age, gender, 
+    email, idPeriod, home_town_addr, home_town_app_location, communicate_addr, local_years, 
+    local_phone, marriage, family_situation, app_city, is_has_child, sign_date, appr_date, 
+    submit_city, family_is_known, month_payment, home_partner, home_type, affirm_date_time, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanUserInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_user_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanUserInfoExample">
+    delete from loan_user_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanUserInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_info (source, order_id, name, 
+      id_card_no, cell_phone, education, 
+      birthday, age, gender, 
+      email, idPeriod, home_town_addr, 
+      home_town_app_location, communicate_addr, local_years, 
+      local_phone, marriage, family_situation, 
+      app_city, is_has_child, sign_date, 
+      appr_date, submit_city, family_is_known, 
+      month_payment, home_partner, home_type, 
+      affirm_date_time, create_time, update_time
+      )
+    values (#{source,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{idCardNo,jdbcType=VARCHAR}, #{cellPhone,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{gender,jdbcType=TINYINT}, 
+      #{email,jdbcType=VARCHAR}, #{idperiod,jdbcType=VARCHAR}, #{homeTownAddr,jdbcType=VARCHAR}, 
+      #{homeTownAppLocation,jdbcType=VARCHAR}, #{communicateAddr,jdbcType=VARCHAR}, #{localYears,jdbcType=VARCHAR}, 
+      #{localPhone,jdbcType=VARCHAR}, #{marriage,jdbcType=VARCHAR}, #{familySituation,jdbcType=VARCHAR}, 
+      #{appCity,jdbcType=VARCHAR}, #{isHasChild,jdbcType=VARCHAR}, #{signDate,jdbcType=VARCHAR}, 
+      #{apprDate,jdbcType=VARCHAR}, #{submitCity,jdbcType=VARCHAR}, #{familyIsKnown,jdbcType=VARCHAR}, 
+      #{monthPayment,jdbcType=DECIMAL}, #{homePartner,jdbcType=VARCHAR}, #{homeType,jdbcType=VARCHAR}, 
+      #{affirmDateTime,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanUserInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="idCardNo != null">
+        id_card_no,
+      </if>
+      <if test="cellPhone != null">
+        cell_phone,
+      </if>
+      <if test="education != null">
+        education,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="idperiod != null">
+        idPeriod,
+      </if>
+      <if test="homeTownAddr != null">
+        home_town_addr,
+      </if>
+      <if test="homeTownAppLocation != null">
+        home_town_app_location,
+      </if>
+      <if test="communicateAddr != null">
+        communicate_addr,
+      </if>
+      <if test="localYears != null">
+        local_years,
+      </if>
+      <if test="localPhone != null">
+        local_phone,
+      </if>
+      <if test="marriage != null">
+        marriage,
+      </if>
+      <if test="familySituation != null">
+        family_situation,
+      </if>
+      <if test="appCity != null">
+        app_city,
+      </if>
+      <if test="isHasChild != null">
+        is_has_child,
+      </if>
+      <if test="signDate != null">
+        sign_date,
+      </if>
+      <if test="apprDate != null">
+        appr_date,
+      </if>
+      <if test="submitCity != null">
+        submit_city,
+      </if>
+      <if test="familyIsKnown != null">
+        family_is_known,
+      </if>
+      <if test="monthPayment != null">
+        month_payment,
+      </if>
+      <if test="homePartner != null">
+        home_partner,
+      </if>
+      <if test="homeType != null">
+        home_type,
+      </if>
+      <if test="affirmDateTime != null">
+        affirm_date_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNo != null">
+        #{idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cellPhone != null">
+        #{cellPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null">
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="idperiod != null">
+        #{idperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTownAddr != null">
+        #{homeTownAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTownAppLocation != null">
+        #{homeTownAppLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="communicateAddr != null">
+        #{communicateAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="localYears != null">
+        #{localYears,jdbcType=VARCHAR},
+      </if>
+      <if test="localPhone != null">
+        #{localPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null">
+        #{marriage,jdbcType=VARCHAR},
+      </if>
+      <if test="familySituation != null">
+        #{familySituation,jdbcType=VARCHAR},
+      </if>
+      <if test="appCity != null">
+        #{appCity,jdbcType=VARCHAR},
+      </if>
+      <if test="isHasChild != null">
+        #{isHasChild,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        #{signDate,jdbcType=VARCHAR},
+      </if>
+      <if test="apprDate != null">
+        #{apprDate,jdbcType=VARCHAR},
+      </if>
+      <if test="submitCity != null">
+        #{submitCity,jdbcType=VARCHAR},
+      </if>
+      <if test="familyIsKnown != null">
+        #{familyIsKnown,jdbcType=VARCHAR},
+      </if>
+      <if test="monthPayment != null">
+        #{monthPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="homePartner != null">
+        #{homePartner,jdbcType=VARCHAR},
+      </if>
+      <if test="homeType != null">
+        #{homeType,jdbcType=VARCHAR},
+      </if>
+      <if test="affirmDateTime != null">
+        #{affirmDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanUserInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_user_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_user_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCardNo != null">
+        id_card_no = #{record.idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cellPhone != null">
+        cell_phone = #{record.cellPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.education != null">
+        education = #{record.education,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null">
+        birthday = #{record.birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.age != null">
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=TINYINT},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idperiod != null">
+        idPeriod = #{record.idperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeTownAddr != null">
+        home_town_addr = #{record.homeTownAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeTownAppLocation != null">
+        home_town_app_location = #{record.homeTownAppLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.communicateAddr != null">
+        communicate_addr = #{record.communicateAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.localYears != null">
+        local_years = #{record.localYears,jdbcType=VARCHAR},
+      </if>
+      <if test="record.localPhone != null">
+        local_phone = #{record.localPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.marriage != null">
+        marriage = #{record.marriage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.familySituation != null">
+        family_situation = #{record.familySituation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appCity != null">
+        app_city = #{record.appCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isHasChild != null">
+        is_has_child = #{record.isHasChild,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signDate != null">
+        sign_date = #{record.signDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.apprDate != null">
+        appr_date = #{record.apprDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submitCity != null">
+        submit_city = #{record.submitCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.familyIsKnown != null">
+        family_is_known = #{record.familyIsKnown,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monthPayment != null">
+        month_payment = #{record.monthPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="record.homePartner != null">
+        home_partner = #{record.homePartner,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeType != null">
+        home_type = #{record.homeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.affirmDateTime != null">
+        affirm_date_time = #{record.affirmDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_user_info
+    set id = #{record.id,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      id_card_no = #{record.idCardNo,jdbcType=VARCHAR},
+      cell_phone = #{record.cellPhone,jdbcType=VARCHAR},
+      education = #{record.education,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      gender = #{record.gender,jdbcType=TINYINT},
+      email = #{record.email,jdbcType=VARCHAR},
+      idPeriod = #{record.idperiod,jdbcType=VARCHAR},
+      home_town_addr = #{record.homeTownAddr,jdbcType=VARCHAR},
+      home_town_app_location = #{record.homeTownAppLocation,jdbcType=VARCHAR},
+      communicate_addr = #{record.communicateAddr,jdbcType=VARCHAR},
+      local_years = #{record.localYears,jdbcType=VARCHAR},
+      local_phone = #{record.localPhone,jdbcType=VARCHAR},
+      marriage = #{record.marriage,jdbcType=VARCHAR},
+      family_situation = #{record.familySituation,jdbcType=VARCHAR},
+      app_city = #{record.appCity,jdbcType=VARCHAR},
+      is_has_child = #{record.isHasChild,jdbcType=VARCHAR},
+      sign_date = #{record.signDate,jdbcType=VARCHAR},
+      appr_date = #{record.apprDate,jdbcType=VARCHAR},
+      submit_city = #{record.submitCity,jdbcType=VARCHAR},
+      family_is_known = #{record.familyIsKnown,jdbcType=VARCHAR},
+      month_payment = #{record.monthPayment,jdbcType=DECIMAL},
+      home_partner = #{record.homePartner,jdbcType=VARCHAR},
+      home_type = #{record.homeType,jdbcType=VARCHAR},
+      affirm_date_time = #{record.affirmDateTime,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanUserInfo">
+    update loan_user_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNo != null">
+        id_card_no = #{idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cellPhone != null">
+        cell_phone = #{cellPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null">
+        education = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="idperiod != null">
+        idPeriod = #{idperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTownAddr != null">
+        home_town_addr = #{homeTownAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTownAppLocation != null">
+        home_town_app_location = #{homeTownAppLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="communicateAddr != null">
+        communicate_addr = #{communicateAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="localYears != null">
+        local_years = #{localYears,jdbcType=VARCHAR},
+      </if>
+      <if test="localPhone != null">
+        local_phone = #{localPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null">
+        marriage = #{marriage,jdbcType=VARCHAR},
+      </if>
+      <if test="familySituation != null">
+        family_situation = #{familySituation,jdbcType=VARCHAR},
+      </if>
+      <if test="appCity != null">
+        app_city = #{appCity,jdbcType=VARCHAR},
+      </if>
+      <if test="isHasChild != null">
+        is_has_child = #{isHasChild,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        sign_date = #{signDate,jdbcType=VARCHAR},
+      </if>
+      <if test="apprDate != null">
+        appr_date = #{apprDate,jdbcType=VARCHAR},
+      </if>
+      <if test="submitCity != null">
+        submit_city = #{submitCity,jdbcType=VARCHAR},
+      </if>
+      <if test="familyIsKnown != null">
+        family_is_known = #{familyIsKnown,jdbcType=VARCHAR},
+      </if>
+      <if test="monthPayment != null">
+        month_payment = #{monthPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="homePartner != null">
+        home_partner = #{homePartner,jdbcType=VARCHAR},
+      </if>
+      <if test="homeType != null">
+        home_type = #{homeType,jdbcType=VARCHAR},
+      </if>
+      <if test="affirmDateTime != null">
+        affirm_date_time = #{affirmDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanUserInfo">
+    update loan_user_info
+    set source = #{source,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      id_card_no = #{idCardNo,jdbcType=VARCHAR},
+      cell_phone = #{cellPhone,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      gender = #{gender,jdbcType=TINYINT},
+      email = #{email,jdbcType=VARCHAR},
+      idPeriod = #{idperiod,jdbcType=VARCHAR},
+      home_town_addr = #{homeTownAddr,jdbcType=VARCHAR},
+      home_town_app_location = #{homeTownAppLocation,jdbcType=VARCHAR},
+      communicate_addr = #{communicateAddr,jdbcType=VARCHAR},
+      local_years = #{localYears,jdbcType=VARCHAR},
+      local_phone = #{localPhone,jdbcType=VARCHAR},
+      marriage = #{marriage,jdbcType=VARCHAR},
+      family_situation = #{familySituation,jdbcType=VARCHAR},
+      app_city = #{appCity,jdbcType=VARCHAR},
+      is_has_child = #{isHasChild,jdbcType=VARCHAR},
+      sign_date = #{signDate,jdbcType=VARCHAR},
+      appr_date = #{apprDate,jdbcType=VARCHAR},
+      submit_city = #{submitCity,jdbcType=VARCHAR},
+      family_is_known = #{familyIsKnown,jdbcType=VARCHAR},
+      month_payment = #{monthPayment,jdbcType=DECIMAL},
+      home_partner = #{homePartner,jdbcType=VARCHAR},
+      home_type = #{homeType,jdbcType=VARCHAR},
+      affirm_date_time = #{affirmDateTime,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

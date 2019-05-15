@@ -1,0 +1,801 @@
+.box-s {
+    padding-bottom: 5px;
+}
+
+/*主体公共样式*/
+.public-div{
+    min-height: 640px;
+}
+.public-div>div{
+    width: 975px;
+    margin: 15px auto;
+}
+
+.box-s>table{
+    width: 888px;
+}
+
+.box-s>table.slips,
+.box-s>table.order-list{
+    margin: 70px auto 10px;
+}
+
+.box-s>table.order-list2,
+div.tc{
+    margin: 30px auto;
+}
+
+.slips{
+    height: 508px;
+    border: 1px solid #091736;
+    font-size: 22px;
+    color: #091736;
+}
+
+.slips2{
+    height: 414px;
+}
+
+.slips3{
+    width: 888px;
+    height: 665px;
+}
+
+.slips thead,
+.slips tbody>tr:not(:last-child){
+    border-bottom: 1px solid #091736;
+}
+
+.slips thead th.th-title{
+    padding-top: 30px;
+    font-weight: 300;
+}
+
+.slips thead th.th-title2{
+    padding: 30px;
+    font-weight: 300;
+}
+
+.slips thead th.tr{
+    padding-right: 10px;
+}
+
+
+.slips tbody>tr>td:not(:last-child){
+    border-right: 1px solid #091736;
+}
+
+.slips tbody>tr>td:not(:first-child){
+    padding-left: 15px;
+}
+
+.slips2 td.td1{
+    vertical-align: top;
+    padding: 30px;
+    font-size: 14px;
+    color: #091736;
+}
+
+.slips2 div.pr{
+    height: 100%;
+}
+
+.slips2 div.pr>p:nth-child(4){
+    bottom: 24px;
+    right: 0;
+}
+.slips2 div.pr>p:nth-child(5){
+    bottom: 0;
+    right: 0;
+}
+
+
+.box-s-h3{
+    width: 888px;
+    color: #F83737;
+    margin: 15px auto;
+}
+.h3-box-s{
+    width: 888px;
+    color: #091736;
+    margin: 47px auto;
+    font-size: 22px;
+}
+
+.h3-box-s p{
+    line-height: 80px;
+}
+
+.h3-box-s span{
+    font-size: 14px;
+}
+
+.h3-box-s em{
+    color: #F83737;
+}
+
+.slips3 td:not(.tc){
+    font-size: 20px;
+}
+
+
+.box-s-h3>span{
+    color: #091736;
+}
+.box-s-h3 a{
+    color: #6898FE;
+    vertical-align: top;
+}
+
+button.add-btn{
+    margin-left: 30px;
+}
+
+button.btn-prev,
+button.btn-next{
+    border: 1px solid #276CFE;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
+
+}
+
+button.btn-next{
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    background: #276CFE;
+    color: #FFF;
+}
+
+button.btn-prev{
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    color: #276CFE;
+    background: #fff;
+}
+.showAll{
+    margin-top: 9px;
+}
+
+
+/*订单列表页*/
+.order-list thead{
+    font-size: 18px;
+    color: #091736;
+    line-height: 24px;
+}
+
+tr.order-list-tr{
+    font-size: 18px;
+    color: #091736;
+    line-height: 24px;
+}
+
+tr.order-list-tr2{
+    font-size: 16px;
+    color: #626B7F;
+    line-height: 24px;
+}
+
+.order-list thead{
+    font-size: 14px;
+    color: #626B7F;
+    line-height: 24px;
+}
+
+
+.order-list thead>tr:nth-child(2) th,
+.order-list thead>tr:nth-child(3) th,
+.order-list2 thead>tr:nth-child(2) th,
+.order-list2 thead>tr:nth-child(3) th{
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+
+
+.order-list>tbody,
+.order-list2>tbody{
+    border: 1px solid #E3E7EA;
+    border-left: none;
+    border-right: none;
+    font-size: 14px;
+    color: #626B7F;
+    line-height: 24px;
+}
+
+.order-list tbody>tr:not(:last-child),
+.order-list2 tbody>tr:not(:last-child){
+    border-bottom: 1px solid #E3E7EA;
+}
+
+.order-list thead tr:last-child>th,
+.order-list>tbody td,
+.order-list2 thead tr:last-child>th,
+.order-list2>tbody td{
+    padding: 20px 0;
+}
+
+.order-list2 a{
+    font-size: 14px;
+    color: #276CFE;
+}
+
+
+/*还款页面or消息通知or提货  样式*/
+.refund{
+    width: 500px;
+    margin: 40px auto;
+}
+
+.message{
+    padding: 20px;
+    margin: 40px auto;
+    color: #091736;
+}
+
+.refund>h1{
+    font-size: 20px;
+    color: #091736;
+    line-height: 28px;
+    border-bottom: 1px solid #ebeff1;
+    padding: 20px 0;
+}
+.refund>h3,
+.message h3{
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 0;
+    border-bottom: 1px dashed #DFE6E9;
+}
+
+.messageBody h3:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,.1);
+    border-bottom: 1px dashed rgba(0,0,0,.1);
+}
+
+.refund>p{
+    font-size: 13px;
+    color: #A2ABBA;
+    letter-spacing: .4px;
+    line-height: 26px;
+    margin-top: 20px;
+}
+
+.refund>h3>span{
+    color: #091736;
+}
+
+.message>h1{
+    font-size: 20px;
+    color: #091736;
+    line-height: 30px;
+}
+
+h3.istrue{
+    color: rgba(9, 23, 54, .3);
+}
+
+h3.istrue:hover{
+    background: none;
+}
+
+.p-time{
+    font-size: 14px;
+    color: #276CFE;
+    letter-spacing: -.41px;
+}
+
+.message img{
+    width: 14px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+
+/*提货人信息页面*/
+.comm-div {
+    width: 945px;
+    margin: 0 auto 15px;
+}
+.comm-div h4 {
+    font-size: 16px;
+    color: #276CFE;
+    line-height: 20px;
+    padding: 15px 3px;
+    background: #F7F7F7;
+}
+
+/*提货人新增 页面*/
+.consignee{
+    font-size: 16px;
+    color: #091736;
+    letter-spacing: 0;
+    margin: 40px 0 20px;
+    padding: 0 3px;
+    line-height: 22px;
+}
+.consignee-p{
+    font-size: 14px;
+    color: #091736;
+    line-height: 20px;
+    margin: 30px 0;
+    padding-left: 80px;
+}
+.consignee-p>span{
+    margin-right: 35px;
+}
+.consignee-p input{
+    margin-right: 10px;
+}
+
+.consignee-a{
+    font-size: 14px;
+    color: #276CFE;
+    display: inline-block;
+    margin: 40px 0 130px 80px;
+}
+
+.template{
+    font-size: 13px;
+}
+
+span.template{
+    color: rgba(9,23,54,0.87);
+}
+
+a.template{
+    color: #276CFE;
+}
+
+div.template{
+    margin-top: 25px;
+    line-height: 22px;
+    color: rgba(248,55,55,0.87);
+}
+
+.refund-s{
+    width: 560px;
+    padding: 160px 0;
+}
+
+.refund-s span{
+    display: inline-block;
+    width: 100px;
+    font-size: 16px;
+    color: #424242;
+}
+
+.refund-s input[type="text"],
+.refund-s input[type="number"]{
+    width: 395px;
+    height: 36px;
+    border: 1px solid #E3E7EA;
+    margin-left: 20px;
+    padding: 0 10px;
+}
+
+.refund-s button.btn-next{
+    margin-top: 20px;
+    cursor: default;
+}
+
+.refund-s button.btnSMS {
+    width: 120px;
+    height: 42px;
+    background: none;
+    line-height: 42px;
+    border: 1px solid #276CFE;
+    border-radius: 39px;
+    font-size: 14px;
+    letter-spacing: .38px;
+    right: -123px;
+    top: -3px;
+    cursor: pointer;
+    color: #276CFE;
+}
+
+.disabled {
+    background: rgba(39, 108, 254, .6);
+    opacity: .6;
+}
+
+.refund-s button.remove-dis{
+    color: #b7b5a0;
+    border-color:#b7b5a0;
+    cursor: no-drop;
+}
+
+.refund-s label.tl{
+    display: block;
+    width: 417px;
+    padding: 10px 0 10px 131px;
+}
+
+
+/*底部版权样式*/
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.footer-pi{
+    position: inherit;
+}
+
+.box-s {
+    padding-bottom: 5px;
+}
+
+/*主体公共样式*/
+.public-div{
+    min-height: 640px;
+}
+.public-div>div{
+    width: 975px;
+    margin: 15px auto;
+}
+
+.box-s>table{
+    width: 888px;
+}
+
+.box-s>table.slips,
+.box-s>table.order-list{
+    margin: 70px auto 10px;
+}
+
+.box-s>table.order-list2,
+div.tc{
+    margin: 30px auto;
+}
+
+.slips{
+    height: 508px;
+    border: 1px solid #091736;
+    font-size: 22px;
+    color: #091736;
+}
+
+.slips2{
+    height: 414px;
+}
+
+.slips3{
+    width: 888px;
+    height: 665px;
+}
+
+.slips thead,
+.slips tbody>tr:not(:last-child){
+    border-bottom: 1px solid #091736;
+}
+
+.slips thead th.th-title{
+    padding-top: 30px;
+    font-weight: 300;
+}
+
+.slips thead th.th-title2{
+    padding: 30px;
+    font-weight: 300;
+}
+
+.slips thead th.tr{
+    padding-right: 10px;
+}
+
+
+.slips tbody>tr>td:not(:last-child){
+    border-right: 1px solid #091736;
+}
+
+.slips tbody>tr>td:not(:first-child){
+    padding-left: 15px;
+}
+
+.slips2 td.td1{
+    vertical-align: top;
+    padding: 30px;
+    font-size: 18px;
+    color: #091736;
+}
+
+.slips2 div.pr{
+    height: 100%;
+}
+
+.slips2 div.pr>p:nth-child(4){
+    bottom: 24px;
+    right: 0;
+}
+.slips2 div.pr>p:nth-child(5){
+    bottom: 0;
+    right: 0;
+}
+
+
+.box-s-h3{
+    width: 888px;
+    color: #F83737;
+    margin: 15px auto;
+}
+.h3-box-s{
+    width: 888px;
+    color: #091736;
+    margin: 47px auto;
+    font-size: 22px;
+}
+
+.h3-box-s p{
+    line-height: 80px;
+}
+
+.h3-box-s span{
+    font-size: 14px;
+}
+
+.h3-box-s em{
+    color: #F83737;
+}
+
+.slips3 td:not(.tc){
+    font-size: 20px;
+}
+
+
+.box-s-h3>span{
+    color: #091736;
+}
+.box-s-h3 a{
+    color: #6898FE;
+    vertical-align: top;
+}
+
+button.add-btn{
+    margin-left: 30px;
+}
+
+button.btn-prev,
+button.btn-next{
+    border: 1px solid #276CFE;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
+
+}
+
+button.btn-next{
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    background: #276CFE;
+    color: #FFF;
+}
+
+button.btn-prev{
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    color: #276CFE;
+    background: #fff;
+}
+.showAll{
+    margin-top: 9px;
+}
+
+
+/*订单列表页*/
+.order-list thead{
+    font-size: 18px;
+    color: #091736;
+    line-height: 24px;
+}
+
+tr.order-list-tr{
+    font-size: 18px;
+    color: #091736;
+    line-height: 24px;
+}
+
+tr.order-list-tr2{
+    font-size: 16px;
+    color: #626B7F;
+    line-height: 24px;
+}
+
+.order-list thead{
+    font-size: 14px;
+    color: #626B7F;
+    line-height: 24px;
+}
+
+
+.order-list thead>tr:nth-child(2) th,
+.order-list thead>tr:nth-child(3) th,
+.order-list2 thead>tr:nth-child(2) th,
+.order-list2 thead>tr:nth-child(3) th{
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+
+
+.order-list>tbody,
+.order-list2>tbody{
+    border: 1px solid #E3E7EA;
+    border-left: none;
+    border-right: none;
+    font-size: 14px;
+    color: #626B7F;
+    line-height: 24px;
+}
+
+.order-list tbody>tr:not(:last-child),
+.order-list2 tbody>tr:not(:last-child){
+    border-bottom: 1px solid #E3E7EA;
+}
+
+.order-list thead tr:last-child>th,
+.order-list>tbody td,
+.order-list2 thead tr:last-child>th,
+.order-list2>tbody td{
+    padding: 20px 0;
+}
+
+.order-list2 a{
+    font-size: 14px;
+    color: #276CFE;
+}
+
+
+/*还款页面or消息通知  样式*/
+.refund{
+    width: 500px;
+    margin: 40px auto;
+}
+
+.message{
+    padding: 20px;
+    margin: 40px auto;
+    color: #091736;
+}
+
+.refund>h1{
+    font-size: 20px;
+    color: #091736;
+    line-height: 28px;
+    border-bottom: 1px solid #ebeff1;
+    padding: 20px 0;
+}
+.refund>h3,
+.message h3{
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 0;
+    border-bottom: 1px dashed #DFE6E9;
+}
+
+.messageBody h3:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,.1);
+    border-bottom: 1px dashed rgba(0,0,0,.1);
+}
+
+.refund>p{
+    font-size: 13px;
+    color: #A2ABBA;
+    letter-spacing: .4px;
+    line-height: 26px;
+    margin-top: 20px;
+}
+
+.refund>h3>span{
+    color: #091736;
+}
+
+.message>h1{
+    font-size: 20px;
+    color: #091736;
+    line-height: 30px;
+}
+
+h3.istrue{
+    color: rgba(9, 23, 54, .3);
+}
+
+h3.istrue:hover{
+    background: none;
+}
+
+.p-time{
+    font-size: 14px;
+    color: #276CFE;
+    letter-spacing: -.41px;
+}
+
+.message img{
+    width: 14px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+
+/*提货人信息页面*/
+.comm-div {
+    width: 945px;
+    margin: 0 auto 15px;
+}
+.comm-div h4 {
+    font-size: 16px;
+    color: #276CFE;
+    line-height: 20px;
+    padding: 15px 3px;
+    background: #F7F7F7;
+}
+
+/*提货人新增 页面*/
+.consignee{
+    font-size: 16px;
+    color: #091736;
+    letter-spacing: 0;
+    margin: 40px 0 20px;
+    padding: 0 3px;
+    line-height: 22px;
+}
+.consignee-p{
+    font-size: 14px;
+    color: #091736;
+    line-height: 20px;
+    margin: 30px 0;
+    padding-left: 80px;
+}
+.consignee-p>span{
+    margin-right: 35px;
+}
+.consignee-p input{
+    margin-right: 10px;
+}
+
+.consignee-a{
+    font-size: 14px;
+    color: #276CFE;
+    display: inline-block;
+    margin: 40px 0 130px 80px;
+}
+
+.template{
+    font-size: 13px;
+}
+
+span.template{
+    color: rgba(9,23,54,0.87);
+}
+
+a.template{
+    color: #276CFE;
+}
+
+div.template{
+    margin-top: 25px;
+    line-height: 22px;
+    color: rgba(248,55,55,0.87);
+}
+
+
+
+/*底部版权样式*/
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-pi{
+    position: inherit;
+}

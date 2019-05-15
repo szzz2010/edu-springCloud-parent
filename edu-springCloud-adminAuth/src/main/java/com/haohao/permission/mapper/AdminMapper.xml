@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.haohao.permission.mapper.AdminMapper" >
+
+  <resultMap id="BaseResultMap" type="com.haohao.permission.model.vo.AdminVO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, user_name, password, real_name, enable, create_time
+  </sql>
+
+  <!--修改admin abner-->
+  <update id="update" parameterType="com.haohao.permission.model.po.AdminPO" >
+    UPDATE tt_admin
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null" >
+        enable = #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--新增admin abner-->
+  <insert id="save" parameterType="com.haohao.permission.model.po.AdminPO" >
+    INSERT INTO tt_admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="enable != null" >
+        enable,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null" >
+        #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <!--根据参数查询admin abner-->
+  <select id="getAdmin" resultMap="BaseResultMap" parameterType="com.haohao.permission.model.cond.AdminCond" >
+    SELECT * FROM tt_admin
+    <where>
+      <if test="userName != null" >
+        AND user_name = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="id != null" >
+        AND id = #{id,jdbcType=INTEGER}
+      </if>
+    </where>
+    ORDER BY id ASC
+    limit 0,1
+  </select>
+
+  <!--根据条件查询adminList abner-->
+  <select id="getList" resultMap="BaseResultMap">
+    SELECT * FROM tt_admin
+    <where>
+      <if test="adminIdList != null and adminIdList.size>0" >
+        AND id IN
+        <foreach collection="adminIdList" item="id" open="(" close=")" separator="," >
+          #{id}
+        </foreach>
+      </if>
+      <if test="enable != null" >
+        AND enable = #{enable,jdbcType=INTEGER}
+      </if>
+      <if test="userName != null" >
+        AND user_name = #{userName}
+      </if>
+      <if test="realName != null" >
+        AND real_name = #{realName}
+      </if>
+    </where>
+    ORDER BY id ASC
+  </select>
+
+</mapper>

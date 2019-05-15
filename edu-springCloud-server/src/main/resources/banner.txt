@@ -1,0 +1,12 @@
+${AnsiColor.BLUE}
+.___________. __       ___      .__   __. .___________. __       ___      .__   __. 
+|           ||  |     /   \     |  \ |  | |           ||  |     /   \     |  \ |  | 
+`---|  |----`|  |    /  ^  \    |   \|  | `---|  |----`|  |    /  ^  \    |   \|  | 
+    |  |     |  |   /  /_\  \   |  . `  |     |  |     |  |   /  /_\  \   |  . `  | 
+    |  |     |  |  /  _____  \  |  |\   |     |  |     |  |  /  _____  \  |  |\   | 
+    |__|     |__| /__/     \__\ |__| \__|     |__|     |__| /__/     \__\ |__| \__| 
+                                                                                    
+${AnsiColor.BLUE}
+ application.title : ${application.title}   spring-boot.version : ${spring-boot.formatted-version}
+ spring.profiles.active : ${spring.profiles.active} server.port : ${spring.profiles.active}
+ server.name = ${server.name}

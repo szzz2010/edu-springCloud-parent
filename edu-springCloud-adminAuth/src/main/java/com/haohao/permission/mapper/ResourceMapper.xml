@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.haohao.permission.mapper.ResourceMapper" >
+
+  <resultMap id="BaseResultMap" type="com.haohao.permission.model.vo.ResourceVO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+    <result column="resource_name" property="resourceName" jdbcType="VARCHAR" />
+    <result column="resource_code" property="resourceCode" jdbcType="VARCHAR" />
+    <result column="resource_url" property="resourceUrl" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="enable" property="enable" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="sort_code" property="sortCode" jdbcType="INTEGER" />
+    <result column="system_type" property="systemType" jdbcType="INTEGER" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, parent_id, resource_name, resource_code, resource_url, `type`, enable, create_time,sort_code,system_type
+  </sql>
+
+  <!--修改resource abner-->
+  <update id="update" parameterType="com.haohao.permission.model.po.ResourcePO" >
+    UPDATE tt_resource
+    <set >
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="resourceName != null" >
+        resource_name = #{resourceName,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceCode != null" >
+        resource_code = #{resourceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceUrl != null" >
+        resource_url = #{resourceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        `type` = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null" >
+        enable = #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="sortCode != null" >
+        sort_code = #{sortCode,jdbcType=INTEGER},
+      </if>
+      <if test="systemType != null" >
+        system_type = #{systemType,jdbcType=INTEGER},
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--新增resource abner-->
+  <insert id="save" parameterType="com.haohao.permission.model.po.ResourcePO" >
+    INSERT INTO tt_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="resourceName != null" >
+        resource_name,
+      </if>
+      <if test="resourceCode != null" >
+        resource_code,
+      </if>
+      <if test="resourceUrl != null" >
+        resource_url,
+      </if>
+      <if test="type != null" >
+        `type`,
+      </if>
+      <if test="enable != null" >
+        enable,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="sortCode != null" >
+        sort_code,
+      </if>
+      <if test="systemType != null" >
+        system_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="resourceName != null" >
+        #{resourceName,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceCode != null" >
+        #{resourceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceUrl != null" >
+        #{resourceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null" >
+        #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="sortCode != null" >
+        #{sortCode,jdbcType=INTEGER},
+      </if>
+      <if test="systemType != null" >
+        #{systemType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <!--根据条件查询resourceList abner-->
+  <select id="getList" resultMap="BaseResultMap" parameterType="com.haohao.permission.model.cond.ResourceCond">
+    SELECT * FROM tt_resource
+    <where>
+      <if test="resourceIdList != null and resourceIdList.size>0" >
+        AND id IN
+        <foreach collection="resourceIdList" item="id" open="(" close=")" separator="," >
+          #{id}
+        </foreach>
+      </if>
+      <if test="enable != null" >
+        AND enable = #{enable,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+        AND `type` = #{type,jdbcType=INTEGER}
+      </if>
+      <if test="parentId != null" >
+        AND parent_id = #{parentId,jdbcType=INTEGER}
+      </if>
+      <if test="systemType != null" >
+        AND system_type = #{systemType,jdbcType=INTEGER}
+      </if>
+    </where>
+    ORDER BY system_type,sort_code ASC
+  </select>
+
+  <!--根据参数查询resource abner-->
+  <select id="getResource" resultMap="BaseResultMap"  parameterType="com.haohao.permission.model.cond.ResourceCond">
+    SELECT * FROM tt_resource
+    <where>
+      <if test="resourceName != null" >
+        AND resource_name = #{resourceName,jdbcType=VARCHAR}
+      </if>
+      <if test="resourceCode != null" >
+        AND resource_code = #{resourceCode,jdbcType=VARCHAR}
+      </if>
+      <if test="id != null" >
+        AND id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="systemType != null" >
+        AND system_type = #{systemType,jdbcType=INTEGER}
+      </if>
+    </where>
+    ORDER BY id ASC
+    limit 0,1
+  </select>
+
+</mapper>

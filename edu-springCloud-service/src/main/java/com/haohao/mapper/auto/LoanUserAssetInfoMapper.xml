@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanUserAssetInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanUserAssetInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="house_type" jdbcType="VARCHAR" property="houseType" />
+    <result column="house_addr" jdbcType="VARCHAR" property="houseAddr" />
+    <result column="shared_people_num" jdbcType="VARCHAR" property="sharedPeopleNum" />
+    <result column="house_area" jdbcType="VARCHAR" property="houseArea" />
+    <result column="buy_time" jdbcType="VARCHAR" property="buyTime" />
+    <result column="house_price" jdbcType="DECIMAL" property="housePrice" />
+    <result column="house_proRight_rate" jdbcType="VARCHAR" property="houseProrightRate" />
+    <result column="houseLo_year_limit" jdbcType="INTEGER" property="houseloYearLimit" />
+    <result column="house_monthly_payment" jdbcType="DECIMAL" property="houseMonthlyPayment" />
+    <result column="houseLo_balance" jdbcType="DECIMAL" property="houseloBalance" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, source, order_id, house_type, house_addr, shared_people_num, house_area, buy_time, 
+    house_price, house_proRight_rate, houseLo_year_limit, house_monthly_payment, houseLo_balance, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanUserAssetInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_user_asset_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_user_asset_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_user_asset_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanUserAssetInfoExample">
+    delete from loan_user_asset_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanUserAssetInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_asset_info (source, order_id, house_type, 
+      house_addr, shared_people_num, house_area, 
+      buy_time, house_price, house_proRight_rate, 
+      houseLo_year_limit, house_monthly_payment, 
+      houseLo_balance, create_time, update_time
+      )
+    values (#{source,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{houseType,jdbcType=VARCHAR}, 
+      #{houseAddr,jdbcType=VARCHAR}, #{sharedPeopleNum,jdbcType=VARCHAR}, #{houseArea,jdbcType=VARCHAR}, 
+      #{buyTime,jdbcType=VARCHAR}, #{housePrice,jdbcType=DECIMAL}, #{houseProrightRate,jdbcType=VARCHAR}, 
+      #{houseloYearLimit,jdbcType=INTEGER}, #{houseMonthlyPayment,jdbcType=DECIMAL}, 
+      #{houseloBalance,jdbcType=DECIMAL}, #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanUserAssetInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_asset_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="houseType != null">
+        house_type,
+      </if>
+      <if test="houseAddr != null">
+        house_addr,
+      </if>
+      <if test="sharedPeopleNum != null">
+        shared_people_num,
+      </if>
+      <if test="houseArea != null">
+        house_area,
+      </if>
+      <if test="buyTime != null">
+        buy_time,
+      </if>
+      <if test="housePrice != null">
+        house_price,
+      </if>
+      <if test="houseProrightRate != null">
+        house_proRight_rate,
+      </if>
+      <if test="houseloYearLimit != null">
+        houseLo_year_limit,
+      </if>
+      <if test="houseMonthlyPayment != null">
+        house_monthly_payment,
+      </if>
+      <if test="houseloBalance != null">
+        houseLo_balance,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="houseType != null">
+        #{houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="houseAddr != null">
+        #{houseAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="sharedPeopleNum != null">
+        #{sharedPeopleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="houseArea != null">
+        #{houseArea,jdbcType=VARCHAR},
+      </if>
+      <if test="buyTime != null">
+        #{buyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="housePrice != null">
+        #{housePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="houseProrightRate != null">
+        #{houseProrightRate,jdbcType=VARCHAR},
+      </if>
+      <if test="houseloYearLimit != null">
+        #{houseloYearLimit,jdbcType=INTEGER},
+      </if>
+      <if test="houseMonthlyPayment != null">
+        #{houseMonthlyPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="houseloBalance != null">
+        #{houseloBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanUserAssetInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_user_asset_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_user_asset_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.houseType != null">
+        house_type = #{record.houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseAddr != null">
+        house_addr = #{record.houseAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sharedPeopleNum != null">
+        shared_people_num = #{record.sharedPeopleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseArea != null">
+        house_area = #{record.houseArea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyTime != null">
+        buy_time = #{record.buyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.housePrice != null">
+        house_price = #{record.housePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseProrightRate != null">
+        house_proRight_rate = #{record.houseProrightRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseloYearLimit != null">
+        houseLo_year_limit = #{record.houseloYearLimit,jdbcType=INTEGER},
+      </if>
+      <if test="record.houseMonthlyPayment != null">
+        house_monthly_payment = #{record.houseMonthlyPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseloBalance != null">
+        houseLo_balance = #{record.houseloBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_user_asset_info
+    set id = #{record.id,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      house_type = #{record.houseType,jdbcType=VARCHAR},
+      house_addr = #{record.houseAddr,jdbcType=VARCHAR},
+      shared_people_num = #{record.sharedPeopleNum,jdbcType=VARCHAR},
+      house_area = #{record.houseArea,jdbcType=VARCHAR},
+      buy_time = #{record.buyTime,jdbcType=VARCHAR},
+      house_price = #{record.housePrice,jdbcType=DECIMAL},
+      house_proRight_rate = #{record.houseProrightRate,jdbcType=VARCHAR},
+      houseLo_year_limit = #{record.houseloYearLimit,jdbcType=INTEGER},
+      house_monthly_payment = #{record.houseMonthlyPayment,jdbcType=DECIMAL},
+      houseLo_balance = #{record.houseloBalance,jdbcType=DECIMAL},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanUserAssetInfo">
+    update loan_user_asset_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="houseType != null">
+        house_type = #{houseType,jdbcType=VARCHAR},
+      </if>
+      <if test="houseAddr != null">
+        house_addr = #{houseAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="sharedPeopleNum != null">
+        shared_people_num = #{sharedPeopleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="houseArea != null">
+        house_area = #{houseArea,jdbcType=VARCHAR},
+      </if>
+      <if test="buyTime != null">
+        buy_time = #{buyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="housePrice != null">
+        house_price = #{housePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="houseProrightRate != null">
+        house_proRight_rate = #{houseProrightRate,jdbcType=VARCHAR},
+      </if>
+      <if test="houseloYearLimit != null">
+        houseLo_year_limit = #{houseloYearLimit,jdbcType=INTEGER},
+      </if>
+      <if test="houseMonthlyPayment != null">
+        house_monthly_payment = #{houseMonthlyPayment,jdbcType=DECIMAL},
+      </if>
+      <if test="houseloBalance != null">
+        houseLo_balance = #{houseloBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanUserAssetInfo">
+    update loan_user_asset_info
+    set source = #{source,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      house_type = #{houseType,jdbcType=VARCHAR},
+      house_addr = #{houseAddr,jdbcType=VARCHAR},
+      shared_people_num = #{sharedPeopleNum,jdbcType=VARCHAR},
+      house_area = #{houseArea,jdbcType=VARCHAR},
+      buy_time = #{buyTime,jdbcType=VARCHAR},
+      house_price = #{housePrice,jdbcType=DECIMAL},
+      house_proRight_rate = #{houseProrightRate,jdbcType=VARCHAR},
+      houseLo_year_limit = #{houseloYearLimit,jdbcType=INTEGER},
+      house_monthly_payment = #{houseMonthlyPayment,jdbcType=DECIMAL},
+      houseLo_balance = #{houseloBalance,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

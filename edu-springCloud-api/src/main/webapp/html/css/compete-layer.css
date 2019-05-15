@@ -1,0 +1,14 @@
+.layui-layer-title{
+    text-align: center !important;
+    background: #fff !important;
+    border: none !important;
+    padding:0 !important;
+}
+
+.layui-layer-btn{
+    text-align: center !important;
+}
+
+.layui-layer-content{
+    text-align: center !important;
+}

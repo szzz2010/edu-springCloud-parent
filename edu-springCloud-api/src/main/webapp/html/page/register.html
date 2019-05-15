@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="Author" content="学习金服" />
+    <meta name="baidu-site-verification" content="GprTjtLKcQ">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Copyright" content="网站版权" />
+    <meta name="keywords" content="学习金服,学习理财,个人理财,互联网金融平台">
+    <meta name="description" content="学习金服（www.xiangshang360.com）- 是专业、公平、透明的理财服务平台，自2013年7月上线以来一直致力于为出借者提供简单、快捷、安全、低门槛的个人理财服务。">
+    <link rel="icon" href="../img/bitbug_favicon.ico">
+    <link type="text/css" rel="stylesheet" href="../css/public.css" />
+    <link type="text/css" rel="stylesheet" href="../css/registered.css" />
+</head>
+<body>
+    <div class="headers">
+        <div class="con">
+            <img src="../img/logo.png" alt="logo">
+            <span>欢迎你注册</span>
+        </div>
+    </div>
+    <div class="registered">
+        <div class="box-s form">
+            <div class="input-text clearfix">
+                <span class="tr fl">手机号</span>
+                <div>
+                    <input id="phone" type="number" name="mobile" oninput="if(value.length>11)value=value.slice(0,11)" autocomplete="off">
+                    <label for="phone" class="error2">手机号格式不对</label><br>
+                    <small>建议使用常用手机号，现支持中国大陆手机号，每个手机号只能注册一个企业</small>
+                </div>
+            </div>
+            <div class="input-text pr">
+                <span class="tr fl">短信验证码</span>
+                <div>
+                    <input type="number" placeholder="请输入短信验证码" name="smsCode" oninput="if(value.length>6)value=value.slice(0,6)" autocomplete="off" id="smsCode">
+                    <button id="btnSMS" class="pa">获取验证码</button>
+                    <label for="smsCode" class="error2">请正确输入短信验证码</label>
+                </div>
+            </div>
+            <div class="sub">
+            	<button class="btn-prev" id="" onclick="history.back()">返回登录</button>
+                <input type="submit" value="立即注册" class="reg-btn ">
+            </div>
+        </div>
+    </div>
+
+    <!--底部版权-->
+    <div class="con footer footer-pi">
+        <div class="clearfix">
+            <div class="footerL fl">
+                <p>西雅图假小学习金融信息服务培训学校版权所有</p>
+                <p>京ICP备13036604号-9</p>
+                <p><img src="../img/ico_telephone.png" alt="客服电话">客服热线：（09:00-19:00）4000-688-166</p>
+            </div>
+            <div class="footerR fr pr">
+                <p>友情连接</p>
+                <p><img src="../img/xiangshang-logo.png" alt="学习logo"><a href="https://www.xiangshang360.cn/xweb/index/" target="_blank">学习金服</a></p>
+                <p><img src="../img/haohaojiedaologo.png" alt="好好借道logo"><a href="https://www.xiangshang360.cn/resources/home/aboutXS/dist/html/borrowMoney/index.html" target="_blank">好好借道(个人版)</a></p>
+                <img class="fr pa" src="../img/QRcode.png" alt="微信二维码">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/com/jquery-1.11.3.min.js"></script>
+<script src="../js/com/jquery.cookie.js"></script>
+<script src="../js/layer/layer.js"></script>
+<script src="../js/com/jquery.md5.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/register.js"></script>
+</html>

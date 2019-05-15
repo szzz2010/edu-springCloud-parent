@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.haohao.permission.mapper.RoleResourceMapper" >
+
+  <resultMap id="BaseResultMap" type="com.haohao.permission.model.vo.RoleResourceVO" >
+    <id column="role_id" property="roleId" jdbcType="INTEGER" />
+    <id column="resource_id" property="resourceId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    role_id, resource_id, create_time
+  </sql>
+
+  <!--批量保存 abner-->
+  <insert id="save">
+    INSERT INTO tt_role_resource (role_id, resource_id, create_time) VALUES
+    <foreach collection="resourceIdList" item="resource" separator="," >
+      (#{id,jdbcType=INTEGER},#{resource,jdbcType=INTEGER},#{time,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+  <!--根据roleIds查询List<Resource.id> abner-->
+  <select id="getResourceIdListByRoleIdList" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    SELECT resource_id FROM tt_role_resource
+    <where>
+      <if test="roleIdList != null and roleIdList.size>0" >
+        AND role_id IN
+        <foreach collection="roleIdList" item="roleId" open="(" close=")" separator="," >
+          #{roleId}
+        </foreach>
+      </if>
+    </where>
+    GROUP BY resource_id
+  </select>
+
+  <!--根据资源id删除关系 abner-->
+  <delete id="deleteByResourceId" parameterType="java.lang.Integer">
+    DELETE FROM tt_role_resource
+    WHERE resource_id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <!--根据RoleId删除关系 abner-->
+  <delete id="deleteByRoleId" parameterType="java.lang.Integer">
+    DELETE FROM tt_role_resource
+    WHERE role_id = #{id,jdbcType=INTEGER}
+  </delete>
+</mapper>

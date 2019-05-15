@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.AcCompanyOrderMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.AcCompanyOrder">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="loan_number" jdbcType="VARCHAR" property="loanNumber" />
+    <result column="loan_company_name" jdbcType="VARCHAR" property="loanCompanyName" />
+    <result column="loan_company_id_card" jdbcType="VARCHAR" property="loanCompanyIdCard" />
+    <result column="loan_company_mobile" jdbcType="VARCHAR" property="loanCompanyMobile" />
+    <result column="loan_agency_id" jdbcType="VARCHAR" property="loanAgencyId" />
+    <result column="loan_agency_code" jdbcType="VARCHAR" property="loanAgencyCode" />
+    <result column="loan_agency_name" jdbcType="VARCHAR" property="loanAgencyName" />
+    <result column="loan_contract_amt" jdbcType="DECIMAL" property="loanContractAmt" />
+    <result column="loan_amt" jdbcType="DECIMAL" property="loanAmt" />
+    <result column="loan_year_interest_rate" jdbcType="DECIMAL" property="loanYearInterestRate" />
+    <result column="loan_apply_time" jdbcType="TIMESTAMP" property="loanApplyTime" />
+    <result column="loan_consult_amt" jdbcType="DECIMAL" property="loanConsultAmt" />
+    <result column="loan_product_type" jdbcType="INTEGER" property="loanProductType" />
+    <result column="loan_give_quota" jdbcType="DECIMAL" property="loanGiveQuota" />
+    <result column="loan_surplus_quota" jdbcType="DECIMAL" property="loanSurplusQuota" />
+    <result column="loan_title" jdbcType="VARCHAR" property="loanTitle" />
+    <result column="loan_purpose" jdbcType="INTEGER" property="loanPurpose" />
+    <result column="loan_terms" jdbcType="INTEGER" property="loanTerms" />
+    <result column="loan_nature" jdbcType="INTEGER" property="loanNature" />
+    <result column="loan_interest_rate" jdbcType="DECIMAL" property="loanInterestRate" />
+    <result column="loan_risk_amt" jdbcType="DECIMAL" property="loanRiskAmt" />
+    <result column="loan_risk_level" jdbcType="VARCHAR" property="loanRiskLevel" />
+    <result column="loan_risk_advice" jdbcType="VARCHAR" property="loanRiskAdvice" />
+    <result column="loan_discount_rate" jdbcType="DECIMAL" property="loanDiscountRate" />
+    <result column="loan_success_time" jdbcType="TIMESTAMP" property="loanSuccessTime" />
+    <result column="loan_fund_use" jdbcType="VARCHAR" property="loanFundUse" />
+    <result column="repay_month_amount" jdbcType="DECIMAL" property="repayMonthAmount" />
+    <result column="repay_month_principal" jdbcType="DECIMAL" property="repayMonthPrincipal" />
+    <result column="repay_type" jdbcType="VARCHAR" property="repayType" />
+    <result column="repay_expiry_time" jdbcType="TIME" property="repayExpiryTime" />
+    <result column="repay_period" jdbcType="INTEGER" property="repayPeriod" />
+    <result column="repay_month_date" jdbcType="INTEGER" property="repayMonthDate" />
+    <result column="repay_first_date" jdbcType="DATE" property="repayFirstDate" />
+    <result column="repay_period_surplus" jdbcType="INTEGER" property="repayPeriodSurplus" />
+    <result column="repay_is_settle" jdbcType="INTEGER" property="repayIsSettle" />
+    <result column="bank_num" jdbcType="VARCHAR" property="bankNum" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_card_no" jdbcType="VARCHAR" property="bankCardNo" />
+    <result column="bank_mobile" jdbcType="VARCHAR" property="bankMobile" />
+    <result column="bank_province" jdbcType="VARCHAR" property="bankProvince" />
+    <result column="bank_city" jdbcType="VARCHAR" property="bankCity" />
+    <result column="bank_branch_name" jdbcType="VARCHAR" property="bankBranchName" />
+    <result column="legal_name" jdbcType="VARCHAR" property="legalName" />
+    <result column="legal_id_card" jdbcType="VARCHAR" property="legalIdCard" />
+    <result column="legal_mobile" jdbcType="VARCHAR" property="legalMobile" />
+    <result column="legal_card_face" jdbcType="VARCHAR" property="legalCardFace" />
+    <result column="legal_card_back" jdbcType="VARCHAR" property="legalCardBack" />
+    <result column="handle_name" jdbcType="VARCHAR" property="handleName" />
+    <result column="handle_id_card" jdbcType="VARCHAR" property="handleIdCard" />
+    <result column="handle_mobile" jdbcType="VARCHAR" property="handleMobile" />
+    <result column="handle_duty" jdbcType="VARCHAR" property="handleDuty" />
+    <result column="company_assure_id_card" jdbcType="VARCHAR" property="companyAssureIdCard" />
+    <result column="company_assure_name" jdbcType="VARCHAR" property="companyAssureName" />
+    <result column="company_risk_rank" jdbcType="VARCHAR" property="companyRiskRank" />
+    <result column="company_nature" jdbcType="INTEGER" property="companyNature" />
+    <result column="company_refer_province" jdbcType="VARCHAR" property="companyReferProvince" />
+    <result column="company_refer_city" jdbcType="VARCHAR" property="companyReferCity" />
+    <result column="company_place_province" jdbcType="VARCHAR" property="companyPlaceProvince" />
+    <result column="company_place_city" jdbcType="VARCHAR" property="companyPlaceCity" />
+    <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="company_create_date" jdbcType="DATE" property="companyCreateDate" />
+    <result column="company_industry" jdbcType="VARCHAR" property="companyIndustry" />
+    <result column="company_operate_status" jdbcType="VARCHAR" property="companyOperateStatus" />
+    <result column="company_year_income" jdbcType="DECIMAL" property="companyYearIncome" />
+    <result column="company_debt_amount" jdbcType="DECIMAL" property="companyDebtAmount" />
+    <result column="company_operate_start_date" jdbcType="DATE" property="companyOperateStartDate" />
+    <result column="company_operate_end_date" jdbcType="DATE" property="companyOperateEndDate" />
+    <result column="company_register_amount" jdbcType="DECIMAL" property="companyRegisterAmount" />
+    <result column="company_register_organ" jdbcType="VARCHAR" property="companyRegisterOrgan" />
+    <result column="company_operate_range" jdbcType="VARCHAR" property="companyOperateRange" />
+    <result column="company_operate_finance_state" jdbcType="VARCHAR" property="companyOperateFinanceState" />
+    <result column="company_repay_ability_change" jdbcType="VARCHAR" property="companyRepayAbilityChange" />
+    <result column="company_overdue_status" jdbcType="INTEGER" property="companyOverdueStatus" />
+    <result column="company_is_involve" jdbcType="INTEGER" property="companyIsInvolve" />
+    <result column="company_is_administrative_penalty" jdbcType="INTEGER" property="companyIsAdministrativePenalty" />
+    <result column="file_is_upload_corporation_card" jdbcType="INTEGER" property="fileIsUploadCorporationCard" />
+    <result column="file_is_upload_finance_statement" jdbcType="INTEGER" property="fileIsUploadFinanceStatement" />
+    <result column="file_is_upload_guarantee_letter" jdbcType="INTEGER" property="fileIsUploadGuaranteeLetter" />
+    <result column="file_is_upload_credit_report" jdbcType="INTEGER" property="fileIsUploadCreditReport" />
+    <result column="file_finance_attach" jdbcType="VARCHAR" property="fileFinanceAttach" />
+    <result column="file_guarantee_attach" jdbcType="VARCHAR" property="fileGuaranteeAttach" />
+    <result column="file_credit_attach" jdbcType="VARCHAR" property="fileCreditAttach" />
+    <result column="goods_order_id" jdbcType="VARCHAR" property="goodsOrderId" />
+    <result column="goods_warehouse" jdbcType="VARCHAR" property="goodsWarehouse" />
+    <result column="goods_collect_goods_date" jdbcType="DATE" property="goodsCollectGoodsDate" />
+    <result column="goods_godown_keeper" jdbcType="VARCHAR" property="goodsGodownKeeper" />
+    <result column="goods_contact_name" jdbcType="VARCHAR" property="goodsContactName" />
+    <result column="goods_contact_mobile" jdbcType="VARCHAR" property="goodsContactMobile" />
+    <result column="goods_serial_number" jdbcType="VARCHAR" property="goodsSerialNumber" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_category" jdbcType="VARCHAR" property="goodsCategory" />
+    <result column="goods_brand" jdbcType="VARCHAR" property="goodsBrand" />
+    <result column="goods_specifications" jdbcType="VARCHAR" property="goodsSpecifications" />
+    <result column="goods_model" jdbcType="VARCHAR" property="goodsModel" />
+    <result column="goods_bar_code" jdbcType="VARCHAR" property="goodsBarCode" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, loan_number, loan_company_name, loan_company_id_card, loan_company_mobile, loan_agency_id, 
+    loan_agency_code, loan_agency_name, loan_contract_amt, loan_amt, loan_year_interest_rate, 
+    loan_apply_time, loan_consult_amt, loan_product_type, loan_give_quota, loan_surplus_quota, 
+    loan_title, loan_purpose, loan_terms, loan_nature, loan_interest_rate, loan_risk_amt, 
+    loan_risk_level, loan_risk_advice, loan_discount_rate, loan_success_time, loan_fund_use, 
+    repay_month_amount, repay_month_principal, repay_type, repay_expiry_time, repay_period, 
+    repay_month_date, repay_first_date, repay_period_surplus, repay_is_settle, bank_num, 
+    bank_name, bank_card_no, bank_mobile, bank_province, bank_city, bank_branch_name, 
+    legal_name, legal_id_card, legal_mobile, legal_card_face, legal_card_back, handle_name, 
+    handle_id_card, handle_mobile, handle_duty, company_assure_id_card, company_assure_name, 
+    company_risk_rank, company_nature, company_refer_province, company_refer_city, company_place_province, 
+    company_place_city, company_address, company_create_date, company_industry, company_operate_status, 
+    company_year_income, company_debt_amount, company_operate_start_date, company_operate_end_date, 
+    company_register_amount, company_register_organ, company_operate_range, company_operate_finance_state, 
+    company_repay_ability_change, company_overdue_status, company_is_involve, company_is_administrative_penalty, 
+    file_is_upload_corporation_card, file_is_upload_finance_statement, file_is_upload_guarantee_letter, 
+    file_is_upload_credit_report, file_finance_attach, file_guarantee_attach, file_credit_attach, 
+    goods_order_id, goods_warehouse, goods_collect_goods_date, goods_godown_keeper, goods_contact_name, 
+    goods_contact_mobile, goods_serial_number, goods_name, goods_category, goods_brand, 
+    goods_specifications, goods_model, goods_bar_code, goods_price, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.AcCompanyOrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ac_company_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ac_company_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ac_company_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.AcCompanyOrderExample">
+    delete from ac_company_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.AcCompanyOrder">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into ac_company_order (loan_number, loan_company_name, loan_company_id_card, 
+      loan_company_mobile, loan_agency_id, loan_agency_code, 
+      loan_agency_name, loan_contract_amt, loan_amt, 
+      loan_year_interest_rate, loan_apply_time, 
+      loan_consult_amt, loan_product_type, loan_give_quota, 
+      loan_surplus_quota, loan_title, loan_purpose, 
+      loan_terms, loan_nature, loan_interest_rate, 
+      loan_risk_amt, loan_risk_level, loan_risk_advice, 
+      loan_discount_rate, loan_success_time, loan_fund_use, 
+      repay_month_amount, repay_month_principal, 
+      repay_type, repay_expiry_time, repay_period, 
+      repay_month_date, repay_first_date, repay_period_surplus, 
+      repay_is_settle, bank_num, bank_name, 
+      bank_card_no, bank_mobile, bank_province, 
+      bank_city, bank_branch_name, legal_name, 
+      legal_id_card, legal_mobile, legal_card_face, 
+      legal_card_back, handle_name, handle_id_card, 
+      handle_mobile, handle_duty, company_assure_id_card, 
+      company_assure_name, company_risk_rank, company_nature, 
+      company_refer_province, company_refer_city, 
+      company_place_province, company_place_city, 
+      company_address, company_create_date, company_industry, 
+      company_operate_status, company_year_income, 
+      company_debt_amount, company_operate_start_date, 
+      company_operate_end_date, company_register_amount, 
+      company_register_organ, company_operate_range, 
+      company_operate_finance_state, company_repay_ability_change, 
+      company_overdue_status, company_is_involve, 
+      company_is_administrative_penalty, file_is_upload_corporation_card, 
+      file_is_upload_finance_statement, file_is_upload_guarantee_letter, 
+      file_is_upload_credit_report, file_finance_attach, 
+      file_guarantee_attach, file_credit_attach, 
+      goods_order_id, goods_warehouse, goods_collect_goods_date, 
+      goods_godown_keeper, goods_contact_name, goods_contact_mobile, 
+      goods_serial_number, goods_name, goods_category, 
+      goods_brand, goods_specifications, goods_model, 
+      goods_bar_code, goods_price, create_time, 
+      update_time)
+    values (#{loanNumber,jdbcType=VARCHAR}, #{loanCompanyName,jdbcType=VARCHAR}, #{loanCompanyIdCard,jdbcType=VARCHAR}, 
+      #{loanCompanyMobile,jdbcType=VARCHAR}, #{loanAgencyId,jdbcType=VARCHAR}, #{loanAgencyCode,jdbcType=VARCHAR}, 
+      #{loanAgencyName,jdbcType=VARCHAR}, #{loanContractAmt,jdbcType=DECIMAL}, #{loanAmt,jdbcType=DECIMAL}, 
+      #{loanYearInterestRate,jdbcType=DECIMAL}, #{loanApplyTime,jdbcType=TIMESTAMP}, 
+      #{loanConsultAmt,jdbcType=DECIMAL}, #{loanProductType,jdbcType=INTEGER}, #{loanGiveQuota,jdbcType=DECIMAL}, 
+      #{loanSurplusQuota,jdbcType=DECIMAL}, #{loanTitle,jdbcType=VARCHAR}, #{loanPurpose,jdbcType=INTEGER}, 
+      #{loanTerms,jdbcType=INTEGER}, #{loanNature,jdbcType=INTEGER}, #{loanInterestRate,jdbcType=DECIMAL}, 
+      #{loanRiskAmt,jdbcType=DECIMAL}, #{loanRiskLevel,jdbcType=VARCHAR}, #{loanRiskAdvice,jdbcType=VARCHAR}, 
+      #{loanDiscountRate,jdbcType=DECIMAL}, #{loanSuccessTime,jdbcType=TIMESTAMP}, #{loanFundUse,jdbcType=VARCHAR}, 
+      #{repayMonthAmount,jdbcType=DECIMAL}, #{repayMonthPrincipal,jdbcType=DECIMAL}, 
+      #{repayType,jdbcType=VARCHAR}, #{repayExpiryTime,jdbcType=TIME}, #{repayPeriod,jdbcType=INTEGER}, 
+      #{repayMonthDate,jdbcType=INTEGER}, #{repayFirstDate,jdbcType=DATE}, #{repayPeriodSurplus,jdbcType=INTEGER}, 
+      #{repayIsSettle,jdbcType=INTEGER}, #{bankNum,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, 
+      #{bankCardNo,jdbcType=VARCHAR}, #{bankMobile,jdbcType=VARCHAR}, #{bankProvince,jdbcType=VARCHAR}, 
+      #{bankCity,jdbcType=VARCHAR}, #{bankBranchName,jdbcType=VARCHAR}, #{legalName,jdbcType=VARCHAR}, 
+      #{legalIdCard,jdbcType=VARCHAR}, #{legalMobile,jdbcType=VARCHAR}, #{legalCardFace,jdbcType=VARCHAR}, 
+      #{legalCardBack,jdbcType=VARCHAR}, #{handleName,jdbcType=VARCHAR}, #{handleIdCard,jdbcType=VARCHAR}, 
+      #{handleMobile,jdbcType=VARCHAR}, #{handleDuty,jdbcType=VARCHAR}, #{companyAssureIdCard,jdbcType=VARCHAR}, 
+      #{companyAssureName,jdbcType=VARCHAR}, #{companyRiskRank,jdbcType=VARCHAR}, #{companyNature,jdbcType=INTEGER}, 
+      #{companyReferProvince,jdbcType=VARCHAR}, #{companyReferCity,jdbcType=VARCHAR}, 
+      #{companyPlaceProvince,jdbcType=VARCHAR}, #{companyPlaceCity,jdbcType=VARCHAR}, 
+      #{companyAddress,jdbcType=VARCHAR}, #{companyCreateDate,jdbcType=DATE}, #{companyIndustry,jdbcType=VARCHAR}, 
+      #{companyOperateStatus,jdbcType=VARCHAR}, #{companyYearIncome,jdbcType=DECIMAL}, 
+      #{companyDebtAmount,jdbcType=DECIMAL}, #{companyOperateStartDate,jdbcType=DATE}, 
+      #{companyOperateEndDate,jdbcType=DATE}, #{companyRegisterAmount,jdbcType=DECIMAL}, 
+      #{companyRegisterOrgan,jdbcType=VARCHAR}, #{companyOperateRange,jdbcType=VARCHAR}, 
+      #{companyOperateFinanceState,jdbcType=VARCHAR}, #{companyRepayAbilityChange,jdbcType=VARCHAR}, 
+      #{companyOverdueStatus,jdbcType=INTEGER}, #{companyIsInvolve,jdbcType=INTEGER}, 
+      #{companyIsAdministrativePenalty,jdbcType=INTEGER}, #{fileIsUploadCorporationCard,jdbcType=INTEGER}, 
+      #{fileIsUploadFinanceStatement,jdbcType=INTEGER}, #{fileIsUploadGuaranteeLetter,jdbcType=INTEGER}, 
+      #{fileIsUploadCreditReport,jdbcType=INTEGER}, #{fileFinanceAttach,jdbcType=VARCHAR}, 
+      #{fileGuaranteeAttach,jdbcType=VARCHAR}, #{fileCreditAttach,jdbcType=VARCHAR}, 
+      #{goodsOrderId,jdbcType=VARCHAR}, #{goodsWarehouse,jdbcType=VARCHAR}, #{goodsCollectGoodsDate,jdbcType=DATE}, 
+      #{goodsGodownKeeper,jdbcType=VARCHAR}, #{goodsContactName,jdbcType=VARCHAR}, #{goodsContactMobile,jdbcType=VARCHAR}, 
+      #{goodsSerialNumber,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, #{goodsCategory,jdbcType=VARCHAR}, 
+      #{goodsBrand,jdbcType=VARCHAR}, #{goodsSpecifications,jdbcType=VARCHAR}, #{goodsModel,jdbcType=VARCHAR}, 
+      #{goodsBarCode,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.AcCompanyOrder">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into ac_company_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loanNumber != null">
+        loan_number,
+      </if>
+      <if test="loanCompanyName != null">
+        loan_company_name,
+      </if>
+      <if test="loanCompanyIdCard != null">
+        loan_company_id_card,
+      </if>
+      <if test="loanCompanyMobile != null">
+        loan_company_mobile,
+      </if>
+      <if test="loanAgencyId != null">
+        loan_agency_id,
+      </if>
+      <if test="loanAgencyCode != null">
+        loan_agency_code,
+      </if>
+      <if test="loanAgencyName != null">
+        loan_agency_name,
+      </if>
+      <if test="loanContractAmt != null">
+        loan_contract_amt,
+      </if>
+      <if test="loanAmt != null">
+        loan_amt,
+      </if>
+      <if test="loanYearInterestRate != null">
+        loan_year_interest_rate,
+      </if>
+      <if test="loanApplyTime != null">
+        loan_apply_time,
+      </if>
+      <if test="loanConsultAmt != null">
+        loan_consult_amt,
+      </if>
+      <if test="loanProductType != null">
+        loan_product_type,
+      </if>
+      <if test="loanGiveQuota != null">
+        loan_give_quota,
+      </if>
+      <if test="loanSurplusQuota != null">
+        loan_surplus_quota,
+      </if>
+      <if test="loanTitle != null">
+        loan_title,
+      </if>
+      <if test="loanPurpose != null">
+        loan_purpose,
+      </if>
+      <if test="loanTerms != null">
+        loan_terms,
+      </if>
+      <if test="loanNature != null">
+        loan_nature,
+      </if>
+      <if test="loanInterestRate != null">
+        loan_interest_rate,
+      </if>
+      <if test="loanRiskAmt != null">
+        loan_risk_amt,
+      </if>
+      <if test="loanRiskLevel != null">
+        loan_risk_level,
+      </if>
+      <if test="loanRiskAdvice != null">
+        loan_risk_advice,
+      </if>
+      <if test="loanDiscountRate != null">
+        loan_discount_rate,
+      </if>
+      <if test="loanSuccessTime != null">
+        loan_success_time,
+      </if>
+      <if test="loanFundUse != null">
+        loan_fund_use,
+      </if>
+      <if test="repayMonthAmount != null">
+        repay_month_amount,
+      </if>
+      <if test="repayMonthPrincipal != null">
+        repay_month_principal,
+      </if>
+      <if test="repayType != null">
+        repay_type,
+      </if>
+      <if test="repayExpiryTime != null">
+        repay_expiry_time,
+      </if>
+      <if test="repayPeriod != null">
+        repay_period,
+      </if>
+      <if test="repayMonthDate != null">
+        repay_month_date,
+      </if>
+      <if test="repayFirstDate != null">
+        repay_first_date,
+      </if>
+      <if test="repayPeriodSurplus != null">
+        repay_period_surplus,
+      </if>
+      <if test="repayIsSettle != null">
+        repay_is_settle,
+      </if>
+      <if test="bankNum != null">
+        bank_num,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="bankCardNo != null">
+        bank_card_no,
+      </if>
+      <if test="bankMobile != null">
+        bank_mobile,
+      </if>
+      <if test="bankProvince != null">
+        bank_province,
+      </if>
+      <if test="bankCity != null">
+        bank_city,
+      </if>
+      <if test="bankBranchName != null">
+        bank_branch_name,
+      </if>
+      <if test="legalName != null">
+        legal_name,
+      </if>
+      <if test="legalIdCard != null">
+        legal_id_card,
+      </if>
+      <if test="legalMobile != null">
+        legal_mobile,
+      </if>
+      <if test="legalCardFace != null">
+        legal_card_face,
+      </if>
+      <if test="legalCardBack != null">
+        legal_card_back,
+      </if>
+      <if test="handleName != null">
+        handle_name,
+      </if>
+      <if test="handleIdCard != null">
+        handle_id_card,
+      </if>
+      <if test="handleMobile != null">
+        handle_mobile,
+      </if>
+      <if test="handleDuty != null">
+        handle_duty,
+      </if>
+      <if test="companyAssureIdCard != null">
+        company_assure_id_card,
+      </if>
+      <if test="companyAssureName != null">
+        company_assure_name,
+      </if>
+      <if test="companyRiskRank != null">
+        company_risk_rank,
+      </if>
+      <if test="companyNature != null">
+        company_nature,
+      </if>
+      <if test="companyReferProvince != null">
+        company_refer_province,
+      </if>
+      <if test="companyReferCity != null">
+        company_refer_city,
+      </if>
+      <if test="companyPlaceProvince != null">
+        company_place_province,
+      </if>
+      <if test="companyPlaceCity != null">
+        company_place_city,
+      </if>
+      <if test="companyAddress != null">
+        company_address,
+      </if>
+      <if test="companyCreateDate != null">
+        company_create_date,
+      </if>
+      <if test="companyIndustry != null">
+        company_industry,
+      </if>
+      <if test="companyOperateStatus != null">
+        company_operate_status,
+      </if>
+      <if test="companyYearIncome != null">
+        company_year_income,
+      </if>
+      <if test="companyDebtAmount != null">
+        company_debt_amount,
+      </if>
+      <if test="companyOperateStartDate != null">
+        company_operate_start_date,
+      </if>
+      <if test="companyOperateEndDate != null">
+        company_operate_end_date,
+      </if>
+      <if test="companyRegisterAmount != null">
+        company_register_amount,
+      </if>
+      <if test="companyRegisterOrgan != null">
+        company_register_organ,
+      </if>
+      <if test="companyOperateRange != null">
+        company_operate_range,
+      </if>
+      <if test="companyOperateFinanceState != null">
+        company_operate_finance_state,
+      </if>
+      <if test="companyRepayAbilityChange != null">
+        company_repay_ability_change,
+      </if>
+      <if test="companyOverdueStatus != null">
+        company_overdue_status,
+      </if>
+      <if test="companyIsInvolve != null">
+        company_is_involve,
+      </if>
+      <if test="companyIsAdministrativePenalty != null">
+        company_is_administrative_penalty,
+      </if>
+      <if test="fileIsUploadCorporationCard != null">
+        file_is_upload_corporation_card,
+      </if>
+      <if test="fileIsUploadFinanceStatement != null">
+        file_is_upload_finance_statement,
+      </if>
+      <if test="fileIsUploadGuaranteeLetter != null">
+        file_is_upload_guarantee_letter,
+      </if>
+      <if test="fileIsUploadCreditReport != null">
+        file_is_upload_credit_report,
+      </if>
+      <if test="fileFinanceAttach != null">
+        file_finance_attach,
+      </if>
+      <if test="fileGuaranteeAttach != null">
+        file_guarantee_attach,
+      </if>
+      <if test="fileCreditAttach != null">
+        file_credit_attach,
+      </if>
+      <if test="goodsOrderId != null">
+        goods_order_id,
+      </if>
+      <if test="goodsWarehouse != null">
+        goods_warehouse,
+      </if>
+      <if test="goodsCollectGoodsDate != null">
+        goods_collect_goods_date,
+      </if>
+      <if test="goodsGodownKeeper != null">
+        goods_godown_keeper,
+      </if>
+      <if test="goodsContactName != null">
+        goods_contact_name,
+      </if>
+      <if test="goodsContactMobile != null">
+        goods_contact_mobile,
+      </if>
+      <if test="goodsSerialNumber != null">
+        goods_serial_number,
+      </if>
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="goodsCategory != null">
+        goods_category,
+      </if>
+      <if test="goodsBrand != null">
+        goods_brand,
+      </if>
+      <if test="goodsSpecifications != null">
+        goods_specifications,
+      </if>
+      <if test="goodsModel != null">
+        goods_model,
+      </if>
+      <if test="goodsBarCode != null">
+        goods_bar_code,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loanNumber != null">
+        #{loanNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loanCompanyName != null">
+        #{loanCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="loanCompanyIdCard != null">
+        #{loanCompanyIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="loanCompanyMobile != null">
+        #{loanCompanyMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAgencyId != null">
+        #{loanAgencyId,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAgencyCode != null">
+        #{loanAgencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAgencyName != null">
+        #{loanAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="loanContractAmt != null">
+        #{loanContractAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanAmt != null">
+        #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanYearInterestRate != null">
+        #{loanYearInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="loanApplyTime != null">
+        #{loanApplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanConsultAmt != null">
+        #{loanConsultAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanProductType != null">
+        #{loanProductType,jdbcType=INTEGER},
+      </if>
+      <if test="loanGiveQuota != null">
+        #{loanGiveQuota,jdbcType=DECIMAL},
+      </if>
+      <if test="loanSurplusQuota != null">
+        #{loanSurplusQuota,jdbcType=DECIMAL},
+      </if>
+      <if test="loanTitle != null">
+        #{loanTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="loanPurpose != null">
+        #{loanPurpose,jdbcType=INTEGER},
+      </if>
+      <if test="loanTerms != null">
+        #{loanTerms,jdbcType=INTEGER},
+      </if>
+      <if test="loanNature != null">
+        #{loanNature,jdbcType=INTEGER},
+      </if>
+      <if test="loanInterestRate != null">
+        #{loanInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="loanRiskAmt != null">
+        #{loanRiskAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanRiskLevel != null">
+        #{loanRiskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="loanRiskAdvice != null">
+        #{loanRiskAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="loanDiscountRate != null">
+        #{loanDiscountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="loanSuccessTime != null">
+        #{loanSuccessTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanFundUse != null">
+        #{loanFundUse,jdbcType=VARCHAR},
+      </if>
+      <if test="repayMonthAmount != null">
+        #{repayMonthAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="repayMonthPrincipal != null">
+        #{repayMonthPrincipal,jdbcType=DECIMAL},
+      </if>
+      <if test="repayType != null">
+        #{repayType,jdbcType=VARCHAR},
+      </if>
+      <if test="repayExpiryTime != null">
+        #{repayExpiryTime,jdbcType=TIME},
+      </if>
+      <if test="repayPeriod != null">
+        #{repayPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="repayMonthDate != null">
+        #{repayMonthDate,jdbcType=INTEGER},
+      </if>
+      <if test="repayFirstDate != null">
+        #{repayFirstDate,jdbcType=DATE},
+      </if>
+      <if test="repayPeriodSurplus != null">
+        #{repayPeriodSurplus,jdbcType=INTEGER},
+      </if>
+      <if test="repayIsSettle != null">
+        #{repayIsSettle,jdbcType=INTEGER},
+      </if>
+      <if test="bankNum != null">
+        #{bankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNo != null">
+        #{bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankMobile != null">
+        #{bankMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="bankProvince != null">
+        #{bankProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCity != null">
+        #{bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="bankBranchName != null">
+        #{bankBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalName != null">
+        #{legalName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdCard != null">
+        #{legalIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="legalMobile != null">
+        #{legalMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="legalCardFace != null">
+        #{legalCardFace,jdbcType=VARCHAR},
+      </if>
+      <if test="legalCardBack != null">
+        #{legalCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="handleName != null">
+        #{handleName,jdbcType=VARCHAR},
+      </if>
+      <if test="handleIdCard != null">
+        #{handleIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="handleMobile != null">
+        #{handleMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="handleDuty != null">
+        #{handleDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAssureIdCard != null">
+        #{companyAssureIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAssureName != null">
+        #{companyAssureName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRiskRank != null">
+        #{companyRiskRank,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNature != null">
+        #{companyNature,jdbcType=INTEGER},
+      </if>
+      <if test="companyReferProvince != null">
+        #{companyReferProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="companyReferCity != null">
+        #{companyReferCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyPlaceProvince != null">
+        #{companyPlaceProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="companyPlaceCity != null">
+        #{companyPlaceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCreateDate != null">
+        #{companyCreateDate,jdbcType=DATE},
+      </if>
+      <if test="companyIndustry != null">
+        #{companyIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOperateStatus != null">
+        #{companyOperateStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="companyYearIncome != null">
+        #{companyYearIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="companyDebtAmount != null">
+        #{companyDebtAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="companyOperateStartDate != null">
+        #{companyOperateStartDate,jdbcType=DATE},
+      </if>
+      <if test="companyOperateEndDate != null">
+        #{companyOperateEndDate,jdbcType=DATE},
+      </if>
+      <if test="companyRegisterAmount != null">
+        #{companyRegisterAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="companyRegisterOrgan != null">
+        #{companyRegisterOrgan,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOperateRange != null">
+        #{companyOperateRange,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOperateFinanceState != null">
+        #{companyOperateFinanceState,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRepayAbilityChange != null">
+        #{companyRepayAbilityChange,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOverdueStatus != null">
+        #{companyOverdueStatus,jdbcType=INTEGER},
+      </if>
+      <if test="companyIsInvolve != null">
+        #{companyIsInvolve,jdbcType=INTEGER},
+      </if>
+      <if test="companyIsAdministrativePenalty != null">
+        #{companyIsAdministrativePenalty,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadCorporationCard != null">
+        #{fileIsUploadCorporationCard,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadFinanceStatement != null">
+        #{fileIsUploadFinanceStatement,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadGuaranteeLetter != null">
+        #{fileIsUploadGuaranteeLetter,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadCreditReport != null">
+        #{fileIsUploadCreditReport,jdbcType=INTEGER},
+      </if>
+      <if test="fileFinanceAttach != null">
+        #{fileFinanceAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="fileGuaranteeAttach != null">
+        #{fileGuaranteeAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="fileCreditAttach != null">
+        #{fileCreditAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsOrderId != null">
+        #{goodsOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsWarehouse != null">
+        #{goodsWarehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsCollectGoodsDate != null">
+        #{goodsCollectGoodsDate,jdbcType=DATE},
+      </if>
+      <if test="goodsGodownKeeper != null">
+        #{goodsGodownKeeper,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsContactName != null">
+        #{goodsContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsContactMobile != null">
+        #{goodsContactMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSerialNumber != null">
+        #{goodsSerialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsCategory != null">
+        #{goodsCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBrand != null">
+        #{goodsBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSpecifications != null">
+        #{goodsSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsModel != null">
+        #{goodsModel,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBarCode != null">
+        #{goodsBarCode,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.AcCompanyOrderExample" resultType="java.lang.Long">
+    select count(*) from ac_company_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ac_company_order
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.loanNumber != null">
+        loan_number = #{record.loanNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanCompanyName != null">
+        loan_company_name = #{record.loanCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanCompanyIdCard != null">
+        loan_company_id_card = #{record.loanCompanyIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanCompanyMobile != null">
+        loan_company_mobile = #{record.loanCompanyMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanAgencyId != null">
+        loan_agency_id = #{record.loanAgencyId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanAgencyCode != null">
+        loan_agency_code = #{record.loanAgencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanAgencyName != null">
+        loan_agency_name = #{record.loanAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanContractAmt != null">
+        loan_contract_amt = #{record.loanContractAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanAmt != null">
+        loan_amt = #{record.loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanYearInterestRate != null">
+        loan_year_interest_rate = #{record.loanYearInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanApplyTime != null">
+        loan_apply_time = #{record.loanApplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.loanConsultAmt != null">
+        loan_consult_amt = #{record.loanConsultAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanProductType != null">
+        loan_product_type = #{record.loanProductType,jdbcType=INTEGER},
+      </if>
+      <if test="record.loanGiveQuota != null">
+        loan_give_quota = #{record.loanGiveQuota,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanSurplusQuota != null">
+        loan_surplus_quota = #{record.loanSurplusQuota,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanTitle != null">
+        loan_title = #{record.loanTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanPurpose != null">
+        loan_purpose = #{record.loanPurpose,jdbcType=INTEGER},
+      </if>
+      <if test="record.loanTerms != null">
+        loan_terms = #{record.loanTerms,jdbcType=INTEGER},
+      </if>
+      <if test="record.loanNature != null">
+        loan_nature = #{record.loanNature,jdbcType=INTEGER},
+      </if>
+      <if test="record.loanInterestRate != null">
+        loan_interest_rate = #{record.loanInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanRiskAmt != null">
+        loan_risk_amt = #{record.loanRiskAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanRiskLevel != null">
+        loan_risk_level = #{record.loanRiskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanRiskAdvice != null">
+        loan_risk_advice = #{record.loanRiskAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanDiscountRate != null">
+        loan_discount_rate = #{record.loanDiscountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanSuccessTime != null">
+        loan_success_time = #{record.loanSuccessTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.loanFundUse != null">
+        loan_fund_use = #{record.loanFundUse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.repayMonthAmount != null">
+        repay_month_amount = #{record.repayMonthAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.repayMonthPrincipal != null">
+        repay_month_principal = #{record.repayMonthPrincipal,jdbcType=DECIMAL},
+      </if>
+      <if test="record.repayType != null">
+        repay_type = #{record.repayType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.repayExpiryTime != null">
+        repay_expiry_time = #{record.repayExpiryTime,jdbcType=TIME},
+      </if>
+      <if test="record.repayPeriod != null">
+        repay_period = #{record.repayPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="record.repayMonthDate != null">
+        repay_month_date = #{record.repayMonthDate,jdbcType=INTEGER},
+      </if>
+      <if test="record.repayFirstDate != null">
+        repay_first_date = #{record.repayFirstDate,jdbcType=DATE},
+      </if>
+      <if test="record.repayPeriodSurplus != null">
+        repay_period_surplus = #{record.repayPeriodSurplus,jdbcType=INTEGER},
+      </if>
+      <if test="record.repayIsSettle != null">
+        repay_is_settle = #{record.repayIsSettle,jdbcType=INTEGER},
+      </if>
+      <if test="record.bankNum != null">
+        bank_num = #{record.bankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankName != null">
+        bank_name = #{record.bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankCardNo != null">
+        bank_card_no = #{record.bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankMobile != null">
+        bank_mobile = #{record.bankMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankProvince != null">
+        bank_province = #{record.bankProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankCity != null">
+        bank_city = #{record.bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankBranchName != null">
+        bank_branch_name = #{record.bankBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalName != null">
+        legal_name = #{record.legalName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalIdCard != null">
+        legal_id_card = #{record.legalIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalMobile != null">
+        legal_mobile = #{record.legalMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalCardFace != null">
+        legal_card_face = #{record.legalCardFace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalCardBack != null">
+        legal_card_back = #{record.legalCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleName != null">
+        handle_name = #{record.handleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleIdCard != null">
+        handle_id_card = #{record.handleIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleMobile != null">
+        handle_mobile = #{record.handleMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleDuty != null">
+        handle_duty = #{record.handleDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAssureIdCard != null">
+        company_assure_id_card = #{record.companyAssureIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAssureName != null">
+        company_assure_name = #{record.companyAssureName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyRiskRank != null">
+        company_risk_rank = #{record.companyRiskRank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyNature != null">
+        company_nature = #{record.companyNature,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyReferProvince != null">
+        company_refer_province = #{record.companyReferProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyReferCity != null">
+        company_refer_city = #{record.companyReferCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyPlaceProvince != null">
+        company_place_province = #{record.companyPlaceProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyPlaceCity != null">
+        company_place_city = #{record.companyPlaceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAddress != null">
+        company_address = #{record.companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyCreateDate != null">
+        company_create_date = #{record.companyCreateDate,jdbcType=DATE},
+      </if>
+      <if test="record.companyIndustry != null">
+        company_industry = #{record.companyIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyOperateStatus != null">
+        company_operate_status = #{record.companyOperateStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyYearIncome != null">
+        company_year_income = #{record.companyYearIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="record.companyDebtAmount != null">
+        company_debt_amount = #{record.companyDebtAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.companyOperateStartDate != null">
+        company_operate_start_date = #{record.companyOperateStartDate,jdbcType=DATE},
+      </if>
+      <if test="record.companyOperateEndDate != null">
+        company_operate_end_date = #{record.companyOperateEndDate,jdbcType=DATE},
+      </if>
+      <if test="record.companyRegisterAmount != null">
+        company_register_amount = #{record.companyRegisterAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.companyRegisterOrgan != null">
+        company_register_organ = #{record.companyRegisterOrgan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyOperateRange != null">
+        company_operate_range = #{record.companyOperateRange,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyOperateFinanceState != null">
+        company_operate_finance_state = #{record.companyOperateFinanceState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyRepayAbilityChange != null">
+        company_repay_ability_change = #{record.companyRepayAbilityChange,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyOverdueStatus != null">
+        company_overdue_status = #{record.companyOverdueStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyIsInvolve != null">
+        company_is_involve = #{record.companyIsInvolve,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyIsAdministrativePenalty != null">
+        company_is_administrative_penalty = #{record.companyIsAdministrativePenalty,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileIsUploadCorporationCard != null">
+        file_is_upload_corporation_card = #{record.fileIsUploadCorporationCard,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileIsUploadFinanceStatement != null">
+        file_is_upload_finance_statement = #{record.fileIsUploadFinanceStatement,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileIsUploadGuaranteeLetter != null">
+        file_is_upload_guarantee_letter = #{record.fileIsUploadGuaranteeLetter,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileIsUploadCreditReport != null">
+        file_is_upload_credit_report = #{record.fileIsUploadCreditReport,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileFinanceAttach != null">
+        file_finance_attach = #{record.fileFinanceAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileGuaranteeAttach != null">
+        file_guarantee_attach = #{record.fileGuaranteeAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileCreditAttach != null">
+        file_credit_attach = #{record.fileCreditAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsOrderId != null">
+        goods_order_id = #{record.goodsOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsWarehouse != null">
+        goods_warehouse = #{record.goodsWarehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsCollectGoodsDate != null">
+        goods_collect_goods_date = #{record.goodsCollectGoodsDate,jdbcType=DATE},
+      </if>
+      <if test="record.goodsGodownKeeper != null">
+        goods_godown_keeper = #{record.goodsGodownKeeper,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsContactName != null">
+        goods_contact_name = #{record.goodsContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsContactMobile != null">
+        goods_contact_mobile = #{record.goodsContactMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsSerialNumber != null">
+        goods_serial_number = #{record.goodsSerialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsName != null">
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsCategory != null">
+        goods_category = #{record.goodsCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsBrand != null">
+        goods_brand = #{record.goodsBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsSpecifications != null">
+        goods_specifications = #{record.goodsSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsModel != null">
+        goods_model = #{record.goodsModel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsBarCode != null">
+        goods_bar_code = #{record.goodsBarCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsPrice != null">
+        goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ac_company_order
+    set id = #{record.id,jdbcType=INTEGER},
+      loan_number = #{record.loanNumber,jdbcType=VARCHAR},
+      loan_company_name = #{record.loanCompanyName,jdbcType=VARCHAR},
+      loan_company_id_card = #{record.loanCompanyIdCard,jdbcType=VARCHAR},
+      loan_company_mobile = #{record.loanCompanyMobile,jdbcType=VARCHAR},
+      loan_agency_id = #{record.loanAgencyId,jdbcType=VARCHAR},
+      loan_agency_code = #{record.loanAgencyCode,jdbcType=VARCHAR},
+      loan_agency_name = #{record.loanAgencyName,jdbcType=VARCHAR},
+      loan_contract_amt = #{record.loanContractAmt,jdbcType=DECIMAL},
+      loan_amt = #{record.loanAmt,jdbcType=DECIMAL},
+      loan_year_interest_rate = #{record.loanYearInterestRate,jdbcType=DECIMAL},
+      loan_apply_time = #{record.loanApplyTime,jdbcType=TIMESTAMP},
+      loan_consult_amt = #{record.loanConsultAmt,jdbcType=DECIMAL},
+      loan_product_type = #{record.loanProductType,jdbcType=INTEGER},
+      loan_give_quota = #{record.loanGiveQuota,jdbcType=DECIMAL},
+      loan_surplus_quota = #{record.loanSurplusQuota,jdbcType=DECIMAL},
+      loan_title = #{record.loanTitle,jdbcType=VARCHAR},
+      loan_purpose = #{record.loanPurpose,jdbcType=INTEGER},
+      loan_terms = #{record.loanTerms,jdbcType=INTEGER},
+      loan_nature = #{record.loanNature,jdbcType=INTEGER},
+      loan_interest_rate = #{record.loanInterestRate,jdbcType=DECIMAL},
+      loan_risk_amt = #{record.loanRiskAmt,jdbcType=DECIMAL},
+      loan_risk_level = #{record.loanRiskLevel,jdbcType=VARCHAR},
+      loan_risk_advice = #{record.loanRiskAdvice,jdbcType=VARCHAR},
+      loan_discount_rate = #{record.loanDiscountRate,jdbcType=DECIMAL},
+      loan_success_time = #{record.loanSuccessTime,jdbcType=TIMESTAMP},
+      loan_fund_use = #{record.loanFundUse,jdbcType=VARCHAR},
+      repay_month_amount = #{record.repayMonthAmount,jdbcType=DECIMAL},
+      repay_month_principal = #{record.repayMonthPrincipal,jdbcType=DECIMAL},
+      repay_type = #{record.repayType,jdbcType=VARCHAR},
+      repay_expiry_time = #{record.repayExpiryTime,jdbcType=TIME},
+      repay_period = #{record.repayPeriod,jdbcType=INTEGER},
+      repay_month_date = #{record.repayMonthDate,jdbcType=INTEGER},
+      repay_first_date = #{record.repayFirstDate,jdbcType=DATE},
+      repay_period_surplus = #{record.repayPeriodSurplus,jdbcType=INTEGER},
+      repay_is_settle = #{record.repayIsSettle,jdbcType=INTEGER},
+      bank_num = #{record.bankNum,jdbcType=VARCHAR},
+      bank_name = #{record.bankName,jdbcType=VARCHAR},
+      bank_card_no = #{record.bankCardNo,jdbcType=VARCHAR},
+      bank_mobile = #{record.bankMobile,jdbcType=VARCHAR},
+      bank_province = #{record.bankProvince,jdbcType=VARCHAR},
+      bank_city = #{record.bankCity,jdbcType=VARCHAR},
+      bank_branch_name = #{record.bankBranchName,jdbcType=VARCHAR},
+      legal_name = #{record.legalName,jdbcType=VARCHAR},
+      legal_id_card = #{record.legalIdCard,jdbcType=VARCHAR},
+      legal_mobile = #{record.legalMobile,jdbcType=VARCHAR},
+      legal_card_face = #{record.legalCardFace,jdbcType=VARCHAR},
+      legal_card_back = #{record.legalCardBack,jdbcType=VARCHAR},
+      handle_name = #{record.handleName,jdbcType=VARCHAR},
+      handle_id_card = #{record.handleIdCard,jdbcType=VARCHAR},
+      handle_mobile = #{record.handleMobile,jdbcType=VARCHAR},
+      handle_duty = #{record.handleDuty,jdbcType=VARCHAR},
+      company_assure_id_card = #{record.companyAssureIdCard,jdbcType=VARCHAR},
+      company_assure_name = #{record.companyAssureName,jdbcType=VARCHAR},
+      company_risk_rank = #{record.companyRiskRank,jdbcType=VARCHAR},
+      company_nature = #{record.companyNature,jdbcType=INTEGER},
+      company_refer_province = #{record.companyReferProvince,jdbcType=VARCHAR},
+      company_refer_city = #{record.companyReferCity,jdbcType=VARCHAR},
+      company_place_province = #{record.companyPlaceProvince,jdbcType=VARCHAR},
+      company_place_city = #{record.companyPlaceCity,jdbcType=VARCHAR},
+      company_address = #{record.companyAddress,jdbcType=VARCHAR},
+      company_create_date = #{record.companyCreateDate,jdbcType=DATE},
+      company_industry = #{record.companyIndustry,jdbcType=VARCHAR},
+      company_operate_status = #{record.companyOperateStatus,jdbcType=VARCHAR},
+      company_year_income = #{record.companyYearIncome,jdbcType=DECIMAL},
+      company_debt_amount = #{record.companyDebtAmount,jdbcType=DECIMAL},
+      company_operate_start_date = #{record.companyOperateStartDate,jdbcType=DATE},
+      company_operate_end_date = #{record.companyOperateEndDate,jdbcType=DATE},
+      company_register_amount = #{record.companyRegisterAmount,jdbcType=DECIMAL},
+      company_register_organ = #{record.companyRegisterOrgan,jdbcType=VARCHAR},
+      company_operate_range = #{record.companyOperateRange,jdbcType=VARCHAR},
+      company_operate_finance_state = #{record.companyOperateFinanceState,jdbcType=VARCHAR},
+      company_repay_ability_change = #{record.companyRepayAbilityChange,jdbcType=VARCHAR},
+      company_overdue_status = #{record.companyOverdueStatus,jdbcType=INTEGER},
+      company_is_involve = #{record.companyIsInvolve,jdbcType=INTEGER},
+      company_is_administrative_penalty = #{record.companyIsAdministrativePenalty,jdbcType=INTEGER},
+      file_is_upload_corporation_card = #{record.fileIsUploadCorporationCard,jdbcType=INTEGER},
+      file_is_upload_finance_statement = #{record.fileIsUploadFinanceStatement,jdbcType=INTEGER},
+      file_is_upload_guarantee_letter = #{record.fileIsUploadGuaranteeLetter,jdbcType=INTEGER},
+      file_is_upload_credit_report = #{record.fileIsUploadCreditReport,jdbcType=INTEGER},
+      file_finance_attach = #{record.fileFinanceAttach,jdbcType=VARCHAR},
+      file_guarantee_attach = #{record.fileGuaranteeAttach,jdbcType=VARCHAR},
+      file_credit_attach = #{record.fileCreditAttach,jdbcType=VARCHAR},
+      goods_order_id = #{record.goodsOrderId,jdbcType=VARCHAR},
+      goods_warehouse = #{record.goodsWarehouse,jdbcType=VARCHAR},
+      goods_collect_goods_date = #{record.goodsCollectGoodsDate,jdbcType=DATE},
+      goods_godown_keeper = #{record.goodsGodownKeeper,jdbcType=VARCHAR},
+      goods_contact_name = #{record.goodsContactName,jdbcType=VARCHAR},
+      goods_contact_mobile = #{record.goodsContactMobile,jdbcType=VARCHAR},
+      goods_serial_number = #{record.goodsSerialNumber,jdbcType=VARCHAR},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      goods_category = #{record.goodsCategory,jdbcType=VARCHAR},
+      goods_brand = #{record.goodsBrand,jdbcType=VARCHAR},
+      goods_specifications = #{record.goodsSpecifications,jdbcType=VARCHAR},
+      goods_model = #{record.goodsModel,jdbcType=VARCHAR},
+      goods_bar_code = #{record.goodsBarCode,jdbcType=VARCHAR},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.AcCompanyOrder">
+    update ac_company_order
+    <set>
+      <if test="loanNumber != null">
+        loan_number = #{loanNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loanCompanyName != null">
+        loan_company_name = #{loanCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="loanCompanyIdCard != null">
+        loan_company_id_card = #{loanCompanyIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="loanCompanyMobile != null">
+        loan_company_mobile = #{loanCompanyMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAgencyId != null">
+        loan_agency_id = #{loanAgencyId,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAgencyCode != null">
+        loan_agency_code = #{loanAgencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAgencyName != null">
+        loan_agency_name = #{loanAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="loanContractAmt != null">
+        loan_contract_amt = #{loanContractAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanAmt != null">
+        loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanYearInterestRate != null">
+        loan_year_interest_rate = #{loanYearInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="loanApplyTime != null">
+        loan_apply_time = #{loanApplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanConsultAmt != null">
+        loan_consult_amt = #{loanConsultAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanProductType != null">
+        loan_product_type = #{loanProductType,jdbcType=INTEGER},
+      </if>
+      <if test="loanGiveQuota != null">
+        loan_give_quota = #{loanGiveQuota,jdbcType=DECIMAL},
+      </if>
+      <if test="loanSurplusQuota != null">
+        loan_surplus_quota = #{loanSurplusQuota,jdbcType=DECIMAL},
+      </if>
+      <if test="loanTitle != null">
+        loan_title = #{loanTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="loanPurpose != null">
+        loan_purpose = #{loanPurpose,jdbcType=INTEGER},
+      </if>
+      <if test="loanTerms != null">
+        loan_terms = #{loanTerms,jdbcType=INTEGER},
+      </if>
+      <if test="loanNature != null">
+        loan_nature = #{loanNature,jdbcType=INTEGER},
+      </if>
+      <if test="loanInterestRate != null">
+        loan_interest_rate = #{loanInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="loanRiskAmt != null">
+        loan_risk_amt = #{loanRiskAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanRiskLevel != null">
+        loan_risk_level = #{loanRiskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="loanRiskAdvice != null">
+        loan_risk_advice = #{loanRiskAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="loanDiscountRate != null">
+        loan_discount_rate = #{loanDiscountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="loanSuccessTime != null">
+        loan_success_time = #{loanSuccessTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanFundUse != null">
+        loan_fund_use = #{loanFundUse,jdbcType=VARCHAR},
+      </if>
+      <if test="repayMonthAmount != null">
+        repay_month_amount = #{repayMonthAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="repayMonthPrincipal != null">
+        repay_month_principal = #{repayMonthPrincipal,jdbcType=DECIMAL},
+      </if>
+      <if test="repayType != null">
+        repay_type = #{repayType,jdbcType=VARCHAR},
+      </if>
+      <if test="repayExpiryTime != null">
+        repay_expiry_time = #{repayExpiryTime,jdbcType=TIME},
+      </if>
+      <if test="repayPeriod != null">
+        repay_period = #{repayPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="repayMonthDate != null">
+        repay_month_date = #{repayMonthDate,jdbcType=INTEGER},
+      </if>
+      <if test="repayFirstDate != null">
+        repay_first_date = #{repayFirstDate,jdbcType=DATE},
+      </if>
+      <if test="repayPeriodSurplus != null">
+        repay_period_surplus = #{repayPeriodSurplus,jdbcType=INTEGER},
+      </if>
+      <if test="repayIsSettle != null">
+        repay_is_settle = #{repayIsSettle,jdbcType=INTEGER},
+      </if>
+      <if test="bankNum != null">
+        bank_num = #{bankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNo != null">
+        bank_card_no = #{bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankMobile != null">
+        bank_mobile = #{bankMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="bankProvince != null">
+        bank_province = #{bankProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCity != null">
+        bank_city = #{bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="bankBranchName != null">
+        bank_branch_name = #{bankBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalName != null">
+        legal_name = #{legalName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdCard != null">
+        legal_id_card = #{legalIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="legalMobile != null">
+        legal_mobile = #{legalMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="legalCardFace != null">
+        legal_card_face = #{legalCardFace,jdbcType=VARCHAR},
+      </if>
+      <if test="legalCardBack != null">
+        legal_card_back = #{legalCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="handleName != null">
+        handle_name = #{handleName,jdbcType=VARCHAR},
+      </if>
+      <if test="handleIdCard != null">
+        handle_id_card = #{handleIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="handleMobile != null">
+        handle_mobile = #{handleMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="handleDuty != null">
+        handle_duty = #{handleDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAssureIdCard != null">
+        company_assure_id_card = #{companyAssureIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAssureName != null">
+        company_assure_name = #{companyAssureName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRiskRank != null">
+        company_risk_rank = #{companyRiskRank,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNature != null">
+        company_nature = #{companyNature,jdbcType=INTEGER},
+      </if>
+      <if test="companyReferProvince != null">
+        company_refer_province = #{companyReferProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="companyReferCity != null">
+        company_refer_city = #{companyReferCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyPlaceProvince != null">
+        company_place_province = #{companyPlaceProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="companyPlaceCity != null">
+        company_place_city = #{companyPlaceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        company_address = #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCreateDate != null">
+        company_create_date = #{companyCreateDate,jdbcType=DATE},
+      </if>
+      <if test="companyIndustry != null">
+        company_industry = #{companyIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOperateStatus != null">
+        company_operate_status = #{companyOperateStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="companyYearIncome != null">
+        company_year_income = #{companyYearIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="companyDebtAmount != null">
+        company_debt_amount = #{companyDebtAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="companyOperateStartDate != null">
+        company_operate_start_date = #{companyOperateStartDate,jdbcType=DATE},
+      </if>
+      <if test="companyOperateEndDate != null">
+        company_operate_end_date = #{companyOperateEndDate,jdbcType=DATE},
+      </if>
+      <if test="companyRegisterAmount != null">
+        company_register_amount = #{companyRegisterAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="companyRegisterOrgan != null">
+        company_register_organ = #{companyRegisterOrgan,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOperateRange != null">
+        company_operate_range = #{companyOperateRange,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOperateFinanceState != null">
+        company_operate_finance_state = #{companyOperateFinanceState,jdbcType=VARCHAR},
+      </if>
+      <if test="companyRepayAbilityChange != null">
+        company_repay_ability_change = #{companyRepayAbilityChange,jdbcType=VARCHAR},
+      </if>
+      <if test="companyOverdueStatus != null">
+        company_overdue_status = #{companyOverdueStatus,jdbcType=INTEGER},
+      </if>
+      <if test="companyIsInvolve != null">
+        company_is_involve = #{companyIsInvolve,jdbcType=INTEGER},
+      </if>
+      <if test="companyIsAdministrativePenalty != null">
+        company_is_administrative_penalty = #{companyIsAdministrativePenalty,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadCorporationCard != null">
+        file_is_upload_corporation_card = #{fileIsUploadCorporationCard,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadFinanceStatement != null">
+        file_is_upload_finance_statement = #{fileIsUploadFinanceStatement,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadGuaranteeLetter != null">
+        file_is_upload_guarantee_letter = #{fileIsUploadGuaranteeLetter,jdbcType=INTEGER},
+      </if>
+      <if test="fileIsUploadCreditReport != null">
+        file_is_upload_credit_report = #{fileIsUploadCreditReport,jdbcType=INTEGER},
+      </if>
+      <if test="fileFinanceAttach != null">
+        file_finance_attach = #{fileFinanceAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="fileGuaranteeAttach != null">
+        file_guarantee_attach = #{fileGuaranteeAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="fileCreditAttach != null">
+        file_credit_attach = #{fileCreditAttach,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsOrderId != null">
+        goods_order_id = #{goodsOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsWarehouse != null">
+        goods_warehouse = #{goodsWarehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsCollectGoodsDate != null">
+        goods_collect_goods_date = #{goodsCollectGoodsDate,jdbcType=DATE},
+      </if>
+      <if test="goodsGodownKeeper != null">
+        goods_godown_keeper = #{goodsGodownKeeper,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsContactName != null">
+        goods_contact_name = #{goodsContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsContactMobile != null">
+        goods_contact_mobile = #{goodsContactMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSerialNumber != null">
+        goods_serial_number = #{goodsSerialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsCategory != null">
+        goods_category = #{goodsCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBrand != null">
+        goods_brand = #{goodsBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSpecifications != null">
+        goods_specifications = #{goodsSpecifications,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsModel != null">
+        goods_model = #{goodsModel,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBarCode != null">
+        goods_bar_code = #{goodsBarCode,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null">
+        goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.AcCompanyOrder">
+    update ac_company_order
+    set loan_number = #{loanNumber,jdbcType=VARCHAR},
+      loan_company_name = #{loanCompanyName,jdbcType=VARCHAR},
+      loan_company_id_card = #{loanCompanyIdCard,jdbcType=VARCHAR},
+      loan_company_mobile = #{loanCompanyMobile,jdbcType=VARCHAR},
+      loan_agency_id = #{loanAgencyId,jdbcType=VARCHAR},
+      loan_agency_code = #{loanAgencyCode,jdbcType=VARCHAR},
+      loan_agency_name = #{loanAgencyName,jdbcType=VARCHAR},
+      loan_contract_amt = #{loanContractAmt,jdbcType=DECIMAL},
+      loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      loan_year_interest_rate = #{loanYearInterestRate,jdbcType=DECIMAL},
+      loan_apply_time = #{loanApplyTime,jdbcType=TIMESTAMP},
+      loan_consult_amt = #{loanConsultAmt,jdbcType=DECIMAL},
+      loan_product_type = #{loanProductType,jdbcType=INTEGER},
+      loan_give_quota = #{loanGiveQuota,jdbcType=DECIMAL},
+      loan_surplus_quota = #{loanSurplusQuota,jdbcType=DECIMAL},
+      loan_title = #{loanTitle,jdbcType=VARCHAR},
+      loan_purpose = #{loanPurpose,jdbcType=INTEGER},
+      loan_terms = #{loanTerms,jdbcType=INTEGER},
+      loan_nature = #{loanNature,jdbcType=INTEGER},
+      loan_interest_rate = #{loanInterestRate,jdbcType=DECIMAL},
+      loan_risk_amt = #{loanRiskAmt,jdbcType=DECIMAL},
+      loan_risk_level = #{loanRiskLevel,jdbcType=VARCHAR},
+      loan_risk_advice = #{loanRiskAdvice,jdbcType=VARCHAR},
+      loan_discount_rate = #{loanDiscountRate,jdbcType=DECIMAL},
+      loan_success_time = #{loanSuccessTime,jdbcType=TIMESTAMP},
+      loan_fund_use = #{loanFundUse,jdbcType=VARCHAR},
+      repay_month_amount = #{repayMonthAmount,jdbcType=DECIMAL},
+      repay_month_principal = #{repayMonthPrincipal,jdbcType=DECIMAL},
+      repay_type = #{repayType,jdbcType=VARCHAR},
+      repay_expiry_time = #{repayExpiryTime,jdbcType=TIME},
+      repay_period = #{repayPeriod,jdbcType=INTEGER},
+      repay_month_date = #{repayMonthDate,jdbcType=INTEGER},
+      repay_first_date = #{repayFirstDate,jdbcType=DATE},
+      repay_period_surplus = #{repayPeriodSurplus,jdbcType=INTEGER},
+      repay_is_settle = #{repayIsSettle,jdbcType=INTEGER},
+      bank_num = #{bankNum,jdbcType=VARCHAR},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      bank_card_no = #{bankCardNo,jdbcType=VARCHAR},
+      bank_mobile = #{bankMobile,jdbcType=VARCHAR},
+      bank_province = #{bankProvince,jdbcType=VARCHAR},
+      bank_city = #{bankCity,jdbcType=VARCHAR},
+      bank_branch_name = #{bankBranchName,jdbcType=VARCHAR},
+      legal_name = #{legalName,jdbcType=VARCHAR},
+      legal_id_card = #{legalIdCard,jdbcType=VARCHAR},
+      legal_mobile = #{legalMobile,jdbcType=VARCHAR},
+      legal_card_face = #{legalCardFace,jdbcType=VARCHAR},
+      legal_card_back = #{legalCardBack,jdbcType=VARCHAR},
+      handle_name = #{handleName,jdbcType=VARCHAR},
+      handle_id_card = #{handleIdCard,jdbcType=VARCHAR},
+      handle_mobile = #{handleMobile,jdbcType=VARCHAR},
+      handle_duty = #{handleDuty,jdbcType=VARCHAR},
+      company_assure_id_card = #{companyAssureIdCard,jdbcType=VARCHAR},
+      company_assure_name = #{companyAssureName,jdbcType=VARCHAR},
+      company_risk_rank = #{companyRiskRank,jdbcType=VARCHAR},
+      company_nature = #{companyNature,jdbcType=INTEGER},
+      company_refer_province = #{companyReferProvince,jdbcType=VARCHAR},
+      company_refer_city = #{companyReferCity,jdbcType=VARCHAR},
+      company_place_province = #{companyPlaceProvince,jdbcType=VARCHAR},
+      company_place_city = #{companyPlaceCity,jdbcType=VARCHAR},
+      company_address = #{companyAddress,jdbcType=VARCHAR},
+      company_create_date = #{companyCreateDate,jdbcType=DATE},
+      company_industry = #{companyIndustry,jdbcType=VARCHAR},
+      company_operate_status = #{companyOperateStatus,jdbcType=VARCHAR},
+      company_year_income = #{companyYearIncome,jdbcType=DECIMAL},
+      company_debt_amount = #{companyDebtAmount,jdbcType=DECIMAL},
+      company_operate_start_date = #{companyOperateStartDate,jdbcType=DATE},
+      company_operate_end_date = #{companyOperateEndDate,jdbcType=DATE},
+      company_register_amount = #{companyRegisterAmount,jdbcType=DECIMAL},
+      company_register_organ = #{companyRegisterOrgan,jdbcType=VARCHAR},
+      company_operate_range = #{companyOperateRange,jdbcType=VARCHAR},
+      company_operate_finance_state = #{companyOperateFinanceState,jdbcType=VARCHAR},
+      company_repay_ability_change = #{companyRepayAbilityChange,jdbcType=VARCHAR},
+      company_overdue_status = #{companyOverdueStatus,jdbcType=INTEGER},
+      company_is_involve = #{companyIsInvolve,jdbcType=INTEGER},
+      company_is_administrative_penalty = #{companyIsAdministrativePenalty,jdbcType=INTEGER},
+      file_is_upload_corporation_card = #{fileIsUploadCorporationCard,jdbcType=INTEGER},
+      file_is_upload_finance_statement = #{fileIsUploadFinanceStatement,jdbcType=INTEGER},
+      file_is_upload_guarantee_letter = #{fileIsUploadGuaranteeLetter,jdbcType=INTEGER},
+      file_is_upload_credit_report = #{fileIsUploadCreditReport,jdbcType=INTEGER},
+      file_finance_attach = #{fileFinanceAttach,jdbcType=VARCHAR},
+      file_guarantee_attach = #{fileGuaranteeAttach,jdbcType=VARCHAR},
+      file_credit_attach = #{fileCreditAttach,jdbcType=VARCHAR},
+      goods_order_id = #{goodsOrderId,jdbcType=VARCHAR},
+      goods_warehouse = #{goodsWarehouse,jdbcType=VARCHAR},
+      goods_collect_goods_date = #{goodsCollectGoodsDate,jdbcType=DATE},
+      goods_godown_keeper = #{goodsGodownKeeper,jdbcType=VARCHAR},
+      goods_contact_name = #{goodsContactName,jdbcType=VARCHAR},
+      goods_contact_mobile = #{goodsContactMobile,jdbcType=VARCHAR},
+      goods_serial_number = #{goodsSerialNumber,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_category = #{goodsCategory,jdbcType=VARCHAR},
+      goods_brand = #{goodsBrand,jdbcType=VARCHAR},
+      goods_specifications = #{goodsSpecifications,jdbcType=VARCHAR},
+      goods_model = #{goodsModel,jdbcType=VARCHAR},
+      goods_bar_code = #{goodsBarCode,jdbcType=VARCHAR},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

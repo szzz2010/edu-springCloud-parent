@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanOrderInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanOrderInfo">
+    <id column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="enable" jdbcType="TINYINT" property="enable" />
+    <result column="contract_code" jdbcType="VARCHAR" property="contractCode" />
+    <result column="loan_number" jdbcType="VARCHAR" property="loanNumber" />
+    <result column="contract_amt" jdbcType="DECIMAL" property="contractAmt" />
+    <result column="consult_amt" jdbcType="DECIMAL" property="consultAmt" />
+    <result column="loan_amt" jdbcType="DECIMAL" property="loanAmt" />
+    <result column="risk_amt" jdbcType="DECIMAL" property="riskAmt" />
+    <result column="repay_type" jdbcType="VARCHAR" property="repayType" />
+    <result column="credit_deposit" jdbcType="DECIMAL" property="creditDeposit" />
+    <result column="premium" jdbcType="DECIMAL" property="premium" />
+    <result column="rate" jdbcType="DECIMAL" property="rate" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="loan_purpose" jdbcType="VARCHAR" property="loanPurpose" />
+    <result column="loan_terms" jdbcType="INTEGER" property="loanTerms" />
+    <result column="pay_status" jdbcType="TINYINT" property="payStatus" />
+    <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+    <result column="risk_status" jdbcType="TINYINT" property="riskStatus" />
+    <result column="risk_level" jdbcType="VARCHAR" property="riskLevel" />
+    <result column="xs_entry_status" jdbcType="TINYINT" property="xsEntryStatus" />
+    <result column="xs_pay_status" jdbcType="TINYINT" property="xsPayStatus" />
+    <result column="xs_pay_time" jdbcType="BIGINT" property="xsPayTime" />
+    <result column="borrow_apply_date" jdbcType="VARCHAR" property="borrowApplyDate" />
+    <result column="repay_source" jdbcType="VARCHAR" property="repaySource" />
+    <result column="subject_property" jdbcType="VARCHAR" property="subjectProperty" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    order_id, source, enable, contract_code, loan_number, contract_amt, consult_amt, 
+    loan_amt, risk_amt, repay_type, credit_deposit, premium, rate, product_code, loan_purpose, 
+    loan_terms, pay_status, file_path, risk_status, risk_level, xs_entry_status, xs_pay_status, 
+    xs_pay_time, borrow_apply_date, repay_source, subject_property, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanOrderInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_order_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_order_info
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_order_info
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanOrderInfoExample">
+    delete from loan_order_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanOrderInfo">
+    <selectKey keyProperty="orderId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_order_info (source, enable, contract_code, 
+      loan_number, contract_amt, consult_amt, 
+      loan_amt, risk_amt, repay_type, 
+      credit_deposit, premium, rate, 
+      product_code, loan_purpose, loan_terms, 
+      pay_status, file_path, risk_status, 
+      risk_level, xs_entry_status, xs_pay_status, 
+      xs_pay_time, borrow_apply_date, repay_source, 
+      subject_property, create_time, update_time
+      )
+    values (#{source,jdbcType=VARCHAR}, #{enable,jdbcType=TINYINT}, #{contractCode,jdbcType=VARCHAR}, 
+      #{loanNumber,jdbcType=VARCHAR}, #{contractAmt,jdbcType=DECIMAL}, #{consultAmt,jdbcType=DECIMAL}, 
+      #{loanAmt,jdbcType=DECIMAL}, #{riskAmt,jdbcType=DECIMAL}, #{repayType,jdbcType=VARCHAR}, 
+      #{creditDeposit,jdbcType=DECIMAL}, #{premium,jdbcType=DECIMAL}, #{rate,jdbcType=DECIMAL}, 
+      #{productCode,jdbcType=VARCHAR}, #{loanPurpose,jdbcType=VARCHAR}, #{loanTerms,jdbcType=INTEGER}, 
+      #{payStatus,jdbcType=TINYINT}, #{filePath,jdbcType=VARCHAR}, #{riskStatus,jdbcType=TINYINT}, 
+      #{riskLevel,jdbcType=VARCHAR}, #{xsEntryStatus,jdbcType=TINYINT}, #{xsPayStatus,jdbcType=TINYINT}, 
+      #{xsPayTime,jdbcType=BIGINT}, #{borrowApplyDate,jdbcType=VARCHAR}, #{repaySource,jdbcType=VARCHAR}, 
+      #{subjectProperty,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanOrderInfo">
+    <selectKey keyProperty="orderId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_order_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="enable != null">
+        enable,
+      </if>
+      <if test="contractCode != null">
+        contract_code,
+      </if>
+      <if test="loanNumber != null">
+        loan_number,
+      </if>
+      <if test="contractAmt != null">
+        contract_amt,
+      </if>
+      <if test="consultAmt != null">
+        consult_amt,
+      </if>
+      <if test="loanAmt != null">
+        loan_amt,
+      </if>
+      <if test="riskAmt != null">
+        risk_amt,
+      </if>
+      <if test="repayType != null">
+        repay_type,
+      </if>
+      <if test="creditDeposit != null">
+        credit_deposit,
+      </if>
+      <if test="premium != null">
+        premium,
+      </if>
+      <if test="rate != null">
+        rate,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="loanPurpose != null">
+        loan_purpose,
+      </if>
+      <if test="loanTerms != null">
+        loan_terms,
+      </if>
+      <if test="payStatus != null">
+        pay_status,
+      </if>
+      <if test="filePath != null">
+        file_path,
+      </if>
+      <if test="riskStatus != null">
+        risk_status,
+      </if>
+      <if test="riskLevel != null">
+        risk_level,
+      </if>
+      <if test="xsEntryStatus != null">
+        xs_entry_status,
+      </if>
+      <if test="xsPayStatus != null">
+        xs_pay_status,
+      </if>
+      <if test="xsPayTime != null">
+        xs_pay_time,
+      </if>
+      <if test="borrowApplyDate != null">
+        borrow_apply_date,
+      </if>
+      <if test="repaySource != null">
+        repay_source,
+      </if>
+      <if test="subjectProperty != null">
+        subject_property,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=TINYINT},
+      </if>
+      <if test="contractCode != null">
+        #{contractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loanNumber != null">
+        #{loanNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="contractAmt != null">
+        #{contractAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="consultAmt != null">
+        #{consultAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanAmt != null">
+        #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="riskAmt != null">
+        #{riskAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="repayType != null">
+        #{repayType,jdbcType=VARCHAR},
+      </if>
+      <if test="creditDeposit != null">
+        #{creditDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="premium != null">
+        #{premium,jdbcType=DECIMAL},
+      </if>
+      <if test="rate != null">
+        #{rate,jdbcType=DECIMAL},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loanPurpose != null">
+        #{loanPurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="loanTerms != null">
+        #{loanTerms,jdbcType=INTEGER},
+      </if>
+      <if test="payStatus != null">
+        #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="filePath != null">
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="riskStatus != null">
+        #{riskStatus,jdbcType=TINYINT},
+      </if>
+      <if test="riskLevel != null">
+        #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="xsEntryStatus != null">
+        #{xsEntryStatus,jdbcType=TINYINT},
+      </if>
+      <if test="xsPayStatus != null">
+        #{xsPayStatus,jdbcType=TINYINT},
+      </if>
+      <if test="xsPayTime != null">
+        #{xsPayTime,jdbcType=BIGINT},
+      </if>
+      <if test="borrowApplyDate != null">
+        #{borrowApplyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="repaySource != null">
+        #{repaySource,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectProperty != null">
+        #{subjectProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanOrderInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_order_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_order_info
+    <set>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enable != null">
+        enable = #{record.enable,jdbcType=TINYINT},
+      </if>
+      <if test="record.contractCode != null">
+        contract_code = #{record.contractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanNumber != null">
+        loan_number = #{record.loanNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contractAmt != null">
+        contract_amt = #{record.contractAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.consultAmt != null">
+        consult_amt = #{record.consultAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.loanAmt != null">
+        loan_amt = #{record.loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.riskAmt != null">
+        risk_amt = #{record.riskAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.repayType != null">
+        repay_type = #{record.repayType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creditDeposit != null">
+        credit_deposit = #{record.creditDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.premium != null">
+        premium = #{record.premium,jdbcType=DECIMAL},
+      </if>
+      <if test="record.rate != null">
+        rate = #{record.rate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.productCode != null">
+        product_code = #{record.productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanPurpose != null">
+        loan_purpose = #{record.loanPurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loanTerms != null">
+        loan_terms = #{record.loanTerms,jdbcType=INTEGER},
+      </if>
+      <if test="record.payStatus != null">
+        pay_status = #{record.payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.filePath != null">
+        file_path = #{record.filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.riskStatus != null">
+        risk_status = #{record.riskStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.riskLevel != null">
+        risk_level = #{record.riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xsEntryStatus != null">
+        xs_entry_status = #{record.xsEntryStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.xsPayStatus != null">
+        xs_pay_status = #{record.xsPayStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.xsPayTime != null">
+        xs_pay_time = #{record.xsPayTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.borrowApplyDate != null">
+        borrow_apply_date = #{record.borrowApplyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.repaySource != null">
+        repay_source = #{record.repaySource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectProperty != null">
+        subject_property = #{record.subjectProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_order_info
+    set order_id = #{record.orderId,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      enable = #{record.enable,jdbcType=TINYINT},
+      contract_code = #{record.contractCode,jdbcType=VARCHAR},
+      loan_number = #{record.loanNumber,jdbcType=VARCHAR},
+      contract_amt = #{record.contractAmt,jdbcType=DECIMAL},
+      consult_amt = #{record.consultAmt,jdbcType=DECIMAL},
+      loan_amt = #{record.loanAmt,jdbcType=DECIMAL},
+      risk_amt = #{record.riskAmt,jdbcType=DECIMAL},
+      repay_type = #{record.repayType,jdbcType=VARCHAR},
+      credit_deposit = #{record.creditDeposit,jdbcType=DECIMAL},
+      premium = #{record.premium,jdbcType=DECIMAL},
+      rate = #{record.rate,jdbcType=DECIMAL},
+      product_code = #{record.productCode,jdbcType=VARCHAR},
+      loan_purpose = #{record.loanPurpose,jdbcType=VARCHAR},
+      loan_terms = #{record.loanTerms,jdbcType=INTEGER},
+      pay_status = #{record.payStatus,jdbcType=TINYINT},
+      file_path = #{record.filePath,jdbcType=VARCHAR},
+      risk_status = #{record.riskStatus,jdbcType=TINYINT},
+      risk_level = #{record.riskLevel,jdbcType=VARCHAR},
+      xs_entry_status = #{record.xsEntryStatus,jdbcType=TINYINT},
+      xs_pay_status = #{record.xsPayStatus,jdbcType=TINYINT},
+      xs_pay_time = #{record.xsPayTime,jdbcType=BIGINT},
+      borrow_apply_date = #{record.borrowApplyDate,jdbcType=VARCHAR},
+      repay_source = #{record.repaySource,jdbcType=VARCHAR},
+      subject_property = #{record.subjectProperty,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanOrderInfo">
+    update loan_order_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null">
+        enable = #{enable,jdbcType=TINYINT},
+      </if>
+      <if test="contractCode != null">
+        contract_code = #{contractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loanNumber != null">
+        loan_number = #{loanNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="contractAmt != null">
+        contract_amt = #{contractAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="consultAmt != null">
+        consult_amt = #{consultAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="loanAmt != null">
+        loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="riskAmt != null">
+        risk_amt = #{riskAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="repayType != null">
+        repay_type = #{repayType,jdbcType=VARCHAR},
+      </if>
+      <if test="creditDeposit != null">
+        credit_deposit = #{creditDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="premium != null">
+        premium = #{premium,jdbcType=DECIMAL},
+      </if>
+      <if test="rate != null">
+        rate = #{rate,jdbcType=DECIMAL},
+      </if>
+      <if test="productCode != null">
+        product_code = #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loanPurpose != null">
+        loan_purpose = #{loanPurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="loanTerms != null">
+        loan_terms = #{loanTerms,jdbcType=INTEGER},
+      </if>
+      <if test="payStatus != null">
+        pay_status = #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="filePath != null">
+        file_path = #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="riskStatus != null">
+        risk_status = #{riskStatus,jdbcType=TINYINT},
+      </if>
+      <if test="riskLevel != null">
+        risk_level = #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="xsEntryStatus != null">
+        xs_entry_status = #{xsEntryStatus,jdbcType=TINYINT},
+      </if>
+      <if test="xsPayStatus != null">
+        xs_pay_status = #{xsPayStatus,jdbcType=TINYINT},
+      </if>
+      <if test="xsPayTime != null">
+        xs_pay_time = #{xsPayTime,jdbcType=BIGINT},
+      </if>
+      <if test="borrowApplyDate != null">
+        borrow_apply_date = #{borrowApplyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="repaySource != null">
+        repay_source = #{repaySource,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectProperty != null">
+        subject_property = #{subjectProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanOrderInfo">
+    update loan_order_info
+    set source = #{source,jdbcType=VARCHAR},
+      enable = #{enable,jdbcType=TINYINT},
+      contract_code = #{contractCode,jdbcType=VARCHAR},
+      loan_number = #{loanNumber,jdbcType=VARCHAR},
+      contract_amt = #{contractAmt,jdbcType=DECIMAL},
+      consult_amt = #{consultAmt,jdbcType=DECIMAL},
+      loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      risk_amt = #{riskAmt,jdbcType=DECIMAL},
+      repay_type = #{repayType,jdbcType=VARCHAR},
+      credit_deposit = #{creditDeposit,jdbcType=DECIMAL},
+      premium = #{premium,jdbcType=DECIMAL},
+      rate = #{rate,jdbcType=DECIMAL},
+      product_code = #{productCode,jdbcType=VARCHAR},
+      loan_purpose = #{loanPurpose,jdbcType=VARCHAR},
+      loan_terms = #{loanTerms,jdbcType=INTEGER},
+      pay_status = #{payStatus,jdbcType=TINYINT},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      risk_status = #{riskStatus,jdbcType=TINYINT},
+      risk_level = #{riskLevel,jdbcType=VARCHAR},
+      xs_entry_status = #{xsEntryStatus,jdbcType=TINYINT},
+      xs_pay_status = #{xsPayStatus,jdbcType=TINYINT},
+      xs_pay_time = #{xsPayTime,jdbcType=BIGINT},
+      borrow_apply_date = #{borrowApplyDate,jdbcType=VARCHAR},
+      repay_source = #{repaySource,jdbcType=VARCHAR},
+      subject_property = #{subjectProperty,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByOrderParam" parameterType="com.haohao.util.paramAndDto.LoanOrderInfoParam" resultMap="BaseResultMap">
+  	SELECT
+   	 <include refid="Base_Column_List"></include>
+    FROM loan_order_info
+    where 1=1 
+     <if test="source != null and source != ''">
+       and source = #{source}
+      </if>
+      <if test="orderId != null">
+       and order_id = #{orderId}
+      </if>
+      <if test="enable != null">
+       and enable = #{enable}
+      </if>
+      <if test="contractCode != null">
+       and contract_code = #{contractCode}
+      </if>
+      <if test="loanNumber != null and loanNumber != ''">
+       and loan_number = #{loanNumber}
+      </if>
+      <if test="contractAmt != null">
+        and contract_amt = #{contractAmt}
+      </if>
+      <if test="consultAmt != null">
+       and consult_amt = #{consultAmt}
+      </if>
+      <if test="loanAmt != null">
+       and loan_amt = #{loanAmt}
+      </if>
+      <if test="riskAmt != null">
+       and risk_amt = #{riskAmt}
+      </if>
+      <if test="repayType != null">
+        and repay_type = #{repayType}
+      </if>
+      <if test="creditDeposit != null">
+       and credit_deposit = #{creditDeposit}
+      </if>
+      <if test="premium != null">
+       and premium = #{premium}
+      </if>
+      <if test="rate != null">
+       and rate = #{rate}
+      </if>
+      <if test="productCode != null">
+       and  product_code = #{productCode}
+      </if>
+      <if test="loanPurpose != null">
+       and loan_purpose = #{loanPurpose}
+      </if>
+      <if test="loanTerms != null">
+       and loan_terms = #{loanTerms}
+      </if>
+      <if test="payStatus != null">
+       and pay_status = #{payStatus}
+      </if>
+      <if test="filePath != null">
+       and file_path = #{filePath}
+      </if>
+      <if test="riskStatus != null">
+       and risk_status = #{riskStatus}
+      </if>
+      <if test="riskLevel != null and riskLevel != ''">
+       and risk_level = #{riskLevel}
+      </if>
+      <if test="xsEntryStatus != null">
+       and xs_entry_status = #{xsEntryStatus}
+      </if>
+      <if test="xsPayStatus != null">
+       and xs_pay_status = #{xsPayStatus}
+      </if>
+      <if test="xsPayTime != null">
+       and xs_pay_time = #{xsPayTime}
+      </if>
+      <if test="xsPayTimeStart != null and xsPayTimeEnd != null">
+       and xs_pay_time between #{xsPayTimeStart} and #{xsPayTimeEnd}
+      </if>
+      <if test="createTime != null">
+       and create_time = #{createTime}
+      </if>
+      <if test="createBetweenTime != null">
+       and create_time between unix_timestamp('${createBetweenTime[0]}') and unix_timestamp('${createBetweenTime[1]}')
+      </if>
+      <if test="updateTime != null">
+       and update_time = #{updateTime}
+      </if>
+  		order by order_id desc
+  </select>
+</mapper>

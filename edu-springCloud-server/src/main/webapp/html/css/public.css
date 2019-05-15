@@ -1,0 +1,355 @@
+/*css样式初始化-start*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,
+th,td {
+    margin:0;
+    padding:0;
+    font-family:Microsoft YaHei,'微软雅黑',YaHei,tahoma,Helvetica,"Hiragino Sans GB",Arial,"\5b8b\4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body,button,input,select,textarea {
+    font:12px/1 Microsoft YaHei,'微软雅黑',YaHei,tahoma,Helvetica,"Hiragino Sans GB",Arial,"\5b8b\4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color:#222;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    background:#fafafa;
+}
+
+h1 {
+    font-size:18px;
+    font-weight: normal;
+}
+h2 {
+    font-size:16px;
+    font-weight: normal;
+}
+h3 {
+    font-size:14px;
+    font-weight: normal;
+}
+h4,h5,h6 {
+    font-size:100%;
+    font-weight: normal;
+}
+address,cite,dfn,em,var {
+    font-style:normal;
+}
+code,kbd,pre,samp,tt {
+    font-family:"Courier New",Courier,monospace;
+}
+small {
+    font-size:12px;
+}
+ul,ol {
+    list-style:none;
+}
+a {
+    text-decoration:none;
+    color:#555;
+}
+a:hover {
+    text-decoration:none;
+}
+abbr[title],acronym[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+q:before,q:after {
+    content:'';
+}
+legend {
+    /* for ie6 */
+    color:#000;
+}
+fieldset,img {
+    border:none;
+}
+button,input,select,textarea {
+    font-size:100%;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+hr {
+    border:none;
+    height:1px;
+}
+html {
+    overflow-y:scroll;
+}
+
+input::-webkit-input-placeholder{
+    color:#acacac;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#acacac;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#acacac;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#acacac;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    border: 1px solid #E3E7EA !important;
+}
+
+.clearfix {
+    *zoom:1;
+    clear:both;
+}
+.clearfix:before,
+.clearfix:after {
+    display:table;
+    line-height:0;
+    content:"";
+}
+.clearfix:after {
+    clear:both;
+}
+input,select,label,button,a{
+    outline:none;
+    vertical-align:middle;
+}
+
+input:checked+label[name="terms"]{/*修改checkbox选中的默认样式*/
+    border: 1px solid #276CFE;
+    background: url("../img/vehicle-selected.png") no-repeat scroll right center transparent;;
+}
+
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("../img/arrow.png") no-repeat scroll right center transparent;/*在选择框的最右侧中间显示小箭头图片*/
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus{
+    border-bottom: 1px solid #276CFE;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance:none
+}
+input[type="number"]{
+    -moz-appearance:textfield;
+}
+/*css样式初始化-end*/
+
+
+/*--------------------------------公共样式-start*/
+body{
+    min-width: 1270px;
+}
+.con{
+    margin: 0 auto;
+}
+
+.pr{
+    position: relative;
+}
+
+.pa{
+    position: absolute;
+}
+
+.tc{
+    text-align: center;
+}
+
+.tl{
+    text-align: left;
+}
+.tr{
+    text-align: right;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.box-s{
+    box-shadow: 0 10px 22px 0 rgba(0,0,0,.1);
+    background: #fff;
+}
+
+.error{
+    visibility: hidden;
+    color: red;
+}
+.error2{
+    display: none;
+    color: red;
+}
+
+.dis-n{display: none}
+.dix-i{display: inline-block}
+.dix-b{display: block}
+.vis-n{visibility: hidden}
+/*头部公共样式*/
+.headers{
+    background: #276CFE;
+}
+
+.headers>div{
+    width: 64%;
+    height: 96px;
+    line-height: 96px;
+}
+
+.headers img{
+    width: 224px;
+    height: 39px;
+    vertical-align: middle;
+}
+.headers img.user{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.headers span {
+    font-size: 26px;
+    color: #fff;
+    margin-left: 74px;
+}
+
+.headers a.pr{
+    font-size: 15px;
+    color: #FFF;
+    letter-spacing: -0.08px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.headers b.msg{
+    width: 8px;
+    height: 8px;
+    background: #f83737;
+    border-radius: 50%;
+    top: 0;
+    right: -8px;
+}
+.headers ul.pa{
+    width: 100px;
+    left: 0;
+    top: 80px;
+    background: #fff;
+    border-radius: 2px;
+    z-index: 100;
+}
+
+.headers ul.pa>li{
+    height: 40px;
+    line-height: 40px;
+}
+
+.headers ul.pa>li:first-child{
+    padding-bottom: 5px;
+}
+
+.headers ul.pa>li.active>a,
+.headers ul.pa>li:hover a{
+    color: #276CFE;
+}
+
+.headers ul.pa>li:first-child:before{
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 0 2px 0 #FFF;
+    background-color: #FFF;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: relative;
+    top: -5px;
+    right: -30px;
+    z-index: 1;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+/*---------------------------------公共样式-end*/
+
+/*---------------------------------底部版权公共样式-start*/
+.footer{
+    padding: 34px 0;
+    background: #101D30;
+    font-size: 14px;
+    color: #B8C0C3;
+    letter-spacing: 1.62px;
+    line-height: 24px;
+}
+.footer>div{
+    width: 975px;
+    margin: 0 auto;
+}
+
+.footerR{
+    margin-right: 140px;
+}
+
+.footer p{
+    line-height: 30px;
+}
+
+.footer img{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.footerL>p:nth-child(1){
+    padding-right: 32px;
+}
+
+.footerL>p:nth-child(2){
+    padding-right: 203px;
+}
+
+.footerR>p:nth-child(2),
+.footerR>p:nth-child(3){
+    padding-left: 20px;
+}
+
+.footerR>p>a{
+    color: #B8C0C3;
+}
+.footerR>p>a:hover{
+    color: #fff;
+}
+
+
+.footerR>img.pa{
+    width: auto;
+    height: auto;
+    left: 203px;
+    top:0;
+}
+/*---------------------------------底部版权公共样式-end*/
+.layui-layer-btn{
+    text-align: center !important;
+}
+
+button.remove-dis{
+    cursor: pointer;
+    color: #276CFE;
+    border-color:#276CFE;
+}

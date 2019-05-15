@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>supply_jz</contextName>
+   <springProperty scope="context" name="log.path" source="logging.path"/>
+
+
+    <!-- 彩色日志 -->
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <!-- 彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN" value="[%contextName][%level]-%d{yyyy-MM-dd HH:mm:ss.SSS}-[%thread] - %msg -[%file : %line] %n"/>
+
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+       <!-- <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>-->
+        <!--<encoder>-->
+            <!--<pattern>[%contextName][%level]-%d{yyyy-MM-dd HH:mm:ss.SSS}-[%thread] - %msg -[%file : %line] %n</pattern>-->
+        <!--</encoder>-->
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件 common-->
+    <appender name="common"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/%d{yyyy-MM}/%d{yyyy-MM-dd}-common.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>180</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>30MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    
+    <!--输出到文件 system-->
+    <appender name="system" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/%d{yyyy-MM}/%d{yyyy-MM-dd}-system.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>90</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>30MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+    <!--输出到文件 special-->
+    <appender name="special" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/%d{yyyy-MM}/%d{yyyy-MM-dd}-special.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>365</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>30MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+     <!--输出到文件 Exception-->
+    <appender name="exception" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/%d{yyyy-MM}/%d{yyyy-MM-dd}-exception.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>365</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>30MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+
+    <!--myibatis log configure-->
+    <logger name="com.apache.ibatis" level="TRACE"/>
+    <logger name="java.sql.Connection" level="DEBUG"/>
+    <logger name="java.sql.Statement" level="DEBUG"/>
+    <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+
+
+    <root level="info">
+        <appender-ref ref="console" />
+        <appender-ref ref="system" />
+    </root>
+
+    <logger name="com.haohao.collection" level="DEBUG" additivity="false">
+        <appender-ref ref="system" />
+        <appender-ref ref="console"/>
+    </logger>
+    <logger name="common" level="DEBUG" additivity="false">
+        <appender-ref ref="common" />
+    </logger>
+    <logger name="exception" level="DEBUG" additivity="false">
+        <appender-ref ref="exception"/>
+        <appender-ref ref="console"/>
+    </logger>
+    <logger name="special" level="DEBUG" additivity="false">
+        <appender-ref ref="special" />
+    </logger>
+</configuration>

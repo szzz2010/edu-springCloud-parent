@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haohao.mapper.auto.LoanUserJobInfoMapper">
+  <resultMap id="BaseResultMap" type="com.haohao.modelAndExample.LoanUserJobInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_property" jdbcType="VARCHAR" property="companyProperty" />
+    <result column="fixed_line" jdbcType="VARCHAR" property="fixedLine" />
+    <result column="company_addr" jdbcType="VARCHAR" property="companyAddr" />
+    <result column="start_date" jdbcType="VARCHAR" property="startDate" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="duty_job" jdbcType="VARCHAR" property="dutyJob" />
+    <result column="monthly_income" jdbcType="DECIMAL" property="monthlyIncome" />
+    <result column="hire_type" jdbcType="VARCHAR" property="hireType" />
+    <result column="business_info" jdbcType="VARCHAR" property="businessInfo" />
+    <result column="company_scale" jdbcType="VARCHAR" property="companyScale" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, source, order_id, company_name, company_property, fixed_line, company_addr, start_date, 
+    profession, duty_job, monthly_income, hire_type, business_info, company_scale, create_time, 
+    update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.haohao.modelAndExample.LoanUserJobInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from loan_user_job_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="page">
+      limit ${offset}, ${count}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan_user_job_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan_user_job_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.haohao.modelAndExample.LoanUserJobInfoExample">
+    delete from loan_user_job_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.haohao.modelAndExample.LoanUserJobInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_job_info (source, order_id, company_name, 
+      company_property, fixed_line, company_addr, 
+      start_date, profession, duty_job, 
+      monthly_income, hire_type, business_info, 
+      company_scale, create_time, update_time
+      )
+    values (#{source,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyProperty,jdbcType=VARCHAR}, #{fixedLine,jdbcType=VARCHAR}, #{companyAddr,jdbcType=VARCHAR}, 
+      #{startDate,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{dutyJob,jdbcType=VARCHAR}, 
+      #{monthlyIncome,jdbcType=DECIMAL}, #{hireType,jdbcType=VARCHAR}, #{businessInfo,jdbcType=VARCHAR}, 
+      #{companyScale,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.haohao.modelAndExample.LoanUserJobInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into loan_user_job_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="companyProperty != null">
+        company_property,
+      </if>
+      <if test="fixedLine != null">
+        fixed_line,
+      </if>
+      <if test="companyAddr != null">
+        company_addr,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="dutyJob != null">
+        duty_job,
+      </if>
+      <if test="monthlyIncome != null">
+        monthly_income,
+      </if>
+      <if test="hireType != null">
+        hire_type,
+      </if>
+      <if test="businessInfo != null">
+        business_info,
+      </if>
+      <if test="companyScale != null">
+        company_scale,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyProperty != null">
+        #{companyProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedLine != null">
+        #{fixedLine,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddr != null">
+        #{companyAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyJob != null">
+        #{dutyJob,jdbcType=VARCHAR},
+      </if>
+      <if test="monthlyIncome != null">
+        #{monthlyIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="hireType != null">
+        #{hireType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessInfo != null">
+        #{businessInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyScale != null">
+        #{companyScale,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.haohao.modelAndExample.LoanUserJobInfoExample" resultType="java.lang.Long">
+    select count(*) from loan_user_job_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loan_user_job_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.source != null">
+        source = #{record.source,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyName != null">
+        company_name = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyProperty != null">
+        company_property = #{record.companyProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fixedLine != null">
+        fixed_line = #{record.fixedLine,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAddr != null">
+        company_addr = #{record.companyAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startDate != null">
+        start_date = #{record.startDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.profession != null">
+        profession = #{record.profession,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dutyJob != null">
+        duty_job = #{record.dutyJob,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monthlyIncome != null">
+        monthly_income = #{record.monthlyIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hireType != null">
+        hire_type = #{record.hireType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessInfo != null">
+        business_info = #{record.businessInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyScale != null">
+        company_scale = #{record.companyScale,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loan_user_job_info
+    set id = #{record.id,jdbcType=INTEGER},
+      source = #{record.source,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      company_name = #{record.companyName,jdbcType=VARCHAR},
+      company_property = #{record.companyProperty,jdbcType=VARCHAR},
+      fixed_line = #{record.fixedLine,jdbcType=VARCHAR},
+      company_addr = #{record.companyAddr,jdbcType=VARCHAR},
+      start_date = #{record.startDate,jdbcType=VARCHAR},
+      profession = #{record.profession,jdbcType=VARCHAR},
+      duty_job = #{record.dutyJob,jdbcType=VARCHAR},
+      monthly_income = #{record.monthlyIncome,jdbcType=DECIMAL},
+      hire_type = #{record.hireType,jdbcType=VARCHAR},
+      business_info = #{record.businessInfo,jdbcType=VARCHAR},
+      company_scale = #{record.companyScale,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haohao.modelAndExample.LoanUserJobInfo">
+    update loan_user_job_info
+    <set>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyProperty != null">
+        company_property = #{companyProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedLine != null">
+        fixed_line = #{fixedLine,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddr != null">
+        company_addr = #{companyAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyJob != null">
+        duty_job = #{dutyJob,jdbcType=VARCHAR},
+      </if>
+      <if test="monthlyIncome != null">
+        monthly_income = #{monthlyIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="hireType != null">
+        hire_type = #{hireType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessInfo != null">
+        business_info = #{businessInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyScale != null">
+        company_scale = #{companyScale,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haohao.modelAndExample.LoanUserJobInfo">
+    update loan_user_job_info
+    set source = #{source,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_property = #{companyProperty,jdbcType=VARCHAR},
+      fixed_line = #{fixedLine,jdbcType=VARCHAR},
+      company_addr = #{companyAddr,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      duty_job = #{dutyJob,jdbcType=VARCHAR},
+      monthly_income = #{monthlyIncome,jdbcType=DECIMAL},
+      hire_type = #{hireType,jdbcType=VARCHAR},
+      business_info = #{businessInfo,jdbcType=VARCHAR},
+      company_scale = #{companyScale,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
